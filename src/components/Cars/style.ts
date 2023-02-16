@@ -16,7 +16,7 @@ align-items: center;
         width: 100%;
         height: 390px;
         background-color: gray;
-        overflow: auto;
+        overflow-x: auto;
 
         ::-webkit-scrollbar{
         background-color: #1d1d1d;
