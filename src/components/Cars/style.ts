@@ -6,13 +6,6 @@ height: 400px;
 background-color: white;
 margin: 0 auto;
 
-    /* .slick-slide > div {
-    margin: 0 10px;
-    }
-    .slick-list {
-    margin: 0 -10px;
-    } */
-
     .card{
         background-color: white;
         max-width: 300px;
@@ -26,13 +19,13 @@ margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #E9ECEF;
+        background-color: var(--grey-7);
     }
 
     .card > .imgDiv > img{
         width: 170px;
         height: 150px;
-        background-color: #E9ECEF;
+        background-color: var(--grey-7);
     }
     
     .card > .divOne{
@@ -57,7 +50,7 @@ margin: 0 auto;
         width: 97%;
         height: 50%;
         font-size: 14px;
-        color: #495057;
+        color: var(--grey-2);
         text-align: justify;
        
     }
@@ -87,14 +80,14 @@ margin: 0 auto;
 
     .card > .divTwo > div > p{
         font-size: 14px;
-        color: #495057;
+        color: var(--grey-2);
         margin: 0px 5px 0px 5px 
     }
 
 
     .card > .divTwo > div > p{
         font-size: 14px;
-        color: #495057;
+        color: var(--grey-2);
     }
 
     .card > .divTree{
@@ -124,8 +117,8 @@ margin: 0 auto;
         width: 50px;
         height: 32px;
         border-radius: 4px;
-        background-color: #EDEAFD;
-        color: #4529E6;
+        background-color: var(--brand-4);
+        color: var(--brand-1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -133,7 +126,7 @@ margin: 0 auto;
 
     .card > .divTree > div > p{
         font-size: 16px;
-        color: #212529;
+        color: var(--grey-0);
         font-weight: bold;
     }
 `

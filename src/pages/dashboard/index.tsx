@@ -7,10 +7,10 @@ import { Header } from "../../components/Header";
 export const Dashboard = () => {
   return (
     <DashboardPage>
-      {/* <Header/>
-      <Cars />
-      <Footer /> */}
+      <Header/>
       <ProductCardAuction/>
+      <Cars />
+      <Footer />     
     </DashboardPage>
   );
 };
