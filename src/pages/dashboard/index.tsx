@@ -6,7 +6,7 @@ import { Footer } from "../../components/Footer";
 export const Dashboard = () => {
   return (
     <DashboardPage>
-      <ProductCardAuction />
+      {/* <ProductCardAuction /> */}
       <Cars />
       <Footer />
     </DashboardPage>
