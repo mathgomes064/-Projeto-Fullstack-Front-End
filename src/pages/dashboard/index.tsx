@@ -8,9 +8,9 @@ export const Dashboard = () => {
   return (
     <DashboardPage>
       <Header/>
-      <ProductCardAuction />
+      <ProductCardAuction/>
       <Cars />
-      <Footer />
+      <Footer />     
     </DashboardPage>
   );
 };
