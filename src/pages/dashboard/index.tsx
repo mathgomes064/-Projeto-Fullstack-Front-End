@@ -1,11 +1,14 @@
-import { Cars } from "../../components/Cars"
-import { Header } from "../../components/Header"
-import { ProductCardAuction } from "../../components/ProductCardAuction"
+import { Cars } from "../../components/Cars";
+import { DashboardPage } from "./style";
+import { ProductCardAuction } from "../../components/ProductCardAuction";
+import { Footer } from "../../components/Footer";
 
-export const Dashboard = () =>{
-    return(
-        <>
-           <Header/>
-        </>
-    )
-}
+export const Dashboard = () => {
+  return (
+    <DashboardPage>
+      <ProductCardAuction />
+      <Cars />
+      <Footer />
+    </DashboardPage>
+  );
+};

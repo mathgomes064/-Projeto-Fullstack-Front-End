@@ -25,10 +25,10 @@ export const ProductCardAuction = () => {
             </div>
             <span>Rodrigo Tavares</span>
           </div>
-        </div>
         <button>
           Acessar página do leilão <img src={arrow} alt="arrow" />
         </button>
+        </div>
       </Container>
     </>
   );

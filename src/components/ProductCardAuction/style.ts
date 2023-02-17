@@ -4,6 +4,7 @@ import background from "../../assets/backgroundcardauction.svg";
 export const Container = styled.div`
   background-image: url(${background});
   background-position: center;
+  background-repeat: no-repeat;
   width: 735px;
   height: 326px;
 
@@ -29,7 +30,7 @@ export const Container = styled.div`
       font-weight: 400;
       font-size: 16px;
       line-height: 28px;
-      color: #CED4DA;
+      color: #ced4da;
       margin-bottom: 24px;
       margin-right: 100px;
     }
@@ -84,6 +85,16 @@ export const Container = styled.div`
 
     img {
       margin-left: 470px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 328px;
+    height: 435px;
+    background-size: 275px;
+    background-repeat: no-repeat;
+    span{
+      font-size: 10px;
     }
   }
 `;
