@@ -6,13 +6,6 @@ height: 400px;
 background-color: white;
 margin: 0 auto;
 
-    /* .slick-slide > div {
-    margin: 0 10px;
-    }
-    .slick-list {
-    margin: 0 -10px;
-    } */
-
     .card{
         background-color: white;
         max-width: 300px;
