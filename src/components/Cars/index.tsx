@@ -1,12 +1,50 @@
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import { CarSection } from "./style"
 import car from "../../assets/carro.png"
 import user from "../../assets/user.jpg"
+import Slider from "react-slick"
 
 export const Cars = () =>{
+    const settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      };
+
     return(
         <CarSection>
-            <ul className="container">
-                <li className="card">
+            <Slider {...settings}>
+                <div className="card">
                     <div className="imgDiv">
                         <img src={car} alt="" />
                     </div>
@@ -22,14 +60,16 @@ export const Cars = () =>{
                     </div>
                     <div className="divTree">
                         <div>
-                            <span>0KM</span>
-                            <span>2019</span>
+                            <div>
+                                <span>0KM</span>
+                                <span>2019</span>
+                            </div>
+                            <p>R$ 00.000,00</p>
                         </div>
-                        <p>R$ 00.000,00</p>
                     </div>
-                </li>
+                </div>
 
-                <li className="card">
+                <div className="card">
                     <div className="imgDiv">
                         <img src={car} alt="" />
                     </div>
@@ -45,14 +85,16 @@ export const Cars = () =>{
                     </div>
                     <div className="divTree">
                         <div>
-                            <span>0KM</span>
-                            <span>2019</span>
+                            <div>
+                                <span>0KM</span>
+                                <span>2019</span>
+                            </div>
+                            <p>R$ 00.000,00</p>
                         </div>
-                        <p>R$ 00.000,00</p>
                     </div>
-                </li>
+                </div>
 
-                <li className="card">
+                <div className="card">
                     <div className="imgDiv">
                         <img src={car} alt="" />
                     </div>
@@ -68,14 +110,16 @@ export const Cars = () =>{
                     </div>
                     <div className="divTree">
                         <div>
-                            <span>0KM</span>
-                            <span>2019</span>
+                            <div>
+                                <span>0KM</span>
+                                <span>2019</span>
+                            </div>
+                            <p>R$ 00.000,00</p>
                         </div>
-                        <p>R$ 00.000,00</p>
                     </div>
-                </li>
+                </div>
 
-                <li className="card">
+                <div className="card">
                     <div className="imgDiv">
                         <img src={car} alt="" />
                     </div>
@@ -91,14 +135,16 @@ export const Cars = () =>{
                     </div>
                     <div className="divTree">
                         <div>
-                            <span>0KM</span>
-                            <span>2019</span>
+                            <div>
+                                <span>0KM</span>
+                                <span>2019</span>
+                            </div>
+                            <p>R$ 00.000,00</p>
                         </div>
-                        <p>R$ 00.000,00</p>
                     </div>
-                </li>
+                </div>
 
-                <li className="card">
+                <div className="card">
                     <div className="imgDiv">
                         <img src={car} alt="" />
                     </div>
@@ -114,14 +160,16 @@ export const Cars = () =>{
                     </div>
                     <div className="divTree">
                         <div>
-                            <span>0KM</span>
-                            <span>2019</span>
+                            <div>
+                                <span>0KM</span>
+                                <span>2019</span>
+                            </div>
+                            <p>R$ 00.000,00</p>
                         </div>
-                        <p>R$ 00.000,00</p>
                     </div>
-                </li>
+                </div>
 
-                <li className="card">
+                <div className="card">
                     <div className="imgDiv">
                         <img src={car} alt="" />
                     </div>
@@ -137,82 +185,15 @@ export const Cars = () =>{
                     </div>
                     <div className="divTree">
                         <div>
-                            <span>0KM</span>
-                            <span>2019</span>
-                        </div>
-                        <p>R$ 00.000,00</p>
-                    </div>
-                </li>
-
-                <li className="card">
-                    <div className="imgDiv">
-                        <img src={car} alt="" />
-                    </div>
-                    <div className="divOne">
-                        <h1>Product title stays here - max 1 line</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio quasi... </p>
-                    </div>
-                    <div className="divTwo">
-                        <div>
-                            <img src={user} alt="" />
-                            <p>Anunciante</p>
+                            <div>
+                                <span>0KM</span>
+                                <span>2019</span>
+                            </div>
+                            <p>R$ 00.000,00</p>
                         </div>
                     </div>
-                    <div className="divTree">
-                        <div>
-                            <span>0KM</span>
-                            <span>2019</span>
-                        </div>
-                        <p>R$ 00.000,00</p>
-                    </div>
-                </li>
-
-                <li className="card">
-                    <div className="imgDiv">
-                        <img src={car} alt="" />
-                    </div>
-                    <div className="divOne">
-                        <h1>Product title stays here - max 1 line</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio quasi... </p>
-                    </div>
-                    <div className="divTwo">
-                        <div>
-                            <img src={user} alt="" />
-                            <p>Anunciante</p>
-                        </div>
-                    </div>
-                    <div className="divTree">
-                        <div>
-                            <span>0KM</span>
-                            <span>2019</span>
-                        </div>
-                        <p>R$ 00.000,00</p>
-                    </div>
-                </li>
-
-                <li className="card">
-                    <div className="imgDiv">
-                        <img src={car} alt="" />
-                    </div>
-                    <div className="divOne">
-                        <h1>Product title stays here - max 1 line</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio quasi... </p>
-                    </div>
-                    <div className="divTwo">
-                        <div>
-                            <img src={user} alt="" />
-                            <p>Anunciante</p>
-                        </div>
-                    </div>
-                    <div className="divTree">
-                        <div>
-                            <span>0KM</span>
-                            <span>2019</span>
-                        </div>
-                        <p>R$ 00.000,00</p>
-                    </div>
-                </li>
-            </ul>
+                </div>
+            </Slider>
         </CarSection>
     )
 }
