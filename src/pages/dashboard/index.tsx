@@ -8,6 +8,7 @@ export const Dashboard = () => {
   return (
     <DashboardPage>
       <Header/>
+      <ProductCardAuction />
       <Cars />
       <Footer />
     </DashboardPage>
