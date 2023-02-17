@@ -8,11 +8,13 @@ export const Container = styled.div`
   width: 100vw;
   height: 140px;
   background: var(--grey-0);
-
+  position: relative;
+  bottom: 0px;
   img{
     width: 153px;
     height: 26px;
   }
+
 
   @media (max-width: 375px){
         display: flex;
