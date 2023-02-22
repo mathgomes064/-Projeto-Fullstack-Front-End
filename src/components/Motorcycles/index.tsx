@@ -1,11 +1,11 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { CarSection } from "./style"
-import car from "../../assets/carro.png"
+import { MotorcycleSection } from "./style"
+import moto from "../../assets/moto.png"
 import user from "../../assets/user.jpg"
 import Slider from "react-slick"
 
-export const Cars = () =>{
+export const Motorcycles = () =>{
     const settings = {
         dots: true,
         infinite: false,
@@ -42,14 +42,14 @@ export const Cars = () =>{
       };
 
     return(
-        <CarSection>
+        <MotorcycleSection>
             <div className="tittleDiv">
-                <h1>Carros</h1>
+                <h1>Motos</h1>
             </div>
             <Slider {...settings}>
                 <div className="card">
                     <div className="imgDiv">
-                        <img src={car} alt="" />
+                        <img src={moto} alt="" />
                     </div>
                     <div className="divOne">
                         <h1>Product title stays here - max 1 line</h1>
@@ -74,7 +74,7 @@ export const Cars = () =>{
 
                 <div className="card">
                     <div className="imgDiv">
-                        <img src={car} alt="" />
+                        <img src={moto} alt="" />
                     </div>
                     <div className="divOne">
                         <h1>Product title stays here - max 1 line</h1>
@@ -99,7 +99,7 @@ export const Cars = () =>{
 
                 <div className="card">
                     <div className="imgDiv">
-                        <img src={car} alt="" />
+                        <img src={moto} alt="" />
                     </div>
                     <div className="divOne">
                         <h1>Product title stays here - max 1 line</h1>
@@ -124,7 +124,7 @@ export const Cars = () =>{
 
                 <div className="card">
                     <div className="imgDiv">
-                        <img src={car} alt="" />
+                        <img src={moto} alt="" />
                     </div>
                     <div className="divOne">
                         <h1>Product title stays here - max 1 line</h1>
@@ -149,7 +149,7 @@ export const Cars = () =>{
 
                 <div className="card">
                     <div className="imgDiv">
-                        <img src={car} alt="" />
+                        <img src={moto} alt="" />
                     </div>
                     <div className="divOne">
                         <h1>Product title stays here - max 1 line</h1>
@@ -174,7 +174,7 @@ export const Cars = () =>{
 
                 <div className="card">
                     <div className="imgDiv">
-                        <img src={car} alt="" />
+                        <img src={moto} alt="" />
                     </div>
                     <div className="divOne">
                         <h1>Product title stays here - max 1 line</h1>
@@ -197,6 +197,6 @@ export const Cars = () =>{
                     </div>
                 </div>
             </Slider>
-        </CarSection>
+        </MotorcycleSection>
     )
 }

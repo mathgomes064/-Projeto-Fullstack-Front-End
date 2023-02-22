@@ -3,7 +3,9 @@ import { createGlobalStyle } from "styled-components";
 const Global = createGlobalStyle`
 
 :root {
-  font-family: 'IBM Plex Mono', monospace;
+  background-color: var( --white);
+  overflow-x: hidden;
+  /* font-family: 'IBM Plex Mono', monospace;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -16,7 +18,7 @@ const Global = createGlobalStyle`
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; */
 
   --brand-1: #4529e6;
   --brand-2: #5126ea;

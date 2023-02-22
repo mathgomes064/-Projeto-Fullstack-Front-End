@@ -1,101 +1,88 @@
-import { Container } from "./style";
+import { HeadeMain } from "./style"
 import logo from "../../assets/logo.png";
-import icone from "../../assets/icone.png";
-import barras from "../../assets/barras.png";
+import user from "../../assets/user.jpg"
+import { VscThreeBars } from 'react-icons/vsc';
+import { useState } from "react";
+
+export const Header = () =>{
+    const [isLogged, setIsLogged] = useState(true)
+    const [activeDropDown, setActiveDropDown] = useState(false)
+    const [activeItemsDropdown, setActiveItemsDropdown] =useState(false)
+
+    const logOff = () =>{
+        setActiveDropDown(false)
+        setIsLogged(true)
+    }
 
 
-export const Header = () => {
+    return(
+        <HeadeMain>
+            <div className="container">
+                <img src={logo} alt="" />
+                <div className="buttonSection">
 
-  const handleClickLogin = event => {
-    var divMotors= document.getElementById("div-motor")
-    var divLogin=document.getElementById("div-login")
-    
-    if (divMotors != null && divLogin != null) {
-      if(divMotors.style.display ==='flex') {
-       divMotors.style.display = 'none' 
-       divLogin.style.display = 'flex';
-      } else {
-        divMotors.style.display = 'flex'
-        divLogin.style.display = 'none';
-  } 
- }
-}
-const handleClickDropDown = event => {
-  
-  var dropDown=document.getElementById("dropDown")
-
-  if (dropDown != null) {
-    if(dropDown.style.display ==='none') {
-      dropDown.style.display = 'flex' 
-    } else {
-      dropDown.style.display = 'none'
-} 
-  }
-
-}
-const handleClickDropDownReponsive = event => {
-  
-  var dropDownResponsive=document.getElementById("bt-responsive")
-
-  if (dropDownResponsive != null) {
-    if(dropDownResponsive.style.display ==='none') {
-      dropDownResponsive.style.display = 'flex' 
-    } else {
-      dropDownResponsive.style.display = 'none'
-} 
-  }
-
-};
-  return (
-    <>
-      <Container>
-        <div className="Main">
-          <div className="right">
-              <div className="divLogo">
-                <img src={logo} alt="logo" />
-                <img src = {barras}  onClick={handleClickDropDownReponsive}  className="icon"/>
-              </div>
-            <div className="nav">
-              <p>Carros</p>
-              <p>Motos</p>
-              <p>Leilão</p>
-            </div>
-          </div>
-          <div className="left">
-            <div className="div-log" id='div-motor'>
-              <button  className="button"id="bt-motor" onClick={handleClickLogin}>Fazer Login</button>
-              <button className="button">Cadastrar</button> 
-            </div>
-            <div className="right-register" id="div-login">
-              <img  className="imagem" src={icone} alt="logo" />
-              <p className="user"  onClick={handleClickDropDown} >usuario</p>
-                <div className="DropDown" id='dropDown'>
-                  <ol>
-                    <li>Editar Perfil</li>
-                    <li>Editar Endereço</li>
-                    <li>Minhas Compras</li>
-                    <li className="out" id="bt-cadastrar" onClick={handleClickLogin}  > Sair</li>
-                  </ol>
+                    <VscThreeBars onClick={() => setActiveItemsDropdown(true)} className="dropdown"/>
+                    {activeItemsDropdown?
+                    (
+                    <div className="userItemsDropDown" id='dropDown'>
+                        <ol>
+                            <li>Carros</li>
+                            <li>Motos</li>
+                            <li>Leilão </li>
+                            <li className="upperLine">
+                                <a href="">Fazer Login</a>
+                            </li>
+                            <button >Cadastrar</button>
+                        </ol>
+                    </div>
+                    )
+                    :
+                    (
+                        ""
+                    )
+                    }
+                    <div className="productLinks">
+                        <a href="">Carros</a>
+                        <a href="">Motos</a>
+                        <a href="">Leilão</a>
+                    </div>
+                    {isLogged?
+                     (
+                     <div className="buttons">
+                        <button onClick={() => setIsLogged(false)}>Fazer Login</button>
+                        <button>Cadastrar</button>
+                     </div>
+                    )
+                     :
+                    (
+                    <div className="userInfo">
+                        <div>
+                            <img className="userImg" src={user} alt="" />
+                            <h1 onClick={() => setActiveDropDown(true)}>Samuel Leão</h1>
+                            {activeDropDown?
+                            (
+                            <div className="userDropDown" id='dropDown'>
+                                <ol>
+                                    <li>Editar Perfil</li>
+                                    <li>Editar Endereço</li>
+                                    <li>Minhas Compras</li>
+                                    <li className="out" onClick={() => logOff()}  > Sair</li>
+                                </ol>
+                            </div>
+                            )
+                            :
+                            (
+                                ""
+                            )
+                            }
+                        </div>
+                    </div>
+                     )
+                     }
+                    
+                    
                 </div>
             </div>
-          </div>
-          <div className="responsive" id="bt-responsive">
-            <div className="responsive-top">
-              <p>Motos</p>
-              <p>Carros</p>
-              <p>Leilão</p>
-          </div >
-          <div className="responsive-bottom">
-            <div className="Login-responsive">
-              <p>Fazer Login</p>
-            </div>
-            <div className="buttom-Responsive">
-              <button >Cadastrar</button>
-            </div>
-          </div>            
-          </div>
-        </div>
-      </Container>
-    </>
-  );
-};
+        </HeadeMain>
+    )
+}
