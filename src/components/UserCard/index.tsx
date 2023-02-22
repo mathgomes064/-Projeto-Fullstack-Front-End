@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-export const Footer = () => {
+export const UserCard = () => {
   return (
     <>
       <Container>

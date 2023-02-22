@@ -16,7 +16,7 @@ export const Container = styled.div`
   height: 104px;
   border-radius: 50px;
   color: var(--white);
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -44,15 +44,13 @@ export const Container = styled.div`
   padding: 0px 7px;
   background-color: var(--brand-4);
   border-radius: 4px;
-
 }
 
 #container-anunciante > p {
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Inter";
   font-weight: 500;
   color: var(--brand-1);
-
 }
 
 #container {
@@ -67,18 +65,15 @@ span {
   color: var(--grey-2);
 }
 
- 
-
-
-@media (min-width: 375px){
+@media (min-width: 450px) {
   section {
-    margin-left: 140px;
-    margin-right: 140px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   #profile-pic {
     margin-bottom: 4px;
   }
-        
 }
+
 `;
