@@ -1,12 +1,12 @@
 import styled from "styled-components"
 
-export const CarSection = styled.section`
+export const MotorcycleSection = styled.section`
 width: 94vw;
 height: 500px;
 margin-top: 100px;
 
     .tittleDiv{
-        width: 94vw;
+        width: 94.5vw;
         height: 100px;
         display: flex;
         align-items: center
@@ -20,7 +20,7 @@ margin-top: 100px;
     }
 
     .card{
-        background-color: var(--white);
+        background-color: white;
         max-width: 300px;
         height: 370px;
         margin: 0px 10px 0px 10px;
