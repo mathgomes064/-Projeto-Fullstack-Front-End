@@ -70,8 +70,15 @@ span {
  
 
 
-  @media (max-width: 375px){
+@media (min-width: 375px){
+  section {
+    margin-left: 140px;
+    margin-right: 140px;
+  }
+
+  #profile-pic {
+    margin-bottom: 4px;
+  }
         
-        
-    }
+}
 `;
