@@ -10,9 +10,8 @@ export const UserCard = () => {
           </div>
           <div id="profile-name">
             <h3>Samuel Leão</h3>
-            <div id="container-anunciante">
-              <p>Anunciante</p>
-            </div>
+
+            <button id="container-anunciante">Anunciante</button>
           </div>
 
           <span>
@@ -20,6 +19,7 @@ export const UserCard = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s
           </span>
+          <button id="button-blue-1-big">Criar anuncio</button>
         </section>
       </Container>
     </>

@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin: 65px 20px 31px 20px;
   justify-content: center;
   align-items: center;
-  padding: 40px 29px 60px 20px;
+  padding: 40px 29px 43px 35px;
   border-radius: 4px;
 }
 #profile-pic {
@@ -22,7 +22,7 @@ export const Container = styled.div`
   justify-content: center;
   text-align: left;
   margin-bottom: 42px;
-  font-family: "Inter";
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 500;
   text-align: center;
@@ -34,23 +34,22 @@ export const Container = styled.div`
 }
 
 #profile-name > h3 {
+  color: var(--grey-1);
   font-size: 24px;
-  font-family: "Lexend";
+  font-family: 'Lexend', sans-serif;
   font-weight: 600;
   margin-right: 9px;
 }
 
-#container-anunciante {
-  padding: 0px 7px;
+#container-anunciante  {
+  padding: 5px 7px;
   background-color: var(--brand-4);
   border-radius: 4px;
-}
-
-#container-anunciante > p {
-  font-size: 13px;
+  font-size: 16px;
   font-family: "Inter";
   font-weight: 500;
   color: var(--brand-1);
+  border: none;
 }
 
 #container {
@@ -60,10 +59,40 @@ export const Container = styled.div`
 
 span {
   font-size: 16px;
-  font-family: "Inter";
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   color: var(--grey-2);
+  
 }
+
+
+#button-blue-1-big {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 146px;
+  background-color: var(--white);
+  border: 1.5px solid var(--brand-1);
+  border-radius: 4px;
+  gap: 10px;
+
+  color: var(--brand-1);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#button-blue-1-big:hover {
+  transition: all 0.4s;
+  background-color: var(--brand-1);
+  border: 1.5px solid var(--brand-1);
+  
+  color: var(--white);
+}
+
 
 @media (min-width: 450px) {
   section {
