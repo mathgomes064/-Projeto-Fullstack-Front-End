@@ -21,7 +21,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   text-align: left;
-  margin-bottom: 42px;
+  margin-bottom: 45px;
   font-family: 'Inter', sans-serif;
   font-size: 36px;
   font-weight: 500;

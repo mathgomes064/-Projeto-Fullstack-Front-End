@@ -9,6 +9,20 @@ export const StyleUserPage = styled.section`
     padding-top: 16px;
   }
 
+  #container-auction {
+    margin-top: 300px;
+    margin-left: 46px;
+  }
+
+  #container-auction > h2{
+    color: black;
+    font-size: 24px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 600;
+    margin-bottom: 50px;
+    margin-left: 25px;
+  } 
+
   #container-cars {
     margin-top: 300px;
     margin-left: 46px;
