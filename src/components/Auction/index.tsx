@@ -57,7 +57,7 @@ export const ProductAuction = () =>{
                             </div>
                             <div className="specifications">
                                 <div className="innerFooterSpecifications">
-                                    <div>
+                                    <div className="innerDiv">
                                         <div>
                                             <span>2013</span>
                                             <span>0 KM</span>
@@ -65,7 +65,7 @@ export const ProductAuction = () =>{
                                         <h1 className="responsivePrice">R$ 00.000,00</h1>
                                     </div>
                                     
-                                    <h1>R$ 00.000,00</h1>
+                                    <h1 className="desktopPrice">R$ 00.000,00</h1>
                                 </div>
                         
                             </div>
