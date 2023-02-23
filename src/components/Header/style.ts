@@ -24,7 +24,6 @@ align-items: center;
         align-items: center;
     }
 
-    
     .productLinks{
         display: flex;
         justify-content: space-around;
