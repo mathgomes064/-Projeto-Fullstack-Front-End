@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router-dom"
 import { Dashboard } from "../pages/dashboard"
 import { UserPage } from "../pages/userPage"
+
 export const RoutesMain = () =>{
     return(
         <Switch>

@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-export const UserCard = () => {
+export const UserCard = ({handleOpenModal}) => {
   return (
     <>
       <Container>
@@ -19,7 +19,7 @@ export const UserCard = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s
           </span>
-          <button id="button-blue-1-big">Criar anuncio</button>
+          <button id="button-blue-1-big" onClick={handleOpenModal}>Criar anuncio</button>
         </section>
       </Container>
     </>
