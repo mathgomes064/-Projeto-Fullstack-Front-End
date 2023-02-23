@@ -17,7 +17,7 @@ export const Container = styled.div`
    height: 50px;
    background-color: var(--grey-10); 
 
-   font-family: 'Inter', sans-serif;;
+   font-family: 'Inter', sans-serif;
    font-size: 13px;
    color:var(--grey-2);
    font-weight: 700;

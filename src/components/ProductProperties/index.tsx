@@ -5,21 +5,26 @@ export const ProductProperties = () => {
     return (
       <>
         <Container>
-            <div>
-                <div>
-                    <h1 className="title">Título</h1> 
+            <div className="propertierBox">
+                <div className="propertiesTop">
+                    <h1 className="title">Lorem ipsum dolor sit amet consectetur, adipisicing elit</h1> 
                 </div>
-                <div>
-                    <div className="year">Ano</div>
+                <div className="propertiesMiddle">
+                    <div className="yearAndMilage">
+                        <p className="littleBox">Ano</p>
+                        <div className="littleBox">Km</div> 
+                    </div>
+                    <div>
+                        <div className="price">R$ 0.000,00</div>
+                    </div>                
+                    
                 </div>
-                <div>
-                    <div className="mileage">Km</div>
-                    <p className="price">Price</p>
+                <div className="propertiesBottom">
                     <button>Comprar</button> 
                 </div>
                 
             </div>        
-        </Container>y
+        </Container>
       </>
     );
   };

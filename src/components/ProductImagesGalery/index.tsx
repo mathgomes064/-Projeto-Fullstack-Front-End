@@ -7,7 +7,9 @@ export const ProductImagesGalery = () => {
     return (
       <>
         <Container>
+          <h1>Fotos</h1>
             <div className="galery">
+              
                 <img src={car} alt="image from the gallery"></img>
                 <img src={car} alt="image from the gallery"></img>
                 <img src={car} alt="image from the gallery"></img>
@@ -15,7 +17,7 @@ export const ProductImagesGalery = () => {
                 <img src={car} alt="image from the gallery"></img>
                 <img src={car} alt="image from the gallery"></img>
             </div>        
-        </Container>y
+        </Container>
       </>
     );
   };

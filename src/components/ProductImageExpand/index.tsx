@@ -7,10 +7,10 @@ export const ProductImageExpand = () => {
     return (
       <>
         <Container>
-          <div> 
+          <div className="divImage"> 
             <img src={car} alt="Car image"/>
           </div>
-        </Container>y
+        </Container>
       </>
     );
   };

@@ -7,17 +7,26 @@ import { ProductImageExpand } from "../../components/ProductImageExpand";
 import { ProductImagesGalery } from "../../components/ProductImagesGalery";
 import { ProductProperties } from "../../components/ProductProperties";
 import { AdvertisersCard } from "../../components/Advertiser'sCard";
+import { ProductPage } from "./style";
 
 export const Product = () => {
   return (
     <div>
-       <Header />
-       <AdvertisersCard/>
-       <ProductImageExpand/>
-       <ProductImagesGalery/>
-       <ProductProperties/>
-       <ProductDescription/>
-       <CommentsBoard/>
+      <Header />
+      <ProductPage>
+         <div className="productPageright">
+            <ProductImageExpand/> 
+            <ProductProperties/>
+            <ProductDescription/>
+            <CommentsBoard/>
+         </div>
+         <div className="productPageleft">
+            <ProductImagesGalery/>
+            <AdvertisersCard/>
+         </div>
+                  
+      </ProductPage>
+      <Footer/> 
     </div>
  ); 
      
