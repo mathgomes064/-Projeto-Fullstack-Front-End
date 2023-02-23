@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-export const UserCard = ({handleOpenModal}) => {
+export const UserCard = ({handleOpenModal}:any) => {
   return (
     <>
       <Container>

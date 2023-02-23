@@ -9,17 +9,17 @@ import { useState } from "react";
 import Modal from "react-modal";
 import ModalCreateAd from "../../components/ModalCreateAd/ModalCreateAd";
 import ModalCreatedSuccess from "../../components/ModalCreatedSuccess/ModalCreatedSuccess";
-import ModalDeleteAd from "../../components/ModalDeleteAd/ModalDeleteAd";
+import ModalDeleteAd from "../../components/ModalDeleteAd/ModalEditAd";
+import ModalEditAd from "../../components/ModalEditAd/ModalEditAd";
 
 type customStyleType = {
-  content:any,
-  overlay:any
-}
-
+  content: any;
+  overlay: any;
+};
 
 export const UserPage = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [customStyle, setCustomStyle] = useState<customStyleType>()
+  const [customStyle, setCustomStyle] = useState<customStyleType>();
 
   function handleOpenModal() {
     setIsOpen(true);
@@ -35,11 +35,13 @@ export const UserPage = () => {
       left: "50%",
       right: "auto",
       bottom: "auto",
+      height: "100%",
+      width: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
-      background: "none",
+      background: "transparent",
       border: "none",
-
+      
     },
     overlay: {
       position: "fixed",
@@ -60,7 +62,7 @@ export const UserPage = () => {
           isOpen={modalIsOpen}
           onRequestClose={handleCloseModal}
         >
-          <ModalDeleteAd handleCloseModal={handleCloseModal} />
+          <ModalEditAd handleCloseModal={handleCloseModal} />
         </Modal>
         <div id="blue-background">
           <UserCard handleOpenModal={handleOpenModal} />

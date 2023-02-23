@@ -5,9 +5,10 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { useEffect, useState } from "react";
 
-function ModalCreateAd({ handleCloseModal }: any) {
+function ModalEditAd({ handleCloseModal }: any) {
   const [saleType, setSaleType] = useState("sale");
   const [vehicleType, setVehicleType] = useState("carro");
+  const [published, setpublished] = useState(true);
   const [images, setImages] = useState([""]);
 
   const schema = yup.object().shape({
@@ -31,6 +32,7 @@ function ModalCreateAd({ handleCloseModal }: any) {
     data.saleType = saleType;
     data.vehicleType = vehicleType;
     data.imagesUrl = images
+    data.published = published
     console.log(data);
   };
 
@@ -49,7 +51,7 @@ function ModalCreateAd({ handleCloseModal }: any) {
       <Content>
         <form onSubmit={handleSubmit(onSubmitFunction)}>
           <div className="headerForm">
-            <h2 id="title-7-500">Criar anuncio</h2>
+            <h2 id="title-7-500">Editar anuncio</h2>
             <MdClose
               className="closeButton"
               onClick={() => handleCloseModal()}
@@ -139,6 +141,25 @@ function ModalCreateAd({ handleCloseModal }: any) {
               </button>
             </div>
           </div>
+          <div className="vehicleType">
+            <h3 id="text-2-500">Publicado</h3>
+            <div className="vehicleButtons">
+              <button
+                className={published === true ? "selected" : "notSelected"}
+                type="button"
+                onClick={() => setpublished(true)}
+              >
+                Sim
+              </button>
+              <button
+                className={published === true ? "notSelected" : "selected"}
+                type="button"
+                onClick={() => setpublished(false)}
+              >
+               Não
+              </button>
+            </div>
+          </div>
           <div className="divVehicle-1">
             <label id="input-label">Imagem da capa</label>
             <input
@@ -167,4 +188,4 @@ function ModalCreateAd({ handleCloseModal }: any) {
   );
 }
 
-export default ModalCreateAd;
+export default ModalEditAd;
