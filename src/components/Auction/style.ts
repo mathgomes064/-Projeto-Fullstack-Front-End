@@ -161,7 +161,7 @@ margin-top: 100px;
                     flex-direction: column;
                 }
 
-                .innerFooterSpecifications > div >.responsivePrice{
+                .innerFooterSpecifications > div > .responsivePrice{
                     display: none;
                 }
 
@@ -234,13 +234,15 @@ margin-top: 100px;
 
     }
 
-    @media screen and (max-width: 700px) {
-       .innerFooterSpecifications > h1{
-            display: none;
-       }
-
-       .innerFooterSpecifications > div > .responsivePrice{
-            display: block;
+    @media (max-width: 700px) {
+        .specifications{
+            .innerFooterSpecifications > .desktopPrice{
+                 display: none;
+            }
+     
+            .innerFooterSpecifications > div > .responsivePrice{
+                    display: block;
+                }
         }
     }
 
