@@ -31,6 +31,8 @@ export const Container = styled.div`
 #profile-name {
   display: flex;
   align-items: center;
+  margin-top: 25px;
+  margin-bottom: 30px;
 }
 
 #profile-name > h3 {
