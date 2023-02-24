@@ -1,11 +1,24 @@
 import styled from "styled-components"
 
 export const ProductPage = styled.section`
-    background-image: linear-gradient(to bottom, blue 0, var(--brand-2) 30%, var(--grey-5) 70%);
-
-    display: flex;
     
-    top: 20px;
+    
+
+    background-color: var(--grey-10);
+   
+    .blueStrip{
+        width: 100vw;
+
+        background-color: var(--brand-1);
+
+    }
+    .body{
+        
+        
+        display: flex;
+    
+        top: 20px;
+    }
 
     .productPageright{
         display: flex;

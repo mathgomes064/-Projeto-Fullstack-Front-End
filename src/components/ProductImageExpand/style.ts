@@ -9,6 +9,10 @@ export const Container = styled.section`
 
     display: flex;
     align-items: center;
+
+    border-radius: 4px;
+
+    margin-top: 20px;
     
     .divImage{
         display: flex;

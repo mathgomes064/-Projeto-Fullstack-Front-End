@@ -18,21 +18,33 @@ export const Container = styled.section`
         font-size: 20px;
     }
     .littleBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         width: 50px;
-        height: 20px;
+        height: 30px;
 
         color: var(--brand-1);
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 600;
 
         background-color: var(--brand-4);
         border-radius: 4px;
+    }
+
+    .yearAndMilage{
+        display: flex;
+        justify-content: space-evenly;
+
+        width: 25%;
     }
     .propertierBox{
         display: flex;
         flex-direction: column;
         
         justify-content: space-evenly;
-
+        align-items: center;
 
         width: 100%;
         height: 100%;
@@ -41,10 +53,14 @@ export const Container = styled.section`
         display: flex;
         width: 100%;
 
+
+        align-items: center;
+        justify-content: center;
+
     }
     .propertiesBottom{
         display: flex;
-        width: 100%;
+        width: 83%;
 
     }
     .propertiesMiddle{
@@ -52,8 +68,19 @@ export const Container = styled.section`
         display: flex;
 
         justify-content: space-between;
+        align-items: center;
     }
     .yearAndMilage{
         display: flex;
+    }
+    .price{
+        font-weight: 600;
+    }
+    button{
+        background-color: var(--brand-1);
+        color: var(--grey-10);
+
+        font-size: 14px;
+        font-weight: 600;
     }
 ` 
