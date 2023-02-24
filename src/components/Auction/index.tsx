@@ -64,10 +64,8 @@ export const ProductAuction = () =>{
                                         </div>
                                         <h1 className="responsivePrice">R$ 00.000,00</h1>
                                     </div>
-                                    
                                     <h1 className="desktopPrice">R$ 00.000,00</h1>
                                 </div>
-                        
                             </div>
                         </div>
                         <div className="footerCard">
