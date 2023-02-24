@@ -1,14 +1,13 @@
 import { Container } from "./style"
-import car from "../../assets/car.jpeg";
 
 
 
-export const ProductImageExpand = () => {
+export const ProductImageExpand = (img_src:string) => {
     return (
       <>
         <Container>
           <div className="divImage"> 
-            <img src={car} alt="Car image"/>
+            <img src={img_src} alt="Car image"/>
           </div>
         </Container>
       </>

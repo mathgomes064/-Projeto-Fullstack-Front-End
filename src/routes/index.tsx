@@ -9,10 +9,10 @@ export const RoutesMain = () =>{
     return(
         <Switch>
             <Route exact path="/" component={Dashboard}/>
-            <Route exact path="/product" component={Product}/>
+            <Route exact path="/product/:id" component={Product}/>
             <Route exact path="/user" component={UserPage}/>
 
         </Switch>
-=
+
     )
 }

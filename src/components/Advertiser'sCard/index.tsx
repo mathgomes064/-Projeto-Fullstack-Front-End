@@ -6,13 +6,14 @@
       return (
         <>
           <Container>
-              <div>
-                  <img src="" alt=""/>
-                  <h1>User</h1>
+              <div className="userCard">
+                  <div className="userPhoto" >
+                  </div>
+                  <p>User</p>
               </div>
-              <div>
-                  <p>Descrição do usuário</p>
-                  <button>Ver todos os anúncios</button>
+              <div className="descriptionCard">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus saepe temporibus hic cum inventore minima, dolorem tempora enim facilis.</p>
+                  <button>Ver todos anúncios</button>
               </div>  
           </Container>
         </>
