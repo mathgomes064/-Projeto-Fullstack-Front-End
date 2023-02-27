@@ -159,6 +159,7 @@ margin-top: 100px;
                 .innerFooterSpecifications > .innerDiv{
                     display: flex;
                     flex-direction: column;
+                    height: 70px;
                 }
 
                 .innerFooterSpecifications > .innerDiv > .responsivePrice{

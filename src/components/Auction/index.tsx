@@ -100,13 +100,16 @@ export const ProductAuction = () =>{
                                 </div>
                             </div>
                             <div className="specifications">
-                                <div>
-                                    <span>2013</span>
-                                    <span>0 KM</span>
+                                <div className="innerFooterSpecifications">
+                                    <div className="innerDiv">
+                                        <div>
+                                            <span>2013</span>
+                                            <span>0 KM</span>
+                                        </div>
+                                        <h1 className="responsivePrice">R$ 00.000,00</h1>
+                                    </div>
+                                    <h1 className="desktopPrice">R$ 00.000,00</h1>
                                 </div>
-                                
-                                <h1>R$ 00.000,00</h1>
-                        
                             </div>
                         </div>
                         <div className="footerCard">
@@ -117,7 +120,6 @@ export const ProductAuction = () =>{
                         </div>
                     </div>
                 </div>
-
                 <div className="container">
                     <div className="body">
                         <div className="content">
@@ -141,13 +143,16 @@ export const ProductAuction = () =>{
                                 </div>
                             </div>
                             <div className="specifications">
-                                <div>
-                                    <span>2013</span>
-                                    <span>0 KM</span>
+                                <div className="innerFooterSpecifications">
+                                    <div className="innerDiv">
+                                        <div>
+                                            <span>2013</span>
+                                            <span>0 KM</span>
+                                        </div>
+                                        <h1 className="responsivePrice">R$ 00.000,00</h1>
+                                    </div>
+                                    <h1 className="desktopPrice">R$ 00.000,00</h1>
                                 </div>
-                                
-                                <h1>R$ 00.000,00</h1>
-                        
                             </div>
                         </div>
                         <div className="footerCard">
