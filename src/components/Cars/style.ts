@@ -36,7 +36,7 @@ margin-top: 100px;
     }
 
     .card > .imgDiv > img{
-        width: 170px;
+        width: 100%;
         height: 150px;
         background-color: var(--grey-7);
     }
@@ -57,6 +57,8 @@ margin-top: 100px;
         font-weight: bold;
         color: black;
         text-align: start;
+        display: flex;
+        align-items: center;
     }
 
     .card > .divOne > p{
@@ -64,8 +66,9 @@ margin-top: 100px;
         height: 50%;
         font-size: 14px;
         color: var(--grey-2);
-        text-align: justify;
-       
+        text-align: justify;   
+        display: flex;
+        align-items: center; 
     }
 
     .card > .divTwo{
@@ -120,14 +123,14 @@ margin-top: 100px;
     }
 
     .card > .divTree > div > div{
-        width: 113px;
+        width: 170px;
         height: 32px;
         display: flex;
         justify-content: space-between;
     }
 
     .card > .divTree > div > div > span{
-        width: 50px;
+        width: 80px;
         height: 32px;
         border-radius: 4px;
         background-color: var(--brand-4);

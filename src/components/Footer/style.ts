@@ -16,7 +16,7 @@ export const Container = styled.div`
     height: 26px;
   }
 
-  @media (max-width: 375px){
+  @media (max-width: 550px){
         display: flex;
         flex-direction: column;
         text-align: center;

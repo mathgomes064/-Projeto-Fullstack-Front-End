@@ -4,6 +4,8 @@ import { MotorcycleSection } from "./style"
 import moto from "../../assets/moto.png"
 import user from "../../assets/user.jpg"
 import Slider from "react-slick"
+import { useContext, useEffect } from "react";
+import { AuthContext } from "../../providers/vehicle/vehicleContext";
 
 export const Motorcycles = () =>{
     const settings = {
@@ -24,7 +26,7 @@ export const Motorcycles = () =>{
             }
           },
           {
-            breakpoint: 600,
+            breakpoint: 800,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2,
@@ -41,13 +43,45 @@ export const Motorcycles = () =>{
         ]
       };
 
+    const {getMotorcycles, motorcycles}:any = useContext(AuthContext)
+
+    useEffect(() => getMotorcycles(), [])
+
     return(
         <MotorcycleSection>
             <div className="tittleDiv">
                 <h1>Motos</h1>
             </div>
             <Slider {...settings}>
-                <div className="card">
+                    {motorcycles?.map((motorcycle: any, index: any) =>(
+                        <div key={index} className="card">
+                            <div className="imgDiv">
+                                <img src={motorcycle.urlImage} alt="" />
+                            </div>
+                            <div className="divOne">
+                                <h1>{motorcycle.title}</h1>
+                                <p>{motorcycle.description}</p>
+                            </div>
+                            <div className="divTwo">
+                                <div>
+                                    <img src={user} alt="" />
+                                    <p>Samuel Leão</p>
+                                </div>
+                            </div>
+                            <div className="divTree">
+                                <div>
+                                    <div>
+                                        <span>{motorcycle.mileage}</span>
+                                        <span>{motorcycle.year}</span>
+                                    </div>
+                                    <p>R${motorcycle.price}</p>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                )}
+
+                {/* <div className="card">
                     <div className="imgDiv">
                         <img src={moto} alt="" />
                     </div>
@@ -170,32 +204,7 @@ export const Motorcycles = () =>{
                             <p>R$ 00.000,00</p>
                         </div>
                     </div>
-                </div>
-
-                <div className="card">
-                    <div className="imgDiv">
-                        <img src={moto} alt="" />
-                    </div>
-                    <div className="divOne">
-                        <h1>Product title stays here - max 1 line</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto optio quasi... </p>
-                    </div>
-                    <div className="divTwo">
-                        <div>
-                            <img src={user} alt="" />
-                            <p>Anunciante</p>
-                        </div>
-                    </div>
-                    <div className="divTree">
-                        <div>
-                            <div>
-                                <span>0KM</span>
-                                <span>2019</span>
-                            </div>
-                            <p>R$ 00.000,00</p>
-                        </div>
-                    </div>
-                </div>
+                </div> */}
             </Slider>
         </MotorcycleSection>
     )
