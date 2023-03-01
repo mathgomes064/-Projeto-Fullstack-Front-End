@@ -20,16 +20,20 @@ export const Product = () => {
 
    const [product, setProduct] = useState()
 
+   const [msgToShow, setMsgToShow] = useState("Carregando...")
    useEffect(() => {
       api
         .get("/vehicles/"+params.id)
         .then((res) => {
           setProduct(res.data);
+          console.log(res)
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+            setMsgToShow("Nenhum carro encontrado.")
+        });
     }, [setProduct]);
     if(product != undefined){
-      const prod_desc = {
+      const prod_properties = {
          "title": product.title, 
          "year": product.year, 
          "mileage": product.mileage, 
@@ -44,8 +48,8 @@ export const Product = () => {
                  
                  <div className="productPageright" >
                     <ProductImageExpand img_src={product.urlImage}/> 
-                    <ProductProperties desc={prod_desc}/>
-                    <ProductDescription/>
+                    <ProductProperties prod_properties={prod_properties}/>
+                    <ProductDescription desc={product.description}/>
                     <CommentsBoard/>
                  </div>
                  <div className="productPageleft">
@@ -59,7 +63,7 @@ export const Product = () => {
          </div>
       ); 
     } else {
-      return <>Nenhum carro encontrado.</>
+      return <>{msgToShow}</>
     }
   
      
