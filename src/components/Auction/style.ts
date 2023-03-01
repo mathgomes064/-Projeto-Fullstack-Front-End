@@ -156,36 +156,52 @@ margin-top: 100px;
                     align-items: center;
                 }
 
-                .innerFooterSpecifications > div{
+                .innerFooterSpecifications > .innerDiv{
                     display: flex;
                     flex-direction: column;
+                    height: 70px;
                 }
 
-                .innerFooterSpecifications > div > .responsivePrice{
+                .innerFooterSpecifications > .innerDiv > .responsivePrice{
                     display: none;
                 }
 
-                .innerFooterSpecifications > div > div{
+                @media (max-width: 700px) {
+                    .innerFooterSpecifications > .innerDiv > .responsivePrice{
+                        display: block;
+                    }
+
+                    .innerFooterSpecifications > .desktopPrice{
+                        display: none;
+                    }
+                }
+
+                .innerFooterSpecifications > .innerDiv > div{
                     width: 110px;
                     height: 100%;
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        width: 50px;
+                        height: 32px;
+                        background: var(--brand-4);
+                        border-radius: 4px;
+                        color: var(--brand-1);
+                    }
                 }
 
-                span {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                .responsivePrice{
                     font-weight: bold;
-                    width: 50px;
-                    height: 32px;
-                    background: var(--brand-4);
-                    border-radius: 4px;
-                    color: var(--brand-1);
+                    color: var(--white)
                 }
 
-                h1{
+                .desktopPrice{
                     font-weight: bold;
                     color: var(--white)
                 }
@@ -234,17 +250,7 @@ margin-top: 100px;
 
     }
 
-    @media (max-width: 700px) {
-        .specifications{
-            .innerFooterSpecifications > .desktopPrice{
-                 display: none;
-            }
-     
-            .innerFooterSpecifications > div > .responsivePrice{
-                    display: block;
-                }
-        }
-    }
+
 
     /* @media (max-width: 375px) {
         width: 285px;
