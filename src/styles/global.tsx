@@ -121,6 +121,13 @@ table {
   font-size: 36px;
 }
 
+#title-2-500 {
+  color: black;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
 #title-3-600 {
   color: var(--grey-0);
   font-family: 'Lexend', sans-serif;
@@ -653,6 +660,30 @@ table {
   background-color: var(--white);
   border: 1.5px solid var(--brand-1);
   color: var(--brand-1);
+}
+
+#button-blue-register-big {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  background-color: var(--white);
+  border: 1.6px solid var(--grey-3);
+  border-radius: 4px;
+  gap: 10px;
+
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#button-blue-register-big:focus {
+  background-color: var(--brand-1);
+  border: 1.5px solid var(--brand-1);
+  color: var(--white);
+  
 }
 
 #button-blue-2-big {
