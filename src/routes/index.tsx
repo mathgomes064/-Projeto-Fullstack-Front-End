@@ -5,6 +5,7 @@ import { Product } from "../pages/product"
 import { UserPage } from "../pages/userPage"
 
 import { Login } from "../pages/login"
+import { Register } from "../pages/register"
 
 export const RoutesMain = () =>{
     return(
@@ -13,6 +14,7 @@ export const RoutesMain = () =>{
             <Route exact path="/product/:id" component={Product}/>
             <Route exact path="/user" component={UserPage}/>
             <Route exact path="/login" component={Login}/>
+            <Route exact path="/register" component={Register}/>
         </Switch>
     )
 }
