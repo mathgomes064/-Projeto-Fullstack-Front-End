@@ -3,11 +3,14 @@ import logo from "../../assets/logo.png";
 import user from "../../assets/user.jpg"
 import { VscThreeBars } from 'react-icons/vsc';
 import { useState } from "react";
+import { useHistory } from "react-router-dom"
 
 export const Header = () =>{
     const [isLogged, setIsLogged] = useState(true)
     const [activeDropDown, setActiveDropDown] = useState(false)
     const [activeItemsDropdown, setActiveItemsDropdown] =useState(false)
+
+    const history = useHistory()
 
     const logOff = () =>{
         setActiveDropDown(false)
@@ -50,7 +53,7 @@ export const Header = () =>{
                      (
                      <div className="buttons">
                         <button onClick={() => setIsLogged(false)}>Fazer Login</button>
-                        <button>Cadastrar</button>
+                        <button onClick={() => history.push("/register")}>Cadastrar</button>
                      </div>
                     )
                      :
