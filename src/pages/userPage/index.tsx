@@ -11,6 +11,7 @@ import ModalCreateAd from "../../components/ModalCreateAd/ModalCreateAd";
 import ModalCreatedSuccess from "../../components/ModalCreatedSuccess/ModalCreatedSuccess";
 import ModalDeleteAd from "../../components/ModalDeleteAd/ModalEditAd";
 import ModalEditAd from "../../components/ModalEditAd/ModalEditAd";
+import { VehicleProvider } from "../../providers/vehicle/vehicleContext";
 
 type customStyleType = {
   content: any;
@@ -28,6 +29,8 @@ export const UserPage = () => {
   function handleCloseModal() {
     setIsOpen(false);
   }
+
+  VehicleProvider
 
   const customStyles: customStyleType = {
     content: {
