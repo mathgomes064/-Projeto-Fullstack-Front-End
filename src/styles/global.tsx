@@ -847,7 +847,7 @@ label {
 input {
   width: 315px;
   height: 48px;
-  padding: 0px 16px;
+  padding-left: 5px;
   border: 2px solid var(--grey-8);
   border-radius: 4px;
 

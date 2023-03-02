@@ -41,7 +41,7 @@ export const UserPage = () => {
       transform: "translate(-50%, -50%)",
       background: "transparent",
       border: "none",
-      
+
     },
     overlay: {
       position: "fixed",
@@ -62,7 +62,7 @@ export const UserPage = () => {
           isOpen={modalIsOpen}
           onRequestClose={handleCloseModal}
         >
-          <ModalEditAd handleCloseModal={handleCloseModal} />
+          <ModalCreateAd handleCloseModal={handleCloseModal} />
         </Modal>
         <div id="blue-background">
           <UserCard handleOpenModal={handleOpenModal} />
