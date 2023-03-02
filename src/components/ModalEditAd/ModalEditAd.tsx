@@ -128,14 +128,14 @@ function ModalEditAd({ handleCloseModal }: any) {
               <button
                 className={vehicleType === "carro" ? "selected" : "notSelected"}
                 type="button"
-                onClick={() => setVehicleType("carro")}
+                onClick={() => setVehicleType("Carro")}
               >
                 Carro
               </button>
               <button
                 className={vehicleType === "carro" ? "notSelected" : "selected"}
                 type="button"
-                onClick={() => setVehicleType("moto")}
+                onClick={() => setVehicleType("Moto")}
               >
                 Moto
               </button>
