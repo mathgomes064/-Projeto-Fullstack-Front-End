@@ -8,10 +8,8 @@ import { Motorcycles } from "../../components/Motorcycles";
 import { useState } from "react";
 import Modal from "react-modal";
 import ModalCreateAd from "../../components/ModalCreateAd/ModalCreateAd";
-import ModalCreatedSuccess from "../../components/ModalCreatedSuccess/ModalCreatedSuccess";
-import ModalDeleteAd from "../../components/ModalDeleteAd/ModalEditAd";
-import ModalEditAd from "../../components/ModalEditAd/ModalEditAd";
 import { VehicleProvider } from "../../providers/vehicle/vehicleContext";
+
 
 type customStyleType = {
   content: any;
