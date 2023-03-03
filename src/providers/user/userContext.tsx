@@ -15,7 +15,7 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
         .then((response) => setTimeout(history.push("/login"), 5000))
         .catch((err) => console.log(err))
     }
-    
+
     return(
         <UserContext.Provider
         value={{
