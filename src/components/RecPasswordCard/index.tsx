@@ -28,18 +28,18 @@ export const RecPasswordCard = () => {
   };
   const history = useHistory();
 
-  const sendEmail = () =>
-  useEffect(() => {
+  const sendEmail = () => {
     api
-      .post("/login/forgot_password"+params.email)
+      .post("/login/forgot_password/", {email: document.getElementById("emailVal").value})
       .then((res) => {
         setLogin(res.data);
-        console.log(res)
+        alert("Email enviado com sucesso.")
+        history.push("/login")
       })
       .catch((err) => {
           setMsgToShow("Email não cadastrado.")
       });
-  }, [setLogin]);
+  };
 
   
   return (
@@ -49,6 +49,7 @@ export const RecPasswordCard = () => {
         <form onSubmit={handleSubmit(onSubmitFunction)}>
           <label>Digite seu email</label>
           <input
+            id="emailVal"
             type="test"
             placeholder="Ex: samuel@kenzie.com.br"
             {...register("email")}
