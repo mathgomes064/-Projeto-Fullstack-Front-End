@@ -26,7 +26,6 @@ export const Product = () => {
         .get("/vehicles/"+params.id)
         .then((res) => {
           setProduct(res.data);
-          console.log(res)
         })
         .catch((err) => {
             setMsgToShow("Nenhum carro encontrado.")
@@ -50,7 +49,7 @@ export const Product = () => {
                      <ProductImageExpand img_src={product.urlImage}/> 
                      <ProductProperties prod_properties={prod_properties}/>
                      <ProductDescription desc={product.description}/>
-                     <CommentsBoard/>
+                     <CommentsBoard vehicle_id={product.id}/>
                   </div>
                   <div className="productPageleft">
                      <ProductImagesGalery/>
