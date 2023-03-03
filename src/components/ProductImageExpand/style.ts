@@ -9,6 +9,7 @@ export const Container = styled.section`
 
     display: flex;
     align-items: center;
+    justify-content: center;
 
     border-radius: 4px;
 
@@ -17,12 +18,15 @@ export const Container = styled.section`
     .divImage{
         display: flex;
         justify-content: center;
+        align-items: center;
+        width: 75%;
+        height: 75%;
   
     } 
     img{
 
-        width: 60%;
-        height: 60%;
+        width: 100%;
+        height: 100%;
     }
 
 
