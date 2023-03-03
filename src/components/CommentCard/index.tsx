@@ -5,17 +5,12 @@ export const CommentCard = () => {
       <>
         <Container>
             <div>
-                <img src="" alt=""/>
-                <h1>User</h1>
+              <h1>User</h1>
+              <h2>Date</h2>
             </div>
             <div>
-                <input>
-                    <button>Comentar</button>
-                </input>
-                <button>Gostei Muito</button>
-                <button>Incrível</button>
-                <button>Recomendarei para meus amigos</button>
-            </div>  
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit cum quidem explicabo dolore quos qui, ratione amet aliquid quaerat labore ut quae fugit neque est officiis sunt eum deleniti? Ea.</p>
+            </div>
         </Container>
       </>
     );

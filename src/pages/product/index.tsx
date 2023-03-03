@@ -55,6 +55,7 @@ export const Product = () => {
                   <div className="productPageleft">
                      <ProductImagesGalery/>
                      <AdvertisersCard/>
+                     <CommentCard/>
                   </div>
               </div>
               
