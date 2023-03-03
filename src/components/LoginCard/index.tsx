@@ -2,6 +2,7 @@ import { Container } from "./style";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../providers/user/userContext";
 
@@ -21,6 +22,13 @@ export const LoginCard = () => {
     console.log(data);
   };
 
+  const history = useHistory()
+
+  const routeChange = () =>{ 
+    let path = `/recuperacao`; 
+    history.push(path);
+  }
+
   return (
     <Container>
       <h1 id="title-5-500">Login</h1>
@@ -38,8 +46,8 @@ export const LoginCard = () => {
             placeholder="Digitar senha"
             {...register("password")}
           />
-          <a id="text-2-500">Esqueci minha senha</a>
-          <button id="button-blue-login-big" type="submit">
+          <a  onClick={() => {routeChange()}} className= "Password"id="text-2-500">Esqueci minha senha</a>
+          <button  id="button-blue-login-big" type="submit">
             Entrar
           </button>
         </form>
