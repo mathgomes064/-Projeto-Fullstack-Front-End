@@ -7,6 +7,8 @@ import { UserPage } from "../pages/userPage"
 import { Login } from "../pages/login"
 import { Register } from "../pages/register"
 
+import { RecPassword } from "../pages/recPassword"
+
 export const RoutesMain = () =>{
     return(
         <Switch>
@@ -15,6 +17,7 @@ export const RoutesMain = () =>{
             <Route exact path="/user" component={UserPage}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Register}/>
+            <Route exact path="/recuperacao" component={RecPassword}/>
         </Switch>
     )
 }
