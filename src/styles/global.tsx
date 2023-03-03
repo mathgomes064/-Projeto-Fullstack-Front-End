@@ -4,7 +4,7 @@ const Global = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lexend:wght@500;600;700&display=swap");
 :root {
-  background-color: var( --white);
+  background-color: var( --grey-8);
   overflow-x: hidden;
   /* font-family: 'IBM Plex Mono', monospace;
   font-size: 16px;
