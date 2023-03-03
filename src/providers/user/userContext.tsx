@@ -4,9 +4,9 @@ import { IUserProvidersProps } from "../../interfaces/user";
 import { IUserCreate } from "../../interfaces/user";
 import { useHistory } from "react-router-dom";
 
-export const AuthContext = createContext({})
+export const UserContext = createContext({})
 
-export const userProvider = ({children}: IUserProvidersProps) =>{
+export const UserProvider = ({children}: IUserProvidersProps) =>{
 
     const history = useHistory() as any
 
@@ -17,12 +17,12 @@ export const userProvider = ({children}: IUserProvidersProps) =>{
     }
     
     return(
-        <AuthContext.Provider
+        <UserContext.Provider
         value={{
             registerUser
         }}
         >
             {children}
-        </AuthContext.Provider>
+        </UserContext.Provider>
     )
 }
