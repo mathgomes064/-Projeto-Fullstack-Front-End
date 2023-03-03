@@ -13,7 +13,7 @@ export interface IAddressCreate{
     complement: string
 }
 
-export interface IUserCreate{
+export interface IUserRaw{
     name: string,
     email: string,
     cpf: string,
@@ -26,6 +26,19 @@ export interface IUserCreate{
     street: string,
     number: string,
     complement: string,
+    isAdvertiser: boolean,
+    password: string,
+    confirmPassword: string
+}
+
+export interface IUserCreate{
+    name: string,
+    email: string,
+    cpf: string,
+    cellPhone: string,
+    birthDate: string,
+    description: string,
+    address: IAddressCreate,
     isAdvertiser: boolean,
     password: string,
     confirmPassword: string
