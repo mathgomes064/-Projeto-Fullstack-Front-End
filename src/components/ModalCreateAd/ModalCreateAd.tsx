@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 function ModalCreateAd({ handleCloseModal }: any) {
   const [saleType, setSaleType] = useState("sale");
-  const [vehicleType, setVehicleType] = useState("carro");
+  const [vehicleType, setVehicleType] = useState("Carro");
   const [images, setImages] = useState([""]);
 
   const schema = yup.object().shape({
@@ -77,8 +77,9 @@ function ModalCreateAd({ handleCloseModal }: any) {
             </div>
           </div>
           <h3 id="text-2-500">Infomações do veículo</h3>
-          <label id="input-label">Título</label>
+          <label className="mainLabel" id="input-label">Título</label>
           <input
+            className="tittleInput"
             id="input-placeholder"
             type="text"
             placeholder="Digitar título"
@@ -113,34 +114,35 @@ function ModalCreateAd({ handleCloseModal }: any) {
               />
             </div>
           </div>
-          <label id="input-label">Descrição</label>
+          <label className="mainLabel" id="input-label">Descrição</label>
           <input
+            className="descriptionInput"
             id="input-placeholder"
             type="text"
             placeholder="Digitar descrição"
             {...register("description")}
           />
           <div className="vehicleType">
-            <h3 id="text-2-500">Tipo de anúncio</h3>
+            <h3 id="text-2-500">Tipo de veículo</h3>
             <div className="vehicleButtons">
               <button
-                className={vehicleType === "carro" ? "selected" : "notSelected"}
+                className={vehicleType === "Carro" ? "selected" : "notSelected"}
                 type="button"
-                onClick={() => setVehicleType("carro")}
+                onClick={() => setVehicleType("Carro")}
               >
                 Carro
               </button>
               <button
-                className={vehicleType === "carro" ? "notSelected" : "selected"}
+                className={vehicleType === "Carro" ? "notSelected" : "selected"}
                 type="button"
-                onClick={() => setVehicleType("moto")}
+                onClick={() => setVehicleType("Moto")}
               >
                 Moto
               </button>
             </div>
           </div>
-          <div className="divVehicle-1">
-            <label id="input-label">Imagem da capa</label>
+          <div className="divVehicleImage">
+            <label className="mainLabel" id="input-label">Imagem da capa</label>
             <input
               id="input-placeholder"
               type="text"
@@ -150,16 +152,18 @@ function ModalCreateAd({ handleCloseModal }: any) {
           </div>
           {images.map((image, index) => (
             <div key={index} className="imageField">
-              <label>{index+1}ª imagem da galeria</label>
+              <label className="mainLabel">{index+1}ª imagem da galeria</label>
               <input type="text" onChange={(e) => handleChangeImage(e,index)} placeholder="Inserir URL da imagem" />
             </div>
           ))}
-          <button type="button" onClick={addImages}>
-            Adicionar campo para imagem da galeria
-          </button>
+          <div className="addImageDiv">
+            <button className="addImage" type="button" onClick={addImages}>
+              Adicionar campo para imagem da galeria
+            </button>
+          </div>
           <div className="footerButtons">
-            <button onClick={handleCloseModal}>Cancelar</button>
-            <button type="submit">Criar anúncio</button>
+            <button className="cancelButton" onClick={handleCloseModal}>Cancelar</button>
+            <button className="createButton" type="submit">Criar anúncio</button>
           </div>
         </form>
       </Content>

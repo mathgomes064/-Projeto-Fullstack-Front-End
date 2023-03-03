@@ -7,7 +7,7 @@ import Slider from "react-slick"
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
-import { IVehicle } from "../../interfaces";
+import { IVehicle } from "../../interfaces/vehicle";
 
 export const Cars = () =>{
     const settings = {

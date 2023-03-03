@@ -8,9 +8,8 @@ import { Motorcycles } from "../../components/Motorcycles";
 import { useState } from "react";
 import Modal from "react-modal";
 import ModalCreateAd from "../../components/ModalCreateAd/ModalCreateAd";
-import ModalCreatedSuccess from "../../components/ModalCreatedSuccess/ModalCreatedSuccess";
-import ModalDeleteAd from "../../components/ModalDeleteAd/ModalEditAd";
-import ModalEditAd from "../../components/ModalEditAd/ModalEditAd";
+import { VehicleProvider } from "../../providers/vehicle/vehicleContext";
+
 
 type customStyleType = {
   content: any;
@@ -29,6 +28,8 @@ export const UserPage = () => {
     setIsOpen(false);
   }
 
+  VehicleProvider
+
   const customStyles: customStyleType = {
     content: {
       top: "50%",
@@ -41,7 +42,7 @@ export const UserPage = () => {
       transform: "translate(-50%, -50%)",
       background: "transparent",
       border: "none",
-      
+
     },
     overlay: {
       position: "fixed",
@@ -62,7 +63,7 @@ export const UserPage = () => {
           isOpen={modalIsOpen}
           onRequestClose={handleCloseModal}
         >
-          <ModalEditAd handleCloseModal={handleCloseModal} />
+          <ModalCreateAd handleCloseModal={handleCloseModal} />
         </Modal>
         <div id="blue-background">
           <UserCard handleOpenModal={handleOpenModal} />

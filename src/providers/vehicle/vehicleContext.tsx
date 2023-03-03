@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { IVehicleProvidersProps } from "../../interfaces";
+import { IVehicleProvidersProps } from "../../interfaces/vehicle";
 
 export const AuthContext = createContext({})
 
