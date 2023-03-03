@@ -4,6 +4,7 @@ import App from './App'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { VehicleProvider } from './providers/vehicle/vehicleContext'
+import { UserProvider } from './providers/user/userContext'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,9 +12,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <VehicleProvider>
-        <App />
-      </VehicleProvider>
+      <UserProvider>
+        <VehicleProvider>
+          <App />
+        </VehicleProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
