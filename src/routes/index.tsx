@@ -11,7 +11,7 @@ export const RoutesMain = () =>{
     return(
         <Switch>
             <Route exact path="/" component={Dashboard}/>
-            <Route exact path="/product/:id" component={Product}/>
+            <Route exact path="/product/:id?" component={Product}/>
             <Route exact path="/user" component={UserPage}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Register}/>

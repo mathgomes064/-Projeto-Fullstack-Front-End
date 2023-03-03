@@ -5,6 +5,8 @@ width: 94vw;
 height: 500px;
 margin-top: 100px;
 
+cursor: pointer;
+
     .tittleDiv{
         width: 94vw;
         height: 100px;

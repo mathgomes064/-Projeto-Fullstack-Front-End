@@ -1,22 +1,21 @@
 import { Container } from "./style"
 
 
-export const ProductProperties = (desc) => {
-    console.log(desc.desc)
+export const ProductProperties = ({prod_properties}) => {
     return (
       <>
         <Container>
             <div className="propertierBox">
                 <div className="propertiesTop">
-                    <h1 className="title">{desc.title}</h1> 
+                    <h1 className="title">{prod_properties.title}</h1> 
                 </div>
                 <div className="propertiesMiddle">
                     <div className="yearAndMilage">
-                        <p className="littleBox">{desc.year}</p>
-                        <div className="littleBox">{desc.mileage}</div> 
+                        <p className="littleBox">{prod_properties.year}</p>
+                        <div className="littleBox">{prod_properties.mileage}</div> 
                     </div>
                     <div>
-                        <div className="price">{desc.price}</div>
+                        <div className="price">{prod_properties.price}</div>
                     </div>                
                     
                 </div>
