@@ -18,6 +18,11 @@ export const LoginCard = () => {
     console.log(data);
   };
 
+  const routeChange = () =>{ 
+    let path = `product/`; 
+    history.push(path);
+  }
+
   return (
     <Container>
       <h1 id="title-5-500">Login</h1>
@@ -36,7 +41,7 @@ export const LoginCard = () => {
             {...register("password")}
           />
           <a id="text-2-500">Esqueci minha senha</a>
-          <button id="button-blue-login-big" type="submit">
+          <button onClick={() => {routeChange()}} id="button-blue-login-big" type="submit">
             Entrar
           </button>
         </form>
