@@ -5,6 +5,7 @@ export const CommentsSection = () => {
       <>
         <Container>
             <div>
+                <img></img>
                 <h1>User</h1>
                 <h4>Date</h4>
             </div>

@@ -8,6 +8,8 @@ export const ProductPage = styled.section`
    
     .blueStrip{
         width: 100vw;
+        height: 450px;
+
 
         background-color: var(--brand-1);
 

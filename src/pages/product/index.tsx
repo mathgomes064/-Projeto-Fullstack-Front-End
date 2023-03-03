@@ -43,23 +43,24 @@ export const Product = () => {
          <div>
            <Header />
            <ProductPage>
-              <div className="blueStrip"></div>
-              <div className="body">
-                 
-                 <div className="productPageright" >
-                    <ProductImageExpand img_src={product.urlImage}/> 
-                    <ProductProperties prod_properties={prod_properties}/>
-                    <ProductDescription desc={product.description}/>
-                    <CommentsBoard/>
-                 </div>
-                 <div className="productPageleft">
-                    <ProductImagesGalery/>
-                    <AdvertisersCard/>
-                 </div>
+              <div className="blueStrip">
+                  <div className="body">
+                  
+                  <div className="productPageright" >
+                     <ProductImageExpand img_src={product.urlImage}/> 
+                     <ProductProperties prod_properties={prod_properties}/>
+                     <ProductDescription desc={product.description}/>
+                     <CommentsBoard/>
+                  </div>
+                  <div className="productPageleft">
+                     <ProductImagesGalery/>
+                     <AdvertisersCard/>
+                  </div>
+              </div>
+              
               </div>
                 
            </ProductPage>
-           <Footer/> 
          </div>
       ); 
     } else {

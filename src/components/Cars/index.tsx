@@ -5,6 +5,7 @@ import car from "../../assets/carro.png"
 import user from "../../assets/user.jpg"
 import Slider from "react-slick"
 import { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
 import { IVehicle } from "../../interfaces";
 
@@ -44,6 +45,14 @@ export const Cars = () =>{
         ]
       };
 
+
+    const history = useHistory();
+
+    const routeChange = (id) =>{ 
+      let path = `product/`+ id; 
+      history.push(path);
+    }
+
     const {getCars, cars}:any = useContext(AuthContext)
 
     useEffect(() => getCars(), [])
@@ -56,7 +65,7 @@ export const Cars = () =>{
             </div>
             <Slider {...settings}>
                 {cars?.map((car: any, index: any) => (
-                            <div key={index} className="card">
+                            <div key={index} className="card" onClick={() => {routeChange(car.id)}}>
                                 <div className="imgDiv">
                                     <img src={car.urlImage} alt="" />
                                 </div>

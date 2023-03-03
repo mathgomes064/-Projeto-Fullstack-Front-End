@@ -6,6 +6,7 @@ import user from "../../assets/user.jpg"
 import Slider from "react-slick"
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
+import { useHistory } from "react-router-dom";
 
 export const Motorcycles = () =>{
     const settings = {
@@ -45,6 +46,13 @@ export const Motorcycles = () =>{
 
     const {getMotorcycles, motorcycles}:any = useContext(AuthContext)
 
+    const history = useHistory();
+
+    const routeChange = (id) =>{ 
+      let path = `product/`+ id; 
+      history.push(path);
+    }
+
     useEffect(() => getMotorcycles(), [])
 
     return(
@@ -54,7 +62,7 @@ export const Motorcycles = () =>{
             </div>
             <Slider {...settings}>
                     {motorcycles?.map((motorcycle: any, index: any) =>(
-                        <div key={index} className="card">
+                        <div key={index} className="card"  onClick={() => {routeChange(motorcycle.id)}}>
                             <div className="imgDiv">
                                 <img src={motorcycle.urlImage} alt="" />
                             </div>
