@@ -3,8 +3,9 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
-import { IUserCreate } from "../../interfaces/user";
-import { AuthContext } from "../../providers/vehicle/vehicleContext";
+import { IUserCreate, IUserRaw } from "../../interfaces/user";
+import { UserContext } from "../../providers/user/userContext";
+import { useHistory } from "react-router-dom";
 
 export const RegisterCard = () => {
   const [userType, setUserType] = useState(false);
@@ -27,16 +28,36 @@ export const RegisterCard = () => {
     .oneOf([yup.ref("password")], "As senhas devem ser identicas")
   })
 
-  const { register, handleSubmit, formState: {errors} } = useForm<IUserCreate>({
+  const { register, handleSubmit, formState: {errors} } = useForm<IUserRaw>({
     resolver: yupResolver(formSchema)
   })
 
-  const {registerUser}: any = useContext(AuthContext)
+  const {registerUser}: any = useContext(UserContext)
 
-  const onSubmitFunction = async(data: any) =>{
+  const [address, setAddress] = useState({})
+
+  const onSubmitFunction = async(data: IUserRaw) =>{
     data.isAdvertiser = userType
-    console.log(data)
-    await registerUser(data)
+    const tratedData: IUserCreate = {
+      name: data.name,
+      email: data.email,
+      cpf: data.cpf,
+      cellPhone: data.cellPhone,
+      birthDate: data.birthDate,
+      description: data.description,
+      address:{
+        cep: data.cep,
+        state: data.state,
+        city: data.city,
+        street: data.street,
+        number: data.number,
+        complement: data.complement
+      },
+      isAdvertiser: data.isAdvertiser,
+      password: data.password,
+      confirmPassword: data.confirmPassword
+    }
+    await registerUser(tratedData)
   }
 
   return (

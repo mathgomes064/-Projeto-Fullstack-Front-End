@@ -3,6 +3,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../providers/user/userContext";
 
 
 export const LoginCard = () => {
@@ -15,7 +17,8 @@ export const LoginCard = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmitFunction = (data: any) => {
+  const {loginUser} : any = useContext(UserContext)
+  const onSubmitFunction = async(data: any) => {
     console.log(data);
   };
 
@@ -30,7 +33,7 @@ export const LoginCard = () => {
     <Container>
       <h1 id="title-5-500">Login</h1>
       <div id="wrapper-form">
-        <form onSubmit={handleSubmit(onSubmitFunction)}>
+        <form onSubmit={handleSubmit(loginUser)}>
           <label>Usuário</label>
           <input
             type="text"

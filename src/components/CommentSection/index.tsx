@@ -1,16 +1,17 @@
 import { Container } from "./style"
 
-export const CommentsSection = () => {
+export const CommentsSection = ({comment}) => {
+  
     return (
       <>
         <Container>
             <div>
                 <img></img>
-                <h1>User</h1>
-                <h4>Date</h4>
+                <h1>{comment.user.name}</h1>
+                <h4>{comment.created_at.slice(0, 10)}</h4>
             </div>
             <div>
-                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit cum quidem explicabo dolore quos qui, ratione amet aliquid quaerat labore ut quae fugit neque est officiis sunt eum deleniti? Ea.</p>
+                 <p>{comment.description}</p>
             </div>
         </Container>
       </>
