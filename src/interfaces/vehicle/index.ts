@@ -4,7 +4,7 @@ export interface IVehicleProvidersProps{
     children: ReactNode
 }
 
-export interface IVehicle {
+export interface IVehicleCreate {
     id: string;
     title: string;
     year: string;
@@ -14,4 +14,4 @@ export interface IVehicle {
     type: string;
     urlImage: string;
     createdAt: Date;
-  }
+}

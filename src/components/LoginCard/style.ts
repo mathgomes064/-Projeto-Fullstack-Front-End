@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Container = styled.section`
   padding: 44px 48px;
 
+  div > form > input{
+    background-color: transparent;
+  }
+
   h1 {
     margin: 0;
   }

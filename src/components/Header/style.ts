@@ -7,13 +7,19 @@ background-color: var(--grey-10);
 display: flex;
 justify-content: center;
 align-items: center;
+/* overflow: hidden;
+position: fixed; */
 
     .container{
         width: 95%;
         height: 60px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: center; 
+
+        img{
+            cursor: pointer;
+        }
     }
 
     .buttonSection{
@@ -94,10 +100,10 @@ align-items: center;
     }
 
     .userInfo > div{
-        width: 45%;
+        width: 70%;
         height: 60px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -141,7 +147,7 @@ align-items: center;
       justify-content: center;
       align-items: center;
       width: 170px;
-      height: 182px;
+      height: 250px;
       
       background-color: var(--grey-9) ;
       box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
@@ -160,7 +166,7 @@ align-items: center;
       align-items: flex-start;
    }
 
-   .out{
+   .options{
       color: var(--grey-2);
         font-size: 16px;
         text-decoration: none;

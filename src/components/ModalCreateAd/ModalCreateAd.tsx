@@ -3,19 +3,26 @@ import { MdClose } from "react-icons/md";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../providers/user/userContext.js";
+import { AuthContext } from "../../providers/vehicle/vehicleContext.js";
 
 function ModalCreateAd({ handleCloseModal }: any) {
   const [saleType, setSaleType] = useState("sale");
-  const [vehicleType, setVehicleType] = useState("Carro");
+  const [type, setType] = useState("Carro");
   const [images, setImages] = useState([""]);
+
+  const {token, getUserData, user} : any = useContext(UserContext)
+  const {registerVehicle}: any = useContext(AuthContext)
+
+  useEffect(()=> {getUserData()}, [])
 
   const schema = yup.object().shape({
     title: yup.string().required("Campo Obrigatório"),
     price: yup.string().required(),
     description: yup.string().required(),
     year: yup.string().required(),
-    kilometers: yup.string().required(),
+    mileage: yup.string().required(),
     urlImage: yup.string().required(),
   });
 
@@ -29,9 +36,12 @@ function ModalCreateAd({ handleCloseModal }: any) {
 
   const onSubmitFunction = (data: any) => {
     data.saleType = saleType;
-    data.vehicleType = vehicleType;
+    data.type = type;
     data.imagesUrl = images
-    console.log(data);
+    data.userId = user.id
+    delete data.imagesUrl
+    console.log(data)
+    // registerVehicle(data)
   };
 
   const addImages = () => {
@@ -101,7 +111,7 @@ function ModalCreateAd({ handleCloseModal }: any) {
                 id="input-placeholder"
                 type="text"
                 placeholder="0"
-                {...register("kilometers")}
+                {...register("mileage")}
               />
             </div>
             <div className="divVehicle-3">
@@ -126,16 +136,16 @@ function ModalCreateAd({ handleCloseModal }: any) {
             <h3 id="text-2-500">Tipo de veículo</h3>
             <div className="vehicleButtons">
               <button
-                className={vehicleType === "Carro" ? "selected" : "notSelected"}
+                className={type === "Carro" ? "selected" : "notSelected"}
                 type="button"
-                onClick={() => setVehicleType("Carro")}
+                onClick={() => setType("Carro")}
               >
                 Carro
               </button>
               <button
-                className={vehicleType === "Carro" ? "notSelected" : "selected"}
+                className={type === "Carro" ? "notSelected" : "selected"}
                 type="button"
-                onClick={() => setVehicleType("Moto")}
+                onClick={() => setType("Moto")}
               >
                 Moto
               </button>
