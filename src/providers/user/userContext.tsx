@@ -9,6 +9,7 @@ export const UserContext = createContext({})
 export const UserProvider = ({children}: IUserProvidersProps) =>{
 
     const history = useHistory() as any
+    const [user, setUser] = useState({})
     const [token, setToken] = useState(
         JSON.parse(localStorage.getItem("@user_data:token") as string)
     )
@@ -28,15 +29,33 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
             )
             setToken(response.data.token)
         })
-        .then((response) => setTimeout(history.push("/"), 5000))
+        .then((response) => history.push("/"))
         .catch((err) => console.log(err))
+    }
+
+    const getUserData = () =>{
+        axios.get("http://localhost:3000/user/me", {
+            headers:{
+                Authorization: token
+            },
+        })
+        .then((response) =>{
+            setUser(response.data)
+        })
+        .catch((err) =>{
+            localStorage.clear()
+        })
     }
   
     return(
         <UserContext.Provider
         value={{
             registerUser,
-            loginUser
+            loginUser,
+            setToken,
+            token,
+            getUserData,
+            user,
         }}
         >
             {children}

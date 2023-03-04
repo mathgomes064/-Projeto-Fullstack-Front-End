@@ -1,27 +1,32 @@
 import { HeadeMain } from "./style"
 import logo from "../../assets/logo.png";
-import user from "../../assets/user.jpg"
+import userImage from "../../assets/user.jpg"
 import { VscThreeBars } from 'react-icons/vsc';
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom"
+import { UserContext } from "../../providers/user/userContext";
 
 export const Header = () =>{
-    const [isLogged, setIsLogged] = useState(true)
     const [activeDropDown, setActiveDropDown] = useState(false)
     const [activeItemsDropdown, setActiveItemsDropdown] =useState(false)
 
+    const {token, getUserData, user} : any = useContext(UserContext)
+    
     const history = useHistory()
 
     const logOff = () =>{
         setActiveDropDown(false)
-        setIsLogged(true)
+        localStorage.clear()
+        location.reload()
+        history.push("/")
     }
 
+    useEffect(()=> {getUserData()}, [])
 
     return(
         <HeadeMain>
             <div className="container">
-                <img src={logo} alt="" />
+                <img src={logo} alt=""  onClick={() => history.push("/")}/>
                 <div className="buttonSection">
 
                     <VscThreeBars onClick={() => setActiveItemsDropdown(true)} className="dropdown"/>
@@ -49,10 +54,10 @@ export const Header = () =>{
                         <a href="">Motos</a>
                         <a href="">Leilão</a>
                     </div>
-                    {isLogged?
+                    {token === null?
                      (
                      <div className="buttons">
-                        <button onClick={() => setIsLogged(false)}>Fazer Login</button>
+                        <button onClick={() => history.push("/login")}>Fazer Login</button>
                         <button onClick={() => history.push("/register")}>Cadastrar</button>
                      </div>
                     )
@@ -60,16 +65,17 @@ export const Header = () =>{
                     (
                     <div className="userInfo">
                         <div>
-                            <img className="userImg" src={user} alt="" />
-                            <h1 onClick={() => setActiveDropDown(true)}>Samuel Leão</h1>
+                            <img className="userImg" src={userImage} alt="" />
+                            <h1 onClick={() => setActiveDropDown(true)}>{user.name}</h1>
                             {activeDropDown?
                             (
                             <div className="userDropDown" id='dropDown'>
                                 <ol>
-                                    <li>Editar Perfil</li>
-                                    <li>Editar Endereço</li>
-                                    <li>Minhas Compras</li>
-                                    <li className="out" onClick={() => logOff()}  > Sair</li>
+                                    <li className="options">Editar Perfil</li>
+                                    <li className="options">Editar Endereço</li>
+                                    <li className="options">Minhas Compras</li>
+                                    <li className="options" onClick={() => history.push("/user")}>Meu Perfil</li>
+                                    <li className="options" onClick={() => logOff()} > Sair</li>
                                 </ol>
                             </div>
                             )

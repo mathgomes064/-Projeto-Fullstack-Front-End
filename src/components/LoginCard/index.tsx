@@ -12,15 +12,12 @@ export const LoginCard = () => {
     email: yup.string().required("Email é obrigatório"),
     password: yup.string().required("Senha é obrigatório"),
   });
-//asafasdfgsdfgtestetet
+
   const { register, handleSubmit } = useForm({
     resolver: yupResolver(schema),
   });
 
   const {loginUser} : any = useContext(UserContext)
-  const onSubmitFunction = async(data: any) => {
-    console.log(data);
-  };
 
   const history = useHistory()
 
@@ -54,7 +51,7 @@ export const LoginCard = () => {
       </div>
       <div id="wrapper-button">
         <p id="text-2-400">Ainda não possui conta?</p>
-        <button id="button-grey-login-big">Cadastrar</button>
+        <button onClick={() => history.push("/register")} id="button-grey-login-big">Cadastrar</button>
       </div>
     </Container>
   );
