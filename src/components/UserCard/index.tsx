@@ -5,30 +5,34 @@ import InitialsAvatar from 'react-initials-avatar';
 
 export const UserCard = ({handleOpenModal}:any) => {
 
-  const {getUserData, user} : any = useContext(UserContext)
-  console.log(user)
+  const {getUserData, user, loading} : any = useContext(UserContext)
 
-  useEffect(()=> {getUserData()}, [user])
+  useEffect(()=> {getUserData()}, [])
 
   return (
     <>
-      <Container>
-        <section>
-          <div id="profile-pic">
-            <h3><InitialsAvatar name={user.name}/></h3>
-          </div>
-          <div id="profile-name">
-            <h3>{user.name}</h3>
+      {loading?
+      (
+        <h1>carregando...</h1>
+      )
+      :
+      (
+        <Container>
+          <section>
+            <div id="profile-pic">
+            { user &&  <h3><InitialsAvatar name={user.name}/></h3> }
+            </div>
+            <div id="profile-name">
+            { user &&  <h3>{user.name}</h3>}
 
-            <button id="container-anunciante">Anunciante</button>
-          </div>
+              <button id="container-anunciante">Anunciante</button>
+            </div>
 
-          <span>
-            {user.description}
-          </span>
-          <button id="button-blue-1-big" onClick={handleOpenModal}>Criar anuncio</button>
-        </section>
-      </Container>
+            { user &&  <span>{user.description}</span>}
+            <button id="button-blue-1-big" onClick={handleOpenModal}>Criar anuncio</button>
+          </section>
+        </Container>
+      )}
     </>
   );
 };
