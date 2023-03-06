@@ -43,7 +43,8 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
             setUser(response.data)
         })
         .catch((err) =>{
-            localStorage.clear()
+            // localStorage.clear()
+            console.log(err)
         })
     }
   

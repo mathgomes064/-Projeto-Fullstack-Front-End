@@ -40,8 +40,9 @@ function ModalCreateAd({ handleCloseModal }: any) {
     data.imagesUrl = images
     data.userId = user.id
     delete data.imagesUrl
-    console.log(data)
-    // registerVehicle(data)
+    registerVehicle(data)
+    handleCloseModal()
+    location.reload()
   };
 
   const addImages = () => {
