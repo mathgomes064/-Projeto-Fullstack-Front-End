@@ -9,6 +9,7 @@ export const UserContext = createContext({})
 export const UserProvider = ({children}: IUserProvidersProps) =>{
 
     const history = useHistory() as any
+    const [loading, setLoading] = useState(true)
     const [user, setUser] = useState({})
     const [token, setToken] = useState(
         JSON.parse(localStorage.getItem("@user_data:token") as string)
@@ -42,6 +43,7 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
         .then((response) =>{
             setUser(response.data)
         })
+        .then((response) => setLoading(false))
         .catch((err) =>{
             // localStorage.clear()
             console.log(err)
@@ -57,6 +59,7 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
             token,
             getUserData,
             user,
+            loading,
         }}
         >
             {children}

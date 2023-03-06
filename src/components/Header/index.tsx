@@ -17,8 +17,8 @@ export const Header = () =>{
     const logOff = () =>{
         setActiveDropDown(false)
         localStorage.clear()
-        location.reload()
         history.push("/")
+        location.reload()
     }
 
     useEffect(()=> {getUserData()}, [])
