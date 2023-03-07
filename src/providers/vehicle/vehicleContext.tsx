@@ -8,25 +8,16 @@ export const AuthContext = createContext({})
 
 export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
 
-    const {token, getUserData} : any = useContext(UserContext)
-
+    const {token, getUserData, user} : any = useContext(UserContext)
 
     const history = useHistory() as any
 
     // const [vehicle, setVehicle] = useState([])
-    const [cars, setCar] = useState([])
-    const [motorcycles, setMotorcycles] = useState([])
+    const [allCars, setAllCar] = useState([])
+    const [allMotorcycles, setAllMotorcycles] = useState([])
+    const [userCars, setUserCars] = useState([])
+    const [userMotorcycles, setUserMotorcycles] = useState([])
     const [vehicle, setVehicle] = useState<IVehicleCreate[]>([])
-
-    // const getVehicle = () =>{
-    //     axios.get("http://localhost:3000/vehicles")
-    //     .then((response) => {
-    //         setVehicle(response.data)
-    //     })
-    //     .catch((err) =>{
-    //         console.log(err)
-    //     })
-    // }
 
     const registerVehicle = (data: IVehicleCreate) =>{
         setVehicle([data, ...vehicle])
@@ -44,7 +35,7 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
     const getCars = () =>{
         axios.get("http://localhost:3000/vehicles/cars")
         .then((response) => {
-            setCar(response.data)
+            setAllCar(response.data)
         })
         .catch((err) =>{
             console.log(err)
@@ -54,7 +45,35 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
     const getMotorcycles = () =>{
         axios.get("http://localhost:3000/vehicles/motorcycles")
         .then((response) => {
-            setMotorcycles(response.data)
+            setAllMotorcycles(response.data)
+        })
+        .catch((err) =>{
+            console.log(err)
+        })
+    }
+
+    const getCarsByUser = () =>{
+        axios.get(`http://localhost:3000/vehicles/${user.id}/cars`, {
+            headers:{
+                Authorization: token
+            },
+        })
+        .then((response) => {
+            setUserCars(response.data)
+        })
+        .catch((err) =>{
+            console.log(err)
+        })
+    }
+
+    const getMotorcyclesByUser = () =>{
+        axios.get(`http://localhost:3000/vehicles/${user.id}/motorcycles`, {
+            headers:{
+                Authorization: token
+            },
+        })
+        .then((response) => {
+            setUserMotorcycles(response.data)
         })
         .catch((err) =>{
             console.log(err)
@@ -68,10 +87,12 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
             // getVehicle,
             // vehicle,
             getCars,
-            cars,
+            userCars,
             getMotorcycles,
-            motorcycles,
+            userMotorcycles,
             registerVehicle,
+            getCarsByUser,
+            getMotorcyclesByUser
         }}>
             {children}
         </AuthContext.Provider>

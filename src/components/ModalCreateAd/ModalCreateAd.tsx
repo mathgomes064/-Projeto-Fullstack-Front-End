@@ -39,6 +39,7 @@ function ModalCreateAd({ handleCloseModal }: any) {
     data.type = type;
     data.imagesUrl = images
     data.userId = user.id
+    data.owner = user.name
     delete data.imagesUrl
     registerVehicle(data)
     handleCloseModal()
