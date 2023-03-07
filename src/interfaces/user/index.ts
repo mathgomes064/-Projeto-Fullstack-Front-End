@@ -44,6 +44,19 @@ export interface IUserCreate{
     confirmPassword: string
 }
 
+export interface IUserUpdate{
+    name?: string,
+    email?: string,
+    cpf?: string,
+    cellPhone?: string,
+    birthDate?: string,
+    description?: string,
+    address?: IAddressCreate,
+    isAdvertiser?: boolean,
+    password?: string,
+    confirmPassword?: string
+}
+
 export interface IUserLogin{
     email: string,
     password: string
