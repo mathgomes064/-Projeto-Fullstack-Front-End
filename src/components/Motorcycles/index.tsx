@@ -44,16 +44,16 @@ export const Motorcycles = () =>{
         ]
       };
 
-    const {getMotorcycles, motorcycles}:any = useContext(AuthContext)
+    const {getMotorcyclesByUser, userMotorcycles}:any = useContext(AuthContext)
 
     const history = useHistory();
 
-    const routeChange = (id) =>{ 
+    const routeChange = (id: string) =>{ 
       let path = `product/`+ id; 
       history.push(path);
     }
 
-    useEffect(() => getMotorcycles(), [])
+    useEffect(() => getMotorcyclesByUser(), [])
 
     return(
         <MotorcycleSection>
@@ -61,7 +61,7 @@ export const Motorcycles = () =>{
                 <h1>Motos</h1>
             </div>
             <Slider {...settings}>
-                    {motorcycles?.map((motorcycle: any, index: any) =>(
+                    {userMotorcycles?.map((motorcycle: any, index: any) =>(
                         <div key={index} className="card"  onClick={() => {routeChange(motorcycle.id)}}>
                             <div className="imgDiv">
                                 <img src={motorcycle.urlImage} alt="" />
@@ -73,13 +73,13 @@ export const Motorcycles = () =>{
                             <div className="divTwo">
                                 <div>
                                     <img src={user} alt="" />
-                                    <p>Samuel Leão</p>
+                                    <p>{motorcycle.owner}</p>
                                 </div>
                             </div>
                             <div className="divTree">
                                 <div>
                                     <div>
-                                        <span>{motorcycle.mileage}</span>
+                                        <span>{motorcycle.mileage}Km</span>
                                         <span>{motorcycle.year}</span>
                                     </div>
                                     <p>R${motorcycle.price}</p>

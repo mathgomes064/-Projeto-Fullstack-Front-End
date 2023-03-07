@@ -7,7 +7,7 @@ import Slider from "react-slick"
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
-import { IVehicle } from "../../interfaces/vehicle";
+// import { IVehicle } from "../../interfaces/vehicle";
 
 export const Cars = () =>{
     const settings = {
@@ -48,15 +48,14 @@ export const Cars = () =>{
 
     const history = useHistory();
 
-    const routeChange = (id) =>{ 
+    const routeChange = (id: string) =>{ 
       let path = `product/`+ id; 
       history.push(path);
     }
 
-    const {getCars, cars}:any = useContext(AuthContext)
+    const {getCarsByUser, userCars}:any = useContext(AuthContext)
 
-    useEffect(() => getCars(), [])
-
+    useEffect(() => getCarsByUser(), [])
 
     return(
         <CarSection>
@@ -64,7 +63,7 @@ export const Cars = () =>{
                 <h1>Carros</h1>
             </div>
             <Slider {...settings}>
-                {cars?.map((car: any, index: any) => (
+                {userCars?.map((car: any, index: any) => (
                             <div key={index} className="card" onClick={() => {routeChange(car.id)}}>
                                 <div className="imgDiv">
                                     <img src={car.urlImage} alt="" />
@@ -76,7 +75,7 @@ export const Cars = () =>{
                                 <div className="divTwo">
                                     <div>
                                         <img src={user} alt="" />
-                                        <p>Samuel Leão</p>
+                                        <p>{car.owner}</p>
                                     </div>
                                 </div>
                                 <div className="divTree">
