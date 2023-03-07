@@ -1,6 +1,6 @@
 import { createContext, useState } from "react"
 import axios from "axios";
-import { IUserLogin, IUserProvidersProps } from "../../interfaces/user";
+import { IUserLogin, IUserProvidersProps, IUserUpdate } from "../../interfaces/user";
 import { IUserCreate } from "../../interfaces/user";
 import { useHistory } from "react-router-dom";
 
@@ -45,7 +45,18 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
         })
         .then((response) => setLoading(false))
         .catch((err) =>{
-            // localStorage.clear()
+            console.log(err)
+        })
+    }
+
+    const updateUserData = (data:IUserUpdate,id:string) =>{
+        axios.patch(`http://localhost:3000/user/${id}`, data ,{
+            headers:{
+                Authorization: token
+            },
+        })
+        .then((response) => response)
+        .catch((err) =>{
             console.log(err)
         })
     }
@@ -60,6 +71,7 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
             getUserData,
             user,
             loading,
+            updateUserData,
         }}
         >
             {children}
