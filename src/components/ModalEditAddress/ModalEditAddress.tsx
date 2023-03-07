@@ -3,15 +3,18 @@ import { MdClose } from "react-icons/md";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { UserContext } from "../../providers/user/userContext.js";
+import { useContext } from "react";
 
 function ModalEditAddress({ handleCloseEditAddressModal }: any) {
+  const { updateUserData, user }: any = useContext(UserContext);
+
   const schema = yup.object().shape({
-    name: yup.string().required("Campo Obrigatório"),
-    email: yup.string().required(),
-    cpf: yup.string().required(),
-    cellPhone: yup.string().required(),
-    birthDate: yup.string().required(),
-    description: yup.string().required(),
+    cep: yup.string().required("Campo Obrigatório"),
+    state: yup.string().required("Campo Obrigatório"),
+    city: yup.string().required("Campo Obrigatório"),
+    number: yup.string().required("Campo Obrigatório"),
+    street: yup.string().required("Campo Obrigatório"),
   });
 
   const {
@@ -23,7 +26,19 @@ function ModalEditAddress({ handleCloseEditAddressModal }: any) {
   });
 
   const onSubmitFunction = (data: any) => {
-    console.log(data);
+    const treatedData = {
+      address: {
+        cep: data.cep,
+        state: data.state,
+        city: data.city,
+        number: data.number,
+        complement: data.complement,
+        street: data.street,
+      },
+    };
+    updateUserData(treatedData, user.id);
+    handleCloseEditAddressModal();
+    location.reload();
   };
 
   return (
@@ -44,6 +59,7 @@ function ModalEditAddress({ handleCloseEditAddressModal }: any) {
             type="text"
             placeholder="Digitar cep"
             {...register("cep")}
+            defaultValue={user.address.cep}
           />
           <div className="flexDiv">
             <div className="divVehicle-1">
@@ -53,6 +69,7 @@ function ModalEditAddress({ handleCloseEditAddressModal }: any) {
                 type="text"
                 placeholder="Digitar email"
                 {...register("state")}
+                defaultValue={user.address.state}
               />
             </div>
             <div className="divVehicle-1">
@@ -62,6 +79,7 @@ function ModalEditAddress({ handleCloseEditAddressModal }: any) {
                 type="text"
                 placeholder="Digitar cidade"
                 {...register("city")}
+                defaultValue={user.address.city}
               />
             </div>
           </div>
@@ -71,6 +89,7 @@ function ModalEditAddress({ handleCloseEditAddressModal }: any) {
             type="text"
             placeholder="Digitar sua rua"
             {...register("street")}
+            defaultValue={user.address.street}
           />
           <div className="flexDiv">
             <div className="divVehicle-1">
@@ -80,6 +99,7 @@ function ModalEditAddress({ handleCloseEditAddressModal }: any) {
                 type="text"
                 placeholder="Digitar número"
                 {...register("number")}
+                defaultValue={user.address.number}
               />
             </div>
             <div className="divVehicle-1">
@@ -89,6 +109,7 @@ function ModalEditAddress({ handleCloseEditAddressModal }: any) {
                 type="text"
                 placeholder="Digitar complemento"
                 {...register("complement")}
+                defaultValue={user.address.complement}
               />
             </div>
           </div>
