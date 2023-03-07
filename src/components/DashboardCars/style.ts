@@ -21,6 +21,7 @@ cursor: pointer;
         font-weight: bold;
     }
 
+
     .card{
         background-color: var(--white);
         max-width: 300px;
@@ -43,6 +44,7 @@ cursor: pointer;
         width: 100%;
         height: 150px;
         background-color: var(--grey-7);
+        max-width: 100%;
         -moz-transition: all 0.3s;
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
@@ -128,7 +130,7 @@ cursor: pointer;
     }
 
     .card > .divTree > div{
-        width: 97%;
+        width: 95%;
         height: 60px;
         display: flex;
         justify-content: space-between;

@@ -3,10 +3,28 @@ import styled from "styled-components";
 export const Sign = styled.section`
 width: 100vw;
 height: 500px;
-background-color: var(--brand-2);
 display: flex;
 justify-content: center;
 align-items: center;
+margin: auto;
+font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+overflow: auto;
+background: linear-gradient(315deg, #5126ea 3%, #b0a6f0 38%, rgba(48,238,226,1) 68%, #e34d8c 98%);
+animation: gradient 15s ease infinite;
+background-size: 400% 400%;
+background-attachment: fixed;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: 100% 100%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
 
     .mainDiv{
         width: 50%;

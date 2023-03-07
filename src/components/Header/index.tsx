@@ -8,6 +8,7 @@ import { UserContext } from "../../providers/user/userContext";
 import Modal from "react-modal";
 import ModalEditProfile from "../ModalEditProfile/ModalEditProfile";
 import ModalEditAddress from "../ModalEditAddress/ModalEditAddress";
+import InitialsAvatar from 'react-initials-avatar';
 
 type customStyleType = {
   content: any;
@@ -21,7 +22,7 @@ export const Header = () => {
   const [modalEditAddressIsOpen, setModalEditAddressIsOpen] = useState(false);
 
 
-  const { token, getUserData, user }: any = useContext(UserContext);
+  const { token, getUserData, user, loading }: any = useContext(UserContext);
 
   const history = useHistory();
 
@@ -76,89 +77,99 @@ export const Header = () => {
   }, []);
 
   return (
-    <HeadeMain>
-      <Modal
-        style={customStyles}
-        isOpen={modalEditProfileIsOpen}
-        onRequestClose={handleCloseEditProfileModal}
-      >
-        <ModalEditProfile handleCloseEditProfileModal={handleCloseEditProfileModal} />
-      </Modal>
-      <Modal
-        style={customStyles}
-        isOpen={modalEditAddressIsOpen}
-        onRequestClose={handleCloseEditAddressModal}
-      >
-        <ModalEditAddress handleCloseEditAddressModal={handleCloseEditAddressModal} />
-      </Modal>
 
-      <div className="container">
-        <img src={logo} alt="" onClick={() => history.push("/")} />
-        <div className="buttonSection">
-          <VscThreeBars
-            onClick={() => setActiveItemsDropdown(true)}
-            className="dropdown"
-          />
-          {activeItemsDropdown ? (
-            <div className="userItemsDropDown" id="dropDown">
-              <ol>
-                <li>Carros</li>
-                <li>Motos</li>
-                <li>Leilão </li>
-                <li className="upperLine">
-                  <a href="">Fazer Login</a>
-                </li>
-                <button>Cadastrar</button>
-              </ol>
-            </div>
-          ) : (
-            ""
-          )}
-          <div className="productLinks">
-            <a href="">Carros</a>
-            <a href="">Motos</a>
-            <a href="">Leilão</a>
-          </div>
-          {token === null ? (
-            <div className="buttons">
-              <button onClick={() => history.push("/login")}>
-                Fazer Login
-              </button>
-              <button onClick={() => history.push("/register")}>
-                Cadastrar
-              </button>
-            </div>
-          ) : (
-            <div className="userInfo">
-              <div>
-                <img className="userImg" src={userImage} alt="" />
-                <h1 onClick={() => setActiveDropDown(true)}>{user.name}</h1>
-                {activeDropDown ? (
-                  <div className="userDropDown" id="dropDown">
-                    <ol>
-                      <li onClick={()=>handleOpenEditProfileModal()} className="options">Editar Perfil</li>
-                      <li onClick={()=>handleOpenEditAddressModal()} className="options">Editar Endereço</li>
-                      <li className="options">Minhas Compras</li>
-                      <li
-                        className="options"
-                        onClick={() => history.push("/user")}
-                      >
-                        Meu Perfil
-                      </li>
-                      <li className="options" onClick={() => logOff()}>
-                        {" "}
-                        Sair
-                      </li>
-                    </ol>
-                  </div>
-                ) : (
-                  ""
-                )}
+      <HeadeMain>
+        <Modal
+          style={customStyles}
+          isOpen={modalEditProfileIsOpen}
+          onRequestClose={handleCloseEditProfileModal}
+        >
+          <ModalEditProfile handleCloseEditProfileModal={handleCloseEditProfileModal} />
+        </Modal>
+        <Modal
+          style={customStyles}
+          isOpen={modalEditAddressIsOpen}
+          onRequestClose={handleCloseEditAddressModal}
+        >
+          <ModalEditAddress handleCloseEditAddressModal={handleCloseEditAddressModal} />
+        </Modal>
+
+        <div className="container">
+          <img src={logo} alt="" onClick={() => history.push("/")} />
+          <div className="buttonSection">
+            <VscThreeBars
+              onClick={() => setActiveItemsDropdown(true)}
+              className="dropdown"
+            />
+            {activeItemsDropdown ? (
+              <div className="userItemsDropDown" id="dropDown">
+                <ol>
+                  <li>Carros</li>
+                  <li>Motos</li>
+                  <li>Leilão </li>
+                  <li className="upperLine">
+                    <a href="">Fazer Login</a>
+                  </li>
+                  <button>Cadastrar</button>
+                </ol>
               </div>
+            ) : (
+              ""
+            )}
+            <div className="productLinks">
+              <a href="">Carros</a>
+              <a href="">Motos</a>
+              <a href="">Leilão</a>
             </div>
-          )}
+            {token === null ? (
+              <div className="buttons">
+                <button onClick={() => history.push("/login")}>
+                  Fazer Login
+                </button>
+                <button onClick={() => history.push("/register")}>
+                  Cadastrar
+                </button>
+              </div>
+            ) : (
+              <div className="userInfo">
+                <div>
+                  <div className="profilePic">
+                    {loading? (
+                        <h1>carregando...</h1>
+                    ):
+                    (
+                      <h3><InitialsAvatar name={user.name}/></h3>
+                    )
+                    }
+                  </div>
+                  <h1 onClick={() => setActiveDropDown(true)}>{user.name}</h1>
+                  {activeDropDown ? (
+                    <div className="userDropDown" id="dropDown">
+                      <ol>
+                        <li onClick={()=>handleOpenEditProfileModal()} className="options">Editar Perfil</li>
+                        <li onClick={()=>handleOpenEditAddressModal()} className="options">Editar Endereço</li>
+                        <li className="options">Minhas Compras</li>
+                        <li
+                          className="options"
+                          onClick={() => history.push("/user")}
+                        >
+                          Meu Perfil
+                        </li>
+                        <li className="options" onClick={() => logOff()}>
+                          {" "}
+                          Sair
+                        </li>
+                      </ol>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </HeadeMain>
+      </HeadeMain>
+
   );
 };

@@ -182,17 +182,17 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.19.0"
 
+"@babel/runtime@>=7.0.0-beta.56", "@babel/runtime@^7.12.1", "@babel/runtime@^7.17.2", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.7":
+  version "7.21.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
+  integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.13":
   version "7.20.13"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.20.13.tgz"
   integrity sha512-gt3PKXs0DBoL9xCvOIIZ2NEqAGZqHjAnmVbfQtB620V0uReIQutpel14KcneZuer7UioY8ALKZ7iocavvzTNFA==
-  dependencies:
-    regenerator-runtime "^0.13.11"
-
-"@babel/runtime@^7.12.1", "@babel/runtime@^7.17.2", "@babel/runtime@^7.20.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.8.7":
-  version "7.21.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.21.0.tgz#5b55c9d394e5fcf304909a8b00c07dc217b56673"
-  integrity sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==
   dependencies:
     regenerator-runtime "^0.13.11"
 
@@ -230,12 +230,24 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@emotion/is-prop-valid@^0.8.2":
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
+  integrity sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
+  dependencies:
+    "@emotion/memoize" "0.7.4"
+
 "@emotion/is-prop-valid@^1.1.0":
   version "1.2.0"
   resolved "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-1.2.0.tgz"
   integrity sha512-3aDpDprjM0AwaxGE09bOPkNxHpBd+kA6jty3RnaEXdweX1DF1U3VQpPYb0g1IStAuK7SVQ1cy+bNBBKp4W3Fjg==
   dependencies:
     "@emotion/memoize" "^0.8.0"
+
+"@emotion/memoize@0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@emotion/memoize/-/memoize-0.7.4.tgz#19bf0f5af19149111c40d98bb0cf82119f5d9eeb"
+  integrity sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==
 
 "@emotion/memoize@^0.8.0":
   version "0.8.0"
@@ -516,6 +528,13 @@
     "@types/history" "^4.7.11"
     "@types/react" "*"
 
+"@types/react-sidebar@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-sidebar/-/react-sidebar-3.0.2.tgz#d989a9e1cb2a2281d252becb18adaad1e6a26793"
+  integrity sha512-6ABhGhwv78nZVcHntCkq3ky7qOzKttyfhmEletO0BMkBUVl1+TlJMr6ficypIS8B+lSojLTnM+tQeydtMRRciQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-slick@^0.23.10":
   version "0.23.10"
   resolved "https://registry.yarnpkg.com/@types/react-slick/-/react-slick-0.23.10.tgz#56126e6e4e95cdce7771535b2811c2c1931a7caa"
@@ -774,6 +793,15 @@ form-data@^4.0.0:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
+
+framer-motion@^10.2.3:
+  version "10.2.3"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-10.2.3.tgz#80ac552648f05b707d0595be5e87551aa673689a"
+  integrity sha512-+TBxfia8Ym/lYSvTAhome7LYFIR8fKhImuln5zcp9D8nFI2wNSDdBRtK5WoWTyjHXJ7efv5xv376Ma85zHhtUg==
+  dependencies:
+    tslib "^2.4.0"
+  optionalDependencies:
+    "@emotion/is-prop-valid" "^0.8.2"
 
 fsevents@~2.3.2:
   version "2.3.2"
@@ -1095,6 +1123,14 @@ react-router@5.3.4:
     react-is "^16.6.0"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
+
+react-sidebar@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-sidebar/-/react-sidebar-3.0.2.tgz#cf695b5a78098e70460c847fb0c6c81cfd896c37"
+  integrity sha512-LG/JO1cJvdRqSmUT+DOhJrml/b45/UqM9nm8emcgbJb5EKNegKCObZcrRqyzVix42VfFf0odytviAAFEYYTu1Q==
+  dependencies:
+    "@babel/runtime" ">=7.0.0-beta.56"
+    prop-types "^15.6.2"
 
 react-slick@^0.29.0:
   version "0.29.0"

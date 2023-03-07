@@ -1,13 +1,11 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { CarSection } from "./style"
-import car from "../../assets/carro.png"
 import user from "../../assets/user.jpg"
 import Slider from "react-slick"
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
-// import { IVehicle } from "../../interfaces/vehicle";
 
 export const Cars = () =>{
     const settings = {
@@ -81,10 +79,10 @@ export const Cars = () =>{
                                 <div className="divTree">
                                     <div>
                                         <div>
-                                            <span>{car.mileage}</span>
+                                            <span>{car.mileage}Km</span>
                                             <span>{car.year}</span>
                                         </div>
-                                        <p>R${car.price}</p>
+                                        <p>R${car.price},00</p>
                                     </div>
                                 </div>
                             </div>)

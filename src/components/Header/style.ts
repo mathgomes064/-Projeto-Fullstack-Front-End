@@ -7,8 +7,7 @@ background-color: var(--grey-10);
 display: flex;
 justify-content: center;
 align-items: center;
-/* overflow: hidden;
-position: fixed; */
+
 
     .container{
         width: 95%;
@@ -50,7 +49,6 @@ position: fixed; */
             content: " ";
             width: 0%;
             height: 2px;
-            background-color: var(--grey-2);
             position: absolute;
             bottom: 0;
             left: 0;
@@ -58,7 +56,8 @@ position: fixed; */
         }
         
         :hover::after{
-            width: 100%
+            width: 100%;
+            background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
         }
     }
     
@@ -129,14 +128,32 @@ position: fixed; */
             position: absolute;
             bottom: 0;
             left: 0;
-            transition: 0.5s ease-in-out;
+            transition: 0.3s ease-in-out;
         }
         
         :hover::after{
-            width: 100%
+            width: 100%;
+            background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
         }
 
     
+    }
+
+    .profilePic{
+        background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
+        width: 45px;
+        height: 45px;
+        border-radius: 50px;
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
     }
 
     .userDropDown{
@@ -182,11 +199,12 @@ position: fixed; */
             position: absolute;
             bottom: 0;
             left: 0;
-            transition: 0.5s ease-in-out;
+            transition: 0.3s ease-in-out;
         }
         
         :hover::after{
-            width: 100%
+            width: 100%;
+            background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
         }
    }
 

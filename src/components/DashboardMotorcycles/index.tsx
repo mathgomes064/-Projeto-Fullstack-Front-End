@@ -1,14 +1,13 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { MotorcycleSection } from "./style"
-import moto from "../../assets/moto.png"
 import user from "../../assets/user.jpg"
 import Slider from "react-slick"
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
 import { useHistory } from "react-router-dom";
 
-export const Motorcycles = () =>{
+export const DashboardMotorcycles = () =>{
     const settings = {
         dots: true,
         infinite: false,
@@ -44,7 +43,7 @@ export const Motorcycles = () =>{
         ]
       };
 
-    const {getMotorcyclesByUser, userMotorcycles}:any = useContext(AuthContext)
+    const {getMotorcycles, allMotorcycles}:any = useContext(AuthContext)
 
     const history = useHistory();
 
@@ -53,7 +52,7 @@ export const Motorcycles = () =>{
       history.push(path);
     }
 
-    useEffect(() => getMotorcyclesByUser(), [])
+    useEffect(() => getMotorcycles(), [])
 
     return(
         <MotorcycleSection>
@@ -61,7 +60,7 @@ export const Motorcycles = () =>{
                 <h1>Motos</h1>
             </div>
             <Slider {...settings}>
-                    {userMotorcycles?.map((motorcycle: any, index: any) =>(
+                    {allMotorcycles?.map((motorcycle: any, index: any) =>(
                         <div key={index} className="card"  onClick={() => {routeChange(motorcycle.id)}}>
                             <div className="imgDiv">
                                 <img src={motorcycle.urlImage} alt="" />
@@ -82,7 +81,7 @@ export const Motorcycles = () =>{
                                         <span>{motorcycle.mileage}Km</span>
                                         <span>{motorcycle.year}</span>
                                     </div>
-                                    <p>R${motorcycle.price},00</p>
+                                    <p>R${motorcycle.price}</p>
                                 </div>
                             </div>
                         </div>

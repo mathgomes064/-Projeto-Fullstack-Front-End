@@ -35,12 +35,23 @@ cursor: pointer;
         justify-content: center;
         align-items: center;
         background-color: var(--grey-7);
+        overflow: hidden;
+        text-align: center;
     }
 
     .card > .imgDiv > img{
         width: 100%;
         height: 150px;
         background-color: var(--grey-7);
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+
+        :hover{
+            -moz-transform: scale(1.4);
+            -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+        }
     }
     
     .card > .divOne{
@@ -53,7 +64,7 @@ cursor: pointer;
     }
 
     .card > .divOne > h1{
-        width: 97%;
+        width: 95%;
         height: 50%;
         font-size: 16px;
         font-weight: bold;
@@ -64,7 +75,7 @@ cursor: pointer;
     }
 
     .card > .divOne > p{
-        width: 97%;
+        width: 95%;
         height: 50%;
         font-size: 14px;
         color: var(--grey-2);
@@ -82,7 +93,7 @@ cursor: pointer;
     }
 
     .card > .divTwo > div{
-        width: 97%;
+        width: 95%;
         height: 32px;
         display: flex;
         justify-content: start;

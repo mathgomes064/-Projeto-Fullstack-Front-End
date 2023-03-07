@@ -11,7 +11,7 @@ export const Container = styled.div`
   border-radius: 4px;
 }
 #profile-pic {
-  background-color: var(--brand-1);
+  background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
   width: 104px;
   height: 104px;
   border-radius: 50px;
@@ -89,7 +89,7 @@ span {
 
 #button-blue-1-big:hover {
   transition: all 0.4s;
-  background-color: var(--brand-1);
+  background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
   border: 1.5px solid var(--brand-1);
   
   color: var(--white);

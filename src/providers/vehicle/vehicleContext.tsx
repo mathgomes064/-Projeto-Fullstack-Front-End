@@ -10,9 +10,6 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
 
     const {token, getUserData, user} : any = useContext(UserContext)
 
-    const history = useHistory() as any
-
-    // const [vehicle, setVehicle] = useState([])
     const [allCars, setAllCar] = useState([])
     const [allMotorcycles, setAllMotorcycles] = useState([])
     const [userCars, setUserCars] = useState([])
@@ -84,15 +81,15 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
     return(
         <AuthContext.Provider
         value={{
-            // getVehicle,
-            // vehicle,
             getCars,
             userCars,
             getMotorcycles,
             userMotorcycles,
             registerVehicle,
             getCarsByUser,
-            getMotorcyclesByUser
+            getMotorcyclesByUser,
+            allCars,
+            allMotorcycles,
         }}>
             {children}
         </AuthContext.Provider>
