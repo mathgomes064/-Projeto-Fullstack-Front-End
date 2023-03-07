@@ -26,6 +26,10 @@ cursor: pointer;
         max-width: 300px;
         height: 370px;
         margin: 0px 10px 0px 10px;
+        
+        :hover{
+            border-bottom: 5px solid #4529e6;
+        }
     }
 
     .card > .imgDiv{
