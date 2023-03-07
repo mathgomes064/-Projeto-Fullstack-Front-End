@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const CarSection = styled.section`
+export const MotorcycleSection = styled.section`
 width: 94vw;
 height: 500px;
 margin-top: 100px;
@@ -37,6 +37,7 @@ cursor: pointer;
         background-color: var(--grey-7);
         overflow: hidden;
         text-align: center;
+        
     }
 
     .card > .imgDiv > img{

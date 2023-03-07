@@ -212,7 +212,7 @@ margin-top: 100px;
         }
 
         .footerCard {
-            background: #4529e6;
+            background-image: linear-gradient(to bottom right, #5126ea, #7000ff);            
             display: flex;
             justify-content: space-between;
             align-items: center;

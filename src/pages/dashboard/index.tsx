@@ -1,10 +1,10 @@
-import { Cars } from "../../components/Cars";
 import { DashboardPage } from "./style";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { BlueSign } from "../../components/Sign";
-import { Motorcycles } from "../../components/Motorcycles";
 import { ProductAuction } from "../../components/Auction";
+import { DashboardCars } from "../../components/DashboardCars";
+import { DashboardMotorcycles } from "../../components/DashboardMotorcycles";
 
 export const Dashboard = () => {
   return (
@@ -12,8 +12,8 @@ export const Dashboard = () => {
         <Header/>
         <BlueSign/>
         <ProductAuction/>
-        <Cars />
-        <Motorcycles/>
+        <DashboardCars />
+        <DashboardMotorcycles/>
         <Footer />     
     </DashboardPage>
   );
