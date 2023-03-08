@@ -1,4 +1,4 @@
-import { HeadeMain } from "./style";
+import { Container, HeadeMain } from "./style";
 import logo from "../../assets/logo.png";
 import userImage from "../../assets/user.jpg";
 import { VscThreeBars } from "react-icons/vsc";
@@ -9,6 +9,10 @@ import Modal from "react-modal";
 import ModalEditProfile from "../ModalEditProfile/ModalEditProfile";
 import ModalEditAddress from "../ModalEditAddress/ModalEditAddress";
 import InitialsAvatar from 'react-initials-avatar';
+import ModalSidebar from "@mui/material/Modal";
+import Backdrop from "@mui/material/Backdrop";
+import Fade from "@mui/material/Fade";
+import Box from "@mui/material/Box";
 
 type customStyleType = {
   content: any;
@@ -20,6 +24,9 @@ export const Header = () => {
   const [activeItemsDropdown, setActiveItemsDropdown] = useState(false);
   const [modalEditProfileIsOpen, setModalEditProfileIsOpen] = useState(false);
   const [modalEditAddressIsOpen, setModalEditAddressIsOpen] = useState(false);
+  const [open, setOpen] = useState(false)
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false)
 
 
   const { token, getUserData, user, loading }: any = useContext(UserContext);
@@ -32,6 +39,13 @@ export const Header = () => {
     history.push("/");
     location.reload();
   };
+
+  const style = {
+    position: "absolute",
+    // top: "50%",
+    // left: "50%",
+    // transform: "translate(-50%, -50%)",
+}
 
   const customStyles: customStyleType = {
     content: {
@@ -58,6 +72,7 @@ export const Header = () => {
 
   function handleOpenEditProfileModal() {
     setModalEditProfileIsOpen(true);
+    setOpen(false)
   }
 
   function handleCloseEditProfileModal() {
@@ -66,6 +81,7 @@ export const Header = () => {
 
   function handleOpenEditAddressModal() {
     setModalEditAddressIsOpen(true);
+    setOpen(false)
   }
 
   function handleCloseEditAddressModal() {
@@ -142,8 +158,38 @@ export const Header = () => {
                     )
                     }
                   </div>
-                  <h1 onClick={() => setActiveDropDown(true)}>{user.name}</h1>
-                  {activeDropDown ? (
+                  <h1 onMouseDown={handleOpen}>{user.name}</h1>
+                  <ModalSidebar
+                    open={open}
+                    onClose={handleClose}
+                  >
+                      <Fade in={open}>
+                        <Box sx={style}>
+                            <Container>
+                              <div className="outsideDiv">
+                                <div className="upperDiv">
+                                  <a onClick={()=>handleOpenEditProfileModal()} className="options">Editar Perfil</a>
+                                  <a onClick={()=>handleOpenEditAddressModal()} className="options">Editar Endereço</a>
+                                  <a className="options">Minhas Compras</a>
+                                  <a
+                                    className="options"
+                                    onClick={() => history.push("/user")}
+                                  >
+                                    Meu Perfil
+                                  </a>
+                                </div>
+                                <div className="lowerDiv">
+                                  <a className="options" onClick={() => logOff()}>
+                                    {" "}
+                                    Sair
+                                  </a>
+                                </div>
+                              </div>
+                            </Container>
+                        </Box>
+                      </Fade>
+                  </ModalSidebar>
+                  {/* {activeDropDown ? (
                     <div className="userDropDown" id="dropDown">
                       <ol>
                         <li onClick={()=>handleOpenEditProfileModal()} className="options">Editar Perfil</li>
@@ -163,7 +209,7 @@ export const Header = () => {
                     </div>
                   ) : (
                     ""
-                  )}
+                  )} */}
                 </div>
               </div>
             )}

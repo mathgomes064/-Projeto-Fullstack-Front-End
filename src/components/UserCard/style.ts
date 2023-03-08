@@ -91,7 +91,7 @@ span {
   transition: all 0.4s;
   background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
   border: 1.5px solid var(--brand-1);
-  
+  border: none;
   color: var(--white);
 }
 
