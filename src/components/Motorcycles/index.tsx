@@ -60,35 +60,35 @@ export const Motorcycles = () =>{
             <div className="tittleDiv">
                 <h1>Motos</h1>
             </div>
-            <Slider {...settings}>
-                    {userMotorcycles?.map((motorcycle: any, index: any) =>(
-                        <div key={index} className="card"  onClick={() => {routeChange(motorcycle.id)}}>
-                            <div className="imgDiv">
-                                <img src={motorcycle.urlImage} alt="" />
-                            </div>
-                            <div className="divOne">
-                                <h1>{motorcycle.title}</h1>
-                                <p>{motorcycle.description}</p>
-                            </div>
-                            <div className="divTwo">
-                                <div>
-                                    <img src={user} alt="" />
-                                    <p>{motorcycle.owner}</p>
-                                </div>
-                            </div>
-                            <div className="divTree">
-                                <div>
-                                    <div>
-                                        <span>{motorcycle.mileage}Km</span>
-                                        <span>{motorcycle.year}</span>
-                                    </div>
-                                    <p>R${motorcycle.price},00</p>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                )}
-            </Slider>
+              <Slider {...settings}>
+                      {userMotorcycles?.map((motorcycle: any, index: any) =>(
+                          <div key={index} className="card"  onClick={() => {routeChange(motorcycle.id)}}>
+                              <div className="imgDiv">
+                                  <img src={motorcycle.urlImage} alt="" />
+                              </div>
+                              <div className="divOne">
+                                  <h1>{motorcycle.title}</h1>
+                                  <p>{motorcycle.description}</p>
+                              </div>
+                              <div className="divTwo">
+                                  <div>
+                                      <img src={user} alt="" />
+                                      <p>{motorcycle.owner}</p>
+                                  </div>
+                              </div>
+                              <div className="divTree">
+                                  <div>
+                                      <div>
+                                          <span>{motorcycle.mileage}Km</span>
+                                          <span>{motorcycle.year}</span>
+                                      </div>
+                                      <p>R${motorcycle.price},00</p>
+                                  </div>
+                              </div>
+                          </div>
+                      )
+                  )}
+              </Slider>
         </MotorcycleSection>
     )
 }

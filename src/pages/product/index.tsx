@@ -12,6 +12,7 @@ import { ProductPage } from "./style";
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import api from "../../service";
+import { Container } from "react-bootstrap";
 
 
 
@@ -39,29 +40,27 @@ export const Product = () => {
          "price": product.price
       }
       return (
-         <div>
+         <Container>
            <Header />
            <ProductPage>
               <div className="blueStrip">
                   <div className="body">
-                  
-                  <div className="productPageright" >
-                     <ProductImageExpand img_src={product.urlImage}/> 
-                     <ProductProperties prod_properties={prod_properties}/>
-                     <ProductDescription desc={product.description}/>
-                     <CommentsBoard vehicle_id={product.id}/>
+                     <div className="productPageright" >
+                        <ProductImageExpand img_src={product.urlImage}/> 
+                        <ProductProperties prod_properties={prod_properties}/>
+                        <ProductDescription desc={product.description}/>
+                        <CommentsBoard vehicle_id={product.id}/>
+                     </div>
+                     <div className="productPageleft">
+                        <ProductImagesGalery/>
+                        <AdvertisersCard/>
+                        <CommentCard/>
+                     </div>
                   </div>
-                  <div className="productPageleft">
-                     <ProductImagesGalery/>
-                     <AdvertisersCard/>
-                     <CommentCard/>
-                  </div>
-              </div>
               
               </div>
-                
            </ProductPage>
-         </div>
+         </Container>
       ); 
     } else {
       return <>{msgToShow}</>

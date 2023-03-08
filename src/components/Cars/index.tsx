@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { CarSection } from "./style"
 import user from "../../assets/user.jpg"
 import Slider from "react-slick"
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
 
@@ -60,34 +60,34 @@ export const Cars = () =>{
             <div className="tittleDiv">
                 <h1>Carros</h1>
             </div>
-            <Slider {...settings}>
-                {userCars?.map((car: any, index: any) => (
-                            <div key={index} className="card" onClick={() => {routeChange(car.id)}}>
-                                <div className="imgDiv">
-                                    <img src={car.urlImage} alt="" />
-                                </div>
-                                <div className="divOne">
-                                    <h1>{car.title}</h1>
-                                    <p>{car.description}</p>
-                                </div>
-                                <div className="divTwo">
-                                    <div>
-                                        <img src={user} alt="" />
-                                        <p>{car.owner}</p>
-                                    </div>
-                                </div>
-                                <div className="divTree">
-                                    <div>
-                                        <div>
-                                            <span>{car.mileage}Km</span>
-                                            <span>{car.year}</span>
-                                        </div>
-                                        <p>R${car.price},00</p>
-                                    </div>
-                                </div>
-                            </div>)
-                    )}
-            </Slider>
+              <Slider {...settings}>
+                  {userCars?.map((car: any, index: any) => (
+                              <div key={index} className="card" onClick={() => {routeChange(car.id)}}>
+                                  <div className="imgDiv">
+                                      <img src={car.urlImage} alt="" />
+                                  </div>
+                                  <div className="divOne">
+                                      <h1>{car.title}</h1>
+                                      <p>{car.description}</p>
+                                  </div>
+                                  <div className="divTwo">
+                                      <div>
+                                          <img src={user} alt="" />
+                                          <p>{car.owner}</p>
+                                      </div>
+                                  </div>
+                                  <div className="divTree">
+                                      <div>
+                                          <div>
+                                              <span>{car.mileage}Km</span>
+                                              <span>{car.year}</span>
+                                          </div>
+                                          <p>R${car.price},00</p>
+                                      </div>
+                                  </div>
+                              </div>)
+                      )}
+              </Slider> 
         </CarSection>
     )
 }
