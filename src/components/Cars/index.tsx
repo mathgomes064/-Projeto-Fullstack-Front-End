@@ -6,6 +6,7 @@ import Slider from "react-slick"
 import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
+import { ModalEditAdButton } from "../ModalEditAd/ModalEditAd";
 
 export const Cars = () =>{
     const settings = {
@@ -51,10 +52,15 @@ export const Cars = () =>{
       history.push(path);
     }
 
-    const {getCarsByUser, userCars}:any = useContext(AuthContext)
-
-    useEffect(() => getCarsByUser(), [])
-
+    const {getCarsByUser, userCars, deleteVehicle, setId}:any = useContext(AuthContext)
+    
+    useEffect(() => {getCarsByUser()}, [])
+    
+    const deleteCar = (id: string) =>{
+      deleteVehicle(id)
+      location.reload()
+    }
+    
     return(
         <CarSection>
             <div className="tittleDiv">
@@ -62,8 +68,8 @@ export const Cars = () =>{
             </div>
               <Slider {...settings}>
                   {userCars?.map((car: any, index: any) => (
-                              <div key={index} className="card" onClick={() => {routeChange(car.id)}}>
-                                  <div className="imgDiv">
+                              <div key={index} className="card" >
+                                  <div onClick={() => {routeChange(car.id)}} className="imgDiv">
                                       <img src={car.urlImage} alt="" />
                                   </div>
                                   <div className="divOne">
@@ -84,6 +90,10 @@ export const Cars = () =>{
                                           </div>
                                           <p>R${car.price},00</p>
                                       </div>
+                                  </div>
+                                  <div className="divFourth">
+                                    <button onClick={() => {setId(car.id)}}><ModalEditAdButton/></button>
+                                    <button onClick={() => {deleteCar(car.id)}} className="delete">Deletar</button>
                                   </div>
                               </div>)
                       )}

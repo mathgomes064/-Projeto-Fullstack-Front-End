@@ -15,3 +15,13 @@ export interface IVehicleCreate {
     urlImage: string;
     createdAt: Date;
 }
+
+export interface IVehicleUpdate {
+    title?: string;
+    year?: string;
+    mileage?: string;
+    price?: string;
+    description?: string;
+    type?: string;
+    urlImage?: string;
+}

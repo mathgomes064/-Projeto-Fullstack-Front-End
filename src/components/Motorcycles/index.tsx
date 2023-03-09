@@ -7,6 +7,7 @@ import Slider from "react-slick"
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
 import { useHistory } from "react-router-dom";
+import { ModalEditAdButton } from "../ModalEditAd/ModalEditAd";
 
 export const Motorcycles = () =>{
     const settings = {
@@ -44,7 +45,7 @@ export const Motorcycles = () =>{
         ]
       };
 
-    const {getMotorcyclesByUser, userMotorcycles}:any = useContext(AuthContext)
+    const {getMotorcyclesByUser, userMotorcycles, deleteVehicle, setId}:any = useContext(AuthContext)
 
     const history = useHistory();
 
@@ -55,6 +56,11 @@ export const Motorcycles = () =>{
 
     useEffect(() => getMotorcyclesByUser(), [])
 
+    const deleteCar = (id: string) =>{
+      deleteVehicle(id)
+      location.reload()
+    }
+
     return(
         <MotorcycleSection>
             <div className="tittleDiv">
@@ -62,8 +68,8 @@ export const Motorcycles = () =>{
             </div>
               <Slider {...settings}>
                       {userMotorcycles?.map((motorcycle: any, index: any) =>(
-                          <div key={index} className="card"  onClick={() => {routeChange(motorcycle.id)}}>
-                              <div className="imgDiv">
+                          <div key={index} className="card">
+                              <div className="imgDiv"  onClick={() => {routeChange(motorcycle.id)}}>
                                   <img src={motorcycle.urlImage} alt="" />
                               </div>
                               <div className="divOne">
@@ -84,6 +90,10 @@ export const Motorcycles = () =>{
                                       </div>
                                       <p>R${motorcycle.price},00</p>
                                   </div>
+                              </div>
+                              <div className="divFourth">
+                                <button onClick={() => {setId(motorcycle.id)}} className="edit"><ModalEditAdButton/></button>
+                                <button onClick={() => {deleteCar(motorcycle.id)}} className="delete">Deletar</button>
                               </div>
                           </div>
                       )
