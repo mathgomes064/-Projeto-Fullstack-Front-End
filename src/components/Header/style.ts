@@ -44,7 +44,7 @@ align-items: center;
         position: relative;
         height: 20px;
         font-weight: bold;
-        
+        font-family: 'Inter', sans-serif;
         ::after{
             content: " ";
             width: 0%;

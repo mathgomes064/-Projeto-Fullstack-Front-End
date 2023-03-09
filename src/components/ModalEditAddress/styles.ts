@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   min-height: auto;
-  
+  font-family: 'Inter', sans-serif;
   background: none;
 
   form {

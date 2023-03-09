@@ -40,10 +40,13 @@ background-attachment: fixed;
         font-size: 44px;
         font-weight: bold;
         text-align: center;
+        color: var(--white);
     }
 
     .mainDiv > p{
         font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        color: var(--white);
     }
 
     .mainDiv > div{
@@ -60,8 +63,10 @@ background-attachment: fixed;
         border-radius: 4px;
         border: 1px solid var(--white);
         background-color: transparent;
-        font-weight: bold;
-
+        font-weight: 600;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        color: var(--white);
         :hover{
             background-color: var(--white);
             color: var(--black);

@@ -106,7 +106,7 @@ table {
 
 /* title variable */
 #title-1-700 {
-  color: var(--grey-0);
+  color: var(--grey-10);
   font-family: 'Lexend', sans-serif;
   font-weight: 700;
   font-size: 44px;
@@ -190,7 +190,7 @@ table {
 }
 
 #title-7-500 {
-  color: var(--grey-0);
+  color: var(--grey-1);
   font-family: 'Lexend', sans-serif;
   font-weight: 500;
   font-size: 16px;
