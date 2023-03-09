@@ -23,7 +23,7 @@ export const CommentsBoard = ({vehicle_id}) => {
        });
    }, [setComments]);
 
-    if(comments != undefined) {
+    if(comments.length > 0) {
       return (
         <>
           <Container>
@@ -35,6 +35,14 @@ export const CommentsBoard = ({vehicle_id}) => {
         </>
       );
     }
-    return <>Carregando...</>
+    
+    return (
+      <>
+        <Container>
+            <h1>Comentários</h1>
+            Sem comentários
+        </Container>
+      </>
+    );
     
   };

@@ -11,9 +11,7 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
     const history = useHistory() as any
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState({})
-    const [token, setToken] = useState(
-        JSON.parse(localStorage.getItem("@user_data:token") as string)
-    )
+    const [token, setToken] = useState(localStorage.getItem("@user_data:token"))
 
     const registerUser = (data: IUserCreate) =>{
         axios.post("http://localhost:3000/user", data)
@@ -26,7 +24,7 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
         .then((response)=>{
             localStorage.setItem(
                 "@user_data:token",
-                JSON.stringify(response.data.token)
+                response.data.token
             )
             setToken(response.data.token)
         })
