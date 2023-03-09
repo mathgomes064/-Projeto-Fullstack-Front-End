@@ -77,7 +77,6 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
         })
     }
 
-
     return(
         <AuthContext.Provider
         value={{
