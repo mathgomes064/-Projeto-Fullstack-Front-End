@@ -7,13 +7,19 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: var(--grey-0);
+  background: #0B0D0D;
   position: relative;
   bottom: 0px;
   margin-top: 100px;
   img{
     width: 153px;
     height: 26px;
+  }
+
+  span {
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    font-weight: 400;
   }
 
   @media (max-width: 550px){

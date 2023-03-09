@@ -9,6 +9,7 @@ export const RecPage = styled.section`
   }
 `;
 export const Container = styled.body`
+  font-family: 'Inter', sans-serif;
   background-color: var(--grey-8);
   margin: 0;
   display: flex;

@@ -5,7 +5,7 @@ export const Container = styled.div`
   min-height: auto;
   
   background: none;
-
+  font-family: 'Inter', sans-serif;
   form {
     
     display: flex;

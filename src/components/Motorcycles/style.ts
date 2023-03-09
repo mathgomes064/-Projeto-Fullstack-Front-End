@@ -6,7 +6,9 @@ height: 500px;
 margin-top: 100px;
 
 cursor: pointer;
-
+    body {
+        font-family: "'Inter', sans-serif";
+    }
     .tittleDiv{
         width: 94vw;
         height: 100px;
@@ -19,6 +21,7 @@ cursor: pointer;
         color: var(--black);
         margin-left: 10px;
         font-weight: bold;
+        font-family: "Lexend", sans-serif;
     }
 
     .card{
@@ -76,6 +79,7 @@ cursor: pointer;
         text-align: start;
         display: flex;
         align-items: center;
+        font-family: "Lexend", sans-serif;
     }
 
     .card > .divOne > p{
@@ -86,6 +90,7 @@ cursor: pointer;
         text-align: justify;   
         display: flex;
         align-items: center; 
+        font-family: "'Inter', sans-serif";
     }
 
     .card > .divTwo{
@@ -114,13 +119,15 @@ cursor: pointer;
     .card > .divTwo > div > p{
         font-size: 14px;
         color: var(--grey-2);
-        margin: 0px 5px 0px 5px 
+        margin: 0px 5px 0px 5px;
+        font-family: "'Inter', sans-serif";
     }
 
 
     .card > .divTwo > div > p{
         font-size: 14px;
         color: var(--grey-2);
+        font-family: "'Inter', sans-serif";
     }
 
     .card > .divTree{
@@ -156,12 +163,14 @@ cursor: pointer;
         justify-content: center;
         align-items: center;
         font-weight: bold;
+        font-family: "'Inter', sans-serif";
     }
 
     .card > .divTree > div > p{
         font-size: 16px;
         color: var(--grey-0);
         font-weight: bold;
+        font-weight: "'Lexend', sans-serif";
     }
 
     .card > .divFourth{

@@ -10,7 +10,7 @@ export const BlueSign = () =>{
             animate={{x:-10}}
             transition={{delay: 0.5}}
             >
-                <h1>Velocidade e experiência em um lugar feito para você</h1>
+                <h1 id="title-1-700">Velocidade e experiência em um lugar feito para você</h1>
                 <p>Um ambiente feito para você explorar o seu melhor</p>
                 <div>
                     <button>Carros</button>

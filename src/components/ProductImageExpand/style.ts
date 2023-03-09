@@ -10,7 +10,7 @@ export const Container = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-
+    font-family: 'Inter', sans-serif;
     border-radius: 4px;
 
     margin-top: 20px;
