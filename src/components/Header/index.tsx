@@ -8,7 +8,7 @@ import { UserContext } from "../../providers/user/userContext";
 import Modal from "react-modal";
 import ModalEditProfile from "../ModalEditProfile/ModalEditProfile";
 import ModalEditAddress from "../ModalEditAddress/ModalEditAddress";
-import InitialsAvatar from 'react-initials-avatar';
+import InitialsAvatar from "react-initials-avatar";
 import ModalSidebar from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
@@ -24,10 +24,9 @@ export const Header = () => {
   const [activeItemsDropdown, setActiveItemsDropdown] = useState(false);
   const [modalEditProfileIsOpen, setModalEditProfileIsOpen] = useState(false);
   const [modalEditAddressIsOpen, setModalEditAddressIsOpen] = useState(false);
-  const [open, setOpen] = useState(false)
-    const handleOpen = () => setOpen(true)
-    const handleClose = () => setOpen(false)
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const { token, getUserData, user, loading }: any = useContext(UserContext);
 
@@ -45,7 +44,7 @@ export const Header = () => {
     // top: "50%",
     // left: "50%",
     // transform: "translate(-50%, -50%)",
-}
+  };
 
   const customStyles: customStyleType = {
     content: {
@@ -72,7 +71,7 @@ export const Header = () => {
 
   function handleOpenEditProfileModal() {
     setModalEditProfileIsOpen(true);
-    setOpen(false)
+    setOpen(false);
   }
 
   function handleCloseEditProfileModal() {
@@ -81,7 +80,7 @@ export const Header = () => {
 
   function handleOpenEditAddressModal() {
     setModalEditAddressIsOpen(true);
-    setOpen(false)
+    setOpen(false);
   }
 
   function handleCloseEditAddressModal() {
@@ -93,103 +92,127 @@ export const Header = () => {
   }, []);
 
   return (
+    <HeadeMain>
+      <Modal
+        style={customStyles}
+        isOpen={modalEditProfileIsOpen}
+        onRequestClose={handleCloseEditProfileModal}
+      >
+        <ModalEditProfile
+          handleCloseEditProfileModal={handleCloseEditProfileModal}
+        />
+      </Modal>
+      <Modal
+        style={customStyles}
+        isOpen={modalEditAddressIsOpen}
+        onRequestClose={handleCloseEditAddressModal}
+      >
+        <ModalEditAddress
+          handleCloseEditAddressModal={handleCloseEditAddressModal}
+        />
+      </Modal>
 
-      <HeadeMain>
-        <Modal
-          style={customStyles}
-          isOpen={modalEditProfileIsOpen}
-          onRequestClose={handleCloseEditProfileModal}
-        >
-          <ModalEditProfile handleCloseEditProfileModal={handleCloseEditProfileModal} />
-        </Modal>
-        <Modal
-          style={customStyles}
-          isOpen={modalEditAddressIsOpen}
-          onRequestClose={handleCloseEditAddressModal}
-        >
-          <ModalEditAddress handleCloseEditAddressModal={handleCloseEditAddressModal} />
-        </Modal>
-
-        <div className="container">
-          <img src={logo} alt="" onClick={() => history.push("/")} />
-          <div className="buttonSection">
-            <VscThreeBars
-              onClick={() => setActiveItemsDropdown(true)}
-              className="dropdown"
-            />
-            {activeItemsDropdown ? (
-              <div className="userItemsDropDown" id="dropDown">
-                <ol>
-                  <li>Carros</li>
-                  <li>Motos</li>
-                  <li>Leilão </li>
-                  <li className="upperLine">
-                    <a href="">Fazer Login</a>
-                  </li>
-                  <button>Cadastrar</button>
-                </ol>
-              </div>
-            ) : (
-              ""
-            )}
-            <div className="productLinks">
-              <a id="" href="">Carros</a>
-              <a href="">Motos</a>
-              <a href="">Leilão</a>
+      <div className="container">
+        <img src={logo} alt="" onClick={() => history.push("/")} />
+        <div className="buttonSection">
+          <VscThreeBars
+            onClick={() => setActiveItemsDropdown(true)}
+            className="dropdown"
+          />
+          {activeItemsDropdown ? (
+            <div className="userItemsDropDown" id="dropDown">
+              <ol>
+                <li>Carros</li>
+                <li>Motos</li>
+                <li>Leilão </li>
+                <li className="upperLine">
+                  <a href="">Fazer Login</a>
+                </li>
+                <button>Cadastrar</button>
+              </ol>
             </div>
-            {token === null ? (
-              <div className="buttons">
-                <button onClick={() => history.push("/login")}>
-                  Fazer Login
-                </button>
-                <button onClick={() => history.push("/register")}>
-                  Cadastrar
-                </button>
-              </div>
-            ) : (
-              <div className="userInfo">
-                <div>
-                  <div className="profilePic">
-                    {loading? (
-                        <h1>carregando...</h1>
-                    ):
-                    (
-                      <h3><InitialsAvatar name={user.name}/></h3>
-                    )
-                    }
-                  </div>
-                  <h1 onMouseDown={handleOpen}>{user.name}</h1>
-                  <ModalSidebar
-                    open={open}
-                    onClose={handleClose}
-                  >
-                      <Fade in={open}>
-                        <Box sx={style}>
-                            <Container>
-                              <div className="outsideDiv">
-                                <div className="upperDiv">
-                                  <a onClick={()=>handleOpenEditProfileModal()} className="options">Editar Perfil</a>
-                                  <a onClick={()=>handleOpenEditAddressModal()} className="options">Editar Endereço</a>
-                                  <a className="options">Minhas Compras</a>
-                                  <a
-                                    className="options"
-                                    onClick={() => history.push("/user")}
-                                  >
-                                    Meu Perfil
-                                  </a>
-                                </div>
-                                <div className="lowerDiv">
-                                  <a className="options" onClick={() => logOff()}>
-                                    {" "}
-                                    Sair
-                                  </a>
-                                </div>
-                              </div>
-                            </Container>
-                        </Box>
-                      </Fade>
-                  </ModalSidebar>
-                  {/* {activeDropDown ? (
+          ) : (
+            ""
+          )}
+          <div className="productLinks">
+            <a id="" href="">
+              Carros
+            </a>
+            <a href="">Motos</a>
+            <a href="">Leilão</a>
+          </div>
+          {token === null ? (
+            <div className="buttons">
+              <button onClick={() => history.push("/login")}>
+                Fazer Login
+              </button>
+              <button onClick={() => history.push("/register")}>
+                Cadastrar
+              </button>
+            </div>
+          ) : (
+            <div className="userInfo">
+              <div>
+                <div className="profilePic">
+                  {loading ? (
+                    <h1>carregando...</h1>
+                  ) : (
+                    <h3 style={{ fontFamily: "'Inter', sans-serif" }}>
+                      <InitialsAvatar name={user.name} />
+                    </h3>
+                  )}
+                </div>
+                <h1 onMouseDown={handleOpen}>{user.name}</h1>
+                <ModalSidebar open={open} onClose={handleClose}>
+                  <Fade in={open}>
+                    <Box sx={style}>
+                      <Container>
+                        <div className="outsideDiv">
+                          <div className="upperDiv">
+                            <a
+                              style={{ fontFamily: "'Inter', sans-serif" }}
+                              onClick={() => handleOpenEditProfileModal()}
+                              className="options"
+                            >
+                              Editar Perfil
+                            </a>
+                            <a
+                              style={{ fontFamily: "'Inter', sans-serif" }}
+                              onClick={() => handleOpenEditAddressModal()}
+                              className="options"
+                            >
+                              Editar Endereço
+                            </a>
+                            <a
+                              style={{ fontFamily: "'Inter', sans-serif" }}
+                              className="options"
+                            >
+                              Minhas Compras
+                            </a>
+                            <a
+                              className="options"
+                              onClick={() => history.push("/user")}
+                              style={{ fontFamily: "'Inter', sans-serif" }}
+                            >
+                              Meu Perfil
+                            </a>
+                          </div>
+                          <div className="lowerDiv">
+                            <a
+                              style={{ fontFamily: "'Inter', sans-serif" }}
+                              className="options"
+                              onClick={() => logOff()}
+                            >
+                              {" "}
+                              Sair
+                            </a>
+                          </div>
+                        </div>
+                      </Container>
+                    </Box>
+                  </Fade>
+                </ModalSidebar>
+                {/* {activeDropDown ? (
                     <div className="userDropDown" id="dropDown">
                       <ol>
                         <li onClick={()=>handleOpenEditProfileModal()} className="options">Editar Perfil</li>
@@ -210,12 +233,11 @@ export const Header = () => {
                   ) : (
                     ""
                   )} */}
-                </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
-      </HeadeMain>
-
+      </div>
+    </HeadeMain>
   );
 };
