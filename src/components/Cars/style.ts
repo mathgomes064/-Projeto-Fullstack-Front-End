@@ -170,19 +170,20 @@ cursor: pointer;
         align-items: center;
     }
 
-    .card > .divFourth > button{
+    .card > .divFourth > .edit{
         display: flex;
         justify-content: center;
         align-items: center;
         height: 40px;
-        width: 70px;
+        width: 105px;
+        border: none;
+        background-color: transparent;
 
         :hover{
             transition: all 0.4s;
-            background-color: #5126ea;
-            border: 1.5px solid var(--brand-1);
-            border: none;
+            background-color: white;
             color: var(--white);
+            border: none;
         }
     }
 
@@ -192,6 +193,8 @@ cursor: pointer;
         border: 1.5px solid var(--brand-1);
         border-radius: 4px;
         font-weight: bold;
+        height: 40px;
+        width: 90px;
 
         :hover{
             transition: all 0.4s;

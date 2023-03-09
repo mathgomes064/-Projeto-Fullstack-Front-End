@@ -5,7 +5,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 40px;
-width: 70px;
+width: 100px;
 
 background-color: var(--white);
 color: var(--brand-1);
