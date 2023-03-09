@@ -1,20 +1,21 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import api from "../../service";
+import { CommentAutoButton } from "../CommentAutoButton";
 import { Container } from "./style"
 
-export const CommentCard = () => {
+export const CommentCard = ({productId}) => {
 
   const sendComment = () => {
     const data = {
       "description" : document.getElementById("textComment").value,
-	    "vehicle_id": "7c9b3017-caa9-4ea7-80ab-ae963411d882"
+	    "vehicle_id": productId
     }
     api
       .post("/comment/",data,{
         headers: { 
           "Content-type": "application/json",
-          "Authorization": `Bearer ${localStorage.getItem("token")}` }
+          "Authorization": localStorage.getItem("@user_data:token") }
       })
       .then((res) => {
         window.location.reload(false);
@@ -34,6 +35,12 @@ export const CommentCard = () => {
                 <input id="textComment"></input>
                 <button onClick={sendComment}>Enviar comentário</button>
             </div>
+            <div>
+              <CommentAutoButton text={"Gostei muito"}></CommentAutoButton>
+              <CommentAutoButton text={"Incrível"}></CommentAutoButton>
+              <CommentAutoButton text={"Recomendarei para meus amigos!"}></CommentAutoButton>
+            </div>
+
         </Container>
       </>
     );
