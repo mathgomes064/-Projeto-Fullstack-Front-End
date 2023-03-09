@@ -3,22 +3,34 @@ import car from "../../assets/car.jpeg";
 
 
 
-export const ProductImagesGalery = () => {
+export const ProductImagesGalery = ({vehicleImages}) => {
+    if (vehicleImages.length > 0){
+      return (
+        <>
+          <Container>
+            <div className="titleBox">
+              <h1>Fotos</h1> 
+            </div>
+            <div className="galeryBox">
+              <div className="galery">
+                {vehicleImages.map((pic: any, index: any) => (
+                  <img key={pic.id} src={pic.url} alt="image from the gallery"></img>
+                ))}
+              </div>        
+            </div>
+          </Container>
+        </>
+      );
+    }
     return (
       <>
         <Container>
           <div className="titleBox">
-            <h1>Fotos</h1>
+            <h1>Fotos</h1> 
           </div>
           <div className="galeryBox">
             <div className="galery">
-                
-                <img src={car} alt="image from the gallery"></img>
-                <img src={car} alt="image from the gallery"></img>
-                <img src={car} alt="image from the gallery"></img>
-                <img src={car} alt="image from the gallery"></img>
-                <img src={car} alt="image from the gallery"></img>
-                <img src={car} alt="image from the gallery"></img>
+                Sem imagens
             </div>        
           </div>
         </Container>

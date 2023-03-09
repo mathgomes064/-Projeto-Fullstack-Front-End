@@ -26,10 +26,12 @@ export const Product = () => {
         .get("/vehicles/"+params.id)
         .then((res) => {
           setProduct(res.data);
+          console.log(res.data)
+          console.log(product)
         })
         .catch((err) => {
             setMsgToShow("Nenhum carro encontrado.")
-        });
+        }); 
     }, [setProduct]);
     if(product != undefined){
       const prod_properties = {
@@ -52,9 +54,9 @@ export const Product = () => {
                      <CommentsBoard vehicle_id={product.id}/>
                   </div>
                   <div className="productPageleft">
-                     <ProductImagesGalery/>
-                     <AdvertisersCard/>
-                     <CommentCard/>
+                     <ProductImagesGalery vehicleImages={product.vehicleImages}/>
+                     <AdvertisersCard user={product.user}/>
+                     <CommentCard productId={product.id}/>
                   </div>
               </div>
               
