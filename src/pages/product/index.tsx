@@ -54,9 +54,9 @@ export const Product = () => {
                         <CommentsBoard vehicle_id={product.id}/>
                      </div>
                      <div className="productPageleft">
-                        <ProductImagesGalery/>
-                        <AdvertisersCard/>
-                        <CommentCard/>
+                        <ProductImagesGalery vehicleImages={product.vehicleImages}/>
+                        <AdvertisersCard user={product.user}/>
+                        <CommentCard productId={product.id}/>
                      </div>
                   </div>
               

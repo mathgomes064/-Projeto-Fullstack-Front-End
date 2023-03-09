@@ -4,7 +4,7 @@ import car from "../../assets/car.jpeg";
 
 
 export const ProductImagesGalery = ({vehicleImages}) => {
-    if (vehicleImages.length > 0){
+    if (vehicleImages!=undefined && vehicleImages.length > 0){
       return (
         <>
           <Container>
