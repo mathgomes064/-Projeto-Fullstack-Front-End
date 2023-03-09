@@ -7,6 +7,8 @@ import { DashboardCars } from "../../components/DashboardCars";
 import { DashboardMotorcycles } from "../../components/DashboardMotorcycles";
 
 export const Dashboard = () => {
+
+  
   return (
     <DashboardPage>
         <Header/>
