@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { IVehicleCreate, IVehicleProvidersProps, IVehicleUpdate } from "../../interfaces/vehicle";
 import { UserContext } from "../user/userContext";
@@ -7,9 +7,9 @@ import { UserContext } from "../user/userContext";
 export const AuthContext = createContext({})
 
 export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
-
     
     const {token, getUserData, user} : any = useContext(UserContext)
+
 
     const [allCars, setAllCar] = useState([])
     const [allMotorcycles, setAllMotorcycles] = useState([])
@@ -74,9 +74,8 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
             console.log(err)
         })
     }
-
     const getCarsByUser = () =>{
-        axios.get(`http://localhost:3000/vehicles/${user.id}/cars`, {
+        axios.get(`http://localhost:3000/vehicles/userCars`, {
             headers:{
                 Authorization: token
             },
@@ -90,7 +89,7 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
     }
 
     const getMotorcyclesByUser = () =>{
-        axios.get(`http://localhost:3000/vehicles/${user.id}/motorcycles`, {
+        axios.get(`http://localhost:3000/vehicles/userMotorcycles`, {
             headers:{
                 Authorization: token
             },

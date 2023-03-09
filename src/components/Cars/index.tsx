@@ -1,12 +1,13 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { CarSection } from "./style"
-import user from "../../assets/user.jpg"
+import userImg from "../../assets/user.jpg"
 import Slider from "react-slick"
 import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../providers/vehicle/vehicleContext";
 import { ModalEditAdButton } from "../ModalEditAd/ModalEditAd";
+import { UserContext } from "../../providers/user/userContext";
 
 export const Cars = () =>{
     const settings = {
@@ -55,7 +56,7 @@ export const Cars = () =>{
     const {getCarsByUser, userCars, deleteVehicle, setId}:any = useContext(AuthContext)
     
     useEffect(() => {getCarsByUser()}, [])
-    
+
     const deleteCar = (id: string) =>{
       deleteVehicle(id)
       location.reload()
@@ -78,7 +79,7 @@ export const Cars = () =>{
                                   </div>
                                   <div className="divTwo">
                                       <div>
-                                          <img src={user} alt="" />
+                                          <img src={userImg} alt="" />
                                           <p>{car.owner}</p>
                                       </div>
                                   </div>

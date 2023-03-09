@@ -14,6 +14,7 @@ export const UserProvider = ({children}: IUserProvidersProps) =>{
     const [token, setToken] = useState(localStorage.getItem("@user_data:token"))
 
     const registerUser = (data: IUserCreate) =>{
+        console.log(data)
         axios.post("http://localhost:3000/user", data)
         .then((response) => setTimeout(history.push("/login"), 5000))
         .catch((err) => console.log(err))
