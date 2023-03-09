@@ -92,7 +92,7 @@ export const Cars = () =>{
                                       </div>
                                   </div>
                                   <div className="divFourth">
-                                    <button onClick={() => {setId(car.id)}}><ModalEditAdButton/></button>
+                                    <button className="edit" onClick={() => {setId(car.id)}}><ModalEditAdButton/></button>
                                     <button onClick={() => {deleteCar(car.id)}} className="delete">Deletar</button>
                                   </div>
                               </div>)

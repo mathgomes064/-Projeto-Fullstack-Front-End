@@ -175,14 +175,15 @@ cursor: pointer;
         justify-content: center;
         align-items: center;
         height: 40px;
-        width: 70px;
+        width: 105px;
+        border: none;
+        background-color: transparent;
 
         :hover{
             transition: all 0.4s;
-            background-color: #5126ea;
-            border: 1.5px solid var(--brand-1);
-            border: none;
+            background-color: white;
             color: var(--white);
+            border: none;
         }
     }
 
