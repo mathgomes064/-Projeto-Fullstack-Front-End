@@ -24,7 +24,7 @@ cursor: pointer;
     .card{
         background-color: var(--white);
         max-width: 300px;
-        height: 370px;
+        height: 400px;
         margin: 0px 10px 0px 10px;
 
         :hover{
@@ -163,4 +163,43 @@ cursor: pointer;
         color: var(--grey-0);
         font-weight: bold;
     }
+
+    .card > .divFourth{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card > .divFourth > button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 70px;
+
+        :hover{
+            transition: all 0.4s;
+            background-color: #5126ea;
+            border: 1.5px solid var(--brand-1);
+            border: none;
+            color: var(--white);
+        }
+    }
+
+    .card > .divFourth > .delete{
+        background-color: var(--white);
+        color: var(--brand-1);
+        border: 1.5px solid var(--brand-1);
+        border-radius: 4px;
+        font-weight: bold;
+
+        :hover{
+            transition: all 0.4s;
+            background-color: red;
+            border: 1.5px solid var(--brand-1);
+            border: none;
+            color: var(--white);
+        }
+
+    }  
 `

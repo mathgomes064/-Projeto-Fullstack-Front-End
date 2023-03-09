@@ -1,13 +1,14 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { IVehicleCreate, IVehicleProvidersProps } from "../../interfaces/vehicle";
+import { IVehicleCreate, IVehicleProvidersProps, IVehicleUpdate } from "../../interfaces/vehicle";
 import { UserContext } from "../user/userContext";
 
 export const AuthContext = createContext({})
 
 export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
 
+    
     const {token, getUserData, user} : any = useContext(UserContext)
 
     const [allCars, setAllCar] = useState([])
@@ -15,7 +16,7 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
     const [userCars, setUserCars] = useState([])
     const [userMotorcycles, setUserMotorcycles] = useState([])
     const [vehicle, setVehicle] = useState<IVehicleCreate[]>([])
-
+    
     const registerVehicle = (data: IVehicleCreate) =>{
         setVehicle([data, ...vehicle])
         axios.post("http://localhost:3000/vehicles", data, {
@@ -28,7 +29,32 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
         })
         .catch((err) => console.log(err))
     }
+    
+    const [id, setId] = useState("")
+    const updateVehicle = (data: IVehicleUpdate, id: string) =>{
+        axios.patch(`http://localhost:3000/vehicles/${id}`, data, {
+            headers: {
+                Authorization: token,
+            },
+        })
+        .then((response) =>{
+            getUserData()
+        })
+        .catch((err) => console.log(err))
+    }
 
+    const deleteVehicle = (id: string) =>{
+        axios.delete(`http://localhost:3000/vehicles/${id}`, {
+            headers: {
+                Authorization: token
+            }
+        })
+        .then((response) =>{
+            getUserData()
+        })
+        .catch((err) => console.log(err))
+    }
+    
     const getCars = () =>{
         axios.get("http://localhost:3000/vehicles/cars")
         .then((response) => {
@@ -89,6 +115,10 @@ export const VehicleProvider = ({children}: IVehicleProvidersProps) =>{
             getMotorcyclesByUser,
             allCars,
             allMotorcycles,
+            id,
+            setId,
+            deleteVehicle,
+            updateVehicle,
         }}>
             {children}
         </AuthContext.Provider>
