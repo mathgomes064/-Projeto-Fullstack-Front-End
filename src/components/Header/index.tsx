@@ -41,9 +41,6 @@ export const Header = () => {
 
   const style = {
     position: "absolute",
-    // top: "50%",
-    // left: "50%",
-    // transform: "translate(-50%, -50%)",
   };
 
   const customStyles: customStyleType = {
@@ -158,7 +155,7 @@ export const Header = () => {
                     <img src={userImage} alt="imagem de perfil" />
                   ) : (
                     <h3 style={{ fontFamily: "'Inter', sans-serif" }}>
-                      <InitialsAvatar name={user.name} />
+                      <InitialsAvatar className="profilePic" name={user.name} />
                     </h3>
                   )}
                 </div>
@@ -212,27 +209,6 @@ export const Header = () => {
                     </Box>
                   </Fade>
                 </ModalSidebar>
-                {/* {activeDropDown ? (
-                    <div className="userDropDown" id="dropDown">
-                      <ol>
-                        <li onClick={()=>handleOpenEditProfileModal()} className="options">Editar Perfil</li>
-                        <li onClick={()=>handleOpenEditAddressModal()} className="options">Editar Endereço</li>
-                        <li className="options">Minhas Compras</li>
-                        <li
-                          className="options"
-                          onClick={() => history.push("/user")}
-                        >
-                          Meu Perfil
-                        </li>
-                        <li className="options" onClick={() => logOff()}>
-                          {" "}
-                          Sair
-                        </li>
-                      </ol>
-                    </div>
-                  ) : (
-                    ""
-                  )} */}
               </div>
             </div>
           )}

@@ -55,6 +55,7 @@ export const Motorcycles = () =>{
     }
 
     useEffect(() => getMotorcyclesByUser(), [])
+    console.log(userMotorcycles)
 
     const deleteCar = (id: string) =>{
       deleteVehicle(id)
