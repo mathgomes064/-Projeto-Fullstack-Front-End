@@ -19,6 +19,8 @@ export const Container = styled.section`
     background-color: transparent;
   }
 
+ 
+
   .error{
     color: red;
     height: 25px;
@@ -97,6 +99,89 @@ export const Container = styled.section`
     flex-direction: row;
     
   }
+
+  .divInput{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 96%;
+        height: 40px;
+        background-color: transparent;
+        outline: 0;
+        padding-left: 10px;
+        color: black;
+        border: 1px solid #adb5bd;
+        border-radius: 4px;
+        margin-top: 40px;
+
+        ::placeholder{
+        }
+    }
+
+    .divInput > input{
+        height: 80%;
+        width: 90%;
+        background-color: transparent;
+        outline: 0;
+        border: none;
+
+        ::placeholder{
+        }
+    }
+
+    input{
+        width: 97%;
+        height: 40px;
+        background-color: transparent;
+        outline: 0;
+        border: 1px solid #adb5bd;
+        border-radius: 4px;
+
+        ::placeholder{
+        }
+    }
+
+    .divInput-2{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 96%;
+        height: 40px;
+        background-color: transparent;
+        outline: 0;
+        padding-left: 10px;
+        color: black;
+        border: 1px solid #adb5bd;
+        border-radius: 4px;
+        margin-top: 40px;
+
+
+        ::placeholder{
+        }
+    }
+
+    .divInput-2 > input{
+        height: 80%;
+        width: 90%;
+        background-color: transparent;
+        outline: 0;
+        border: none;
+
+        ::placeholder{
+        }
+    }
+
+    input{
+        width: 97%;
+        height: 40px;
+        background-color: transparent;
+        outline: 0;
+        border: 1px solid #adb5bd;
+        border-radius: 4px;
+
+        ::placeholder{
+        }
+    }
 
   
 `;

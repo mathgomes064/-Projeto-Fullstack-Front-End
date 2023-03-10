@@ -3,11 +3,15 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../providers/user/userContext";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 
 
 export const LoginCard = () => {
+  const [showPassword, setShowPassword] = useState(false)
+
   const schema = yup.object().shape({
     email: yup.string().required("Email é obrigatório"),
     password: yup.string().required("Senha é obrigatório"),
@@ -31,18 +35,27 @@ export const LoginCard = () => {
       <h1 id="title-5-500">Login</h1>
       <div id="wrapper-form">
         <form onSubmit={handleSubmit(loginUser)}>
-          <label>Usuário</label>
+          <label>Email</label>
           <input
             type="text"
-            placeholder="Digitar usuário"
+            placeholder="Digitar email"
             {...register("email")}
           />
           <label>Senha</label>
-          <input
-            type="password"
-            placeholder="Digitar senha"
-            {...register("password")}
-          />
+          <div className="divInput">
+            <input placeholder="Digitar senha" type={showPassword? "text" : "password"} {...register("password")}/>
+            {showPassword ? (
+            <AiFillEye
+            onClick={() => setShowPassword(!showPassword)}
+            className="olhoAberto"
+            />
+            ) : (
+            <AiFillEyeInvisible
+                onClick={() => setShowPassword(!showPassword)}
+                className="olhoAberto"
+            />
+            )}
+          </div>
           <a  onClick={() => {routeChange()}} className= "Password"id="text-2-500">Esqueci minha senha</a>
           <button  id="button-blue-login-big" type="submit">
             Entrar

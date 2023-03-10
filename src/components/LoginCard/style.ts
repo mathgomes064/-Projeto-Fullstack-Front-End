@@ -35,5 +35,45 @@ export const Container = styled.section`
     cursor: pointer;
   }
 
+  .divInput{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 96%;
+        height: 40px;
+        background-color: transparent;
+        outline: 0;
+        padding-left: 10px;
+        color: black;
+        border: 1px solid #adb5bd;
+        border-radius: 4px;
+
+        ::placeholder{
+        }
+    }
+
+    .divInput > input{
+        height: 80%;
+        width: 90%;
+        background-color: transparent;
+        outline: 0;
+        border: none;
+
+        ::placeholder{
+        }
+    }
+
+    input{
+        width: 97%;
+        height: 40px;
+        background-color: transparent;
+        outline: 0;
+        border: 1px solid #adb5bd;
+        border-radius: 4px;
+
+        ::placeholder{
+        }
+    }
+
   
 `;
