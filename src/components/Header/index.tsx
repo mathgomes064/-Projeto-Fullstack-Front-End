@@ -1,6 +1,5 @@
 import { Container, HeadeMain } from "./style";
 import logo from "../../assets/logo.png";
-// import userImage from "../../assets/user.jpg";
 import userImage from "../../assets/6915987.png"
 import { VscThreeBars } from "react-icons/vsc";
 import { useContext, useEffect, useState } from "react";
