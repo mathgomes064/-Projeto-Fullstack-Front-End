@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { UserContext } from "../../providers/user/userContext";
 import { Container } from "./style";
-import InitialsAvatar from 'react-initials-avatar';
+import InitialsAvatar from 'react-initials-avatar'
 
 export const SellerCard = ({handleOpenModal}:any) => {
 

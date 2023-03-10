@@ -8,7 +8,6 @@ import { UserContext } from "../../providers/user/userContext";
 import Modal from "react-modal";
 import ModalEditProfile from "../ModalEditProfile/ModalEditProfile";
 import ModalEditAddress from "../ModalEditAddress/ModalEditAddress";
-import InitialsAvatar from "react-initials-avatar";
 import ModalSidebar from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
@@ -155,7 +154,6 @@ export const Header = () => {
                     <img src={userImage} alt="imagem de perfil" />
                   ) : (
                     <h3 style={{ fontFamily: "'Inter', sans-serif" }}>
-                      <InitialsAvatar className="profilePic" name={user.name} />
                     </h3>
                   )}
                 </div>
