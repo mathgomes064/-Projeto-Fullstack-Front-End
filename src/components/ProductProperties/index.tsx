@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../service";
 
-export const ProductProperties = ({ prod_properties }: any) => {
+export const ProductProperties = ({ prod_properties, user }: any) => {
   const params = useParams();
 
   const [product, setProduct] = useState()
@@ -39,9 +39,10 @@ export const ProductProperties = ({ prod_properties }: any) => {
             </div>
           </div>
           <div className="propertiesBottom">
-            {product.user.cellPhone && (
+            {user.cellPhone && (
               <a
-                href={`https://api.whatsapp.com/send?phone=+55${product.user.cellPhone}&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20portf%C3%B3lio%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}
+                href={`https://api.whatsapp.com/send?phone=+55${user.cellPhone}&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20anuncio%20na%20internet%2C%20gostaria%20de%20saber%20mais%20sobre%20seu%20veículo!`}
+                target="_blank"
               >
                 Comprar
               </a>

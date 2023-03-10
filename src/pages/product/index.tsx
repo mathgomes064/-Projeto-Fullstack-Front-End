@@ -52,7 +52,8 @@ export const Product = () => {
          "title": product.title, 
          "year": product.year, 
          "mileage": product.mileage, 
-         "price": product.price
+         "price": product.price,
+         "user": product.user
       }
       return (
          <Container>
@@ -62,7 +63,7 @@ export const Product = () => {
                   <div className="body">
                      <div className="productPageright" >
                         <ProductImageExpand img_src={product.urlImage}/> 
-                        <ProductProperties prod_properties={prod_properties}/>
+                        <ProductProperties prod_properties={prod_properties} user={product.user}/>
                         <ProductDescription desc={product.description}/>
                         <CommentsBoard vehicle_id={product.id}/>
                      </div>
