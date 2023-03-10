@@ -6,9 +6,15 @@ import * as yup from "yup"
 import { IUserCreate, IUserRaw } from "../../interfaces/user";
 import { UserContext } from "../../providers/user/userContext";
 import { useHistory } from "react-router-dom";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillEye } from "react-icons/ai";
 
 export const RegisterCard = () => {
   const [userType, setUserType] = useState(false);
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
+
     
   const formSchema = yup.object().shape({
     name: yup.string().required("Nome obrigatório"),
@@ -142,14 +148,35 @@ export const RegisterCard = () => {
             type="button"
             onClick={() => setUserType(true)}>Anunciante</button>
           </div>
+          <div className="divInput">
+            <input placeholder="Digitar senha" type={showPassword? "text" : "password"} {...register("password")}/>
+            {showPassword ? (
+            <AiFillEye
+            onClick={() => setShowPassword(!showPassword)}
+            className="olhoAberto"
+            />
+            ) : (
+            <AiFillEyeInvisible
+                onClick={() => setShowPassword(!showPassword)}
+                className="olhoAberto"
+            />
+            )}
+          </div>
 
-          <label>Senha</label>
-          <input type="password" placeholder="Digitar senha" {...register("password")}/>
-          <span className="error">{errors.password?.message}</span>
-
-          <label>Confirmar Senha</label>
-          <input type="password" placeholder="Digitar senha" {...register("confirmPassword")}/>
-          <span className="error">{errors.confirmPassword?.message}</span>
+          <div className="divInput-2">
+            <input placeholder="Confirmar senha" type={showConfirmPassword? "text" : "password"} {...register("confirmPassword")}/>
+            {showConfirmPassword ? (
+            <AiFillEye
+            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            className="olhoAberto"
+            />
+            ) : (
+            <AiFillEyeInvisible
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="olhoAberto"
+            />
+            )}
+          </div>
           <div id="wrapper-button">
             <button type="submit" id="button-blue-login-big">
                 Finalizar Cadastro
