@@ -1,6 +1,7 @@
 import { Container, HeadeMain } from "./style";
 import logo from "../../assets/logo.png";
-import userImage from "../../assets/user.jpg";
+// import userImage from "../../assets/user.jpg";
+import userImage from "../../assets/userImage.png"
 import { VscThreeBars } from "react-icons/vsc";
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -155,7 +156,7 @@ export const Header = () => {
               <div>
                 <div className="profilePic">
                   {loading ? (
-                    <h1>carregando...</h1>
+                    <img src={userImage} alt="imagem de perfil" />
                   ) : (
                     <h3 style={{ fontFamily: "'Inter', sans-serif" }}>
                       <InitialsAvatar name={user.name} />

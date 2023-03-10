@@ -72,22 +72,32 @@ export const DashboardCars = () => {
               <img src={car.urlImage} alt="" />
             </div>
             <div className="divOne">
-              <h1>{car.title}</h1>
-              <p>{car.description}</p>
+              <h1 style={{ fontFamily: "'Lexend', sans-serif" }}>
+                {car.title}
+              </h1>
+              <p style={{ fontFamily: "'Inter', sans-serif" }}>
+                {car.description}
+              </p>
             </div>
             <div className="divTwo">
               <div>
                 <img src={user} alt="" />
-                <p>{car.owner}</p>
+                <p style={{ fontFamily: "'Inter', sans-serif" }}>{car.owner}</p>
               </div>
             </div>
             <div className="divTree">
               <div>
                 <div>
-                  <span>{car.mileage}Km</span>
-                  <span>{car.year}</span>
+                  <span style={{ fontFamily: "'Inter', sans-serif" }}>
+                    {car.mileage}Km
+                  </span>
+                  <span style={{ fontFamily: "'Inter', sans-serif" }}>
+                    {car.year}
+                  </span>
                 </div>
-                <p>R${car.price},00</p>
+                <p style={{ fontFamily: "'Lexend', sans-serif" }}>
+                  R${car.price},00
+                </p>
               </div>
             </div>
           </div>

@@ -140,7 +140,7 @@ align-items: center;
     }
 
     .profilePic{
-        background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
+        
         width: 45px;
         height: 45px;
         border-radius: 50px;
@@ -154,6 +154,10 @@ align-items: center;
         font-size: 15px;
         font-weight: 500;
         text-align: center;
+    }
+
+    .profilePic > img {
+        width: 35px;
     }
 
     .userDropDown{
