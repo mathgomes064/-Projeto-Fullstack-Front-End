@@ -27,7 +27,7 @@ export const UserPage = () => {
   function handleCloseModal() {
     setIsOpen(false);
   }
-
+ 
   VehicleProvider
 
   const customStyles: customStyleType = {
