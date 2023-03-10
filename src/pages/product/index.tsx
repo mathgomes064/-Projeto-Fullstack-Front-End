@@ -8,6 +8,8 @@ import { ProductImagesGalery } from "../../components/ProductImagesGalery";
 import { ProductProperties } from "../../components/ProductProperties";
 import { AdvertisersCard } from "../../components/Advertiser'sCard";
 import { ProductPage } from "./style";
+import Modal from "react-modal";
+
 
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
@@ -17,6 +19,17 @@ import { Container } from "react-bootstrap";
 
 
 export const Product = () => {
+   const [modalIsOpen, setIsOpen] = useState(false);
+  const [customStyle, setCustomStyle] = useState<customStyleType>();
+
+  function handleOpenModal() {
+    setIsOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsOpen(false);
+  }
+
    const params = useParams();
 
    const [product, setProduct] = useState()

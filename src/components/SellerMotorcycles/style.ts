@@ -1,20 +1,17 @@
 import styled from "styled-components"
 
-export const CarSection = styled.section`
+export const MotorcycleSection = styled.section`
 width: 94vw;
 height: 500px;
 margin-top: 100px;
 
 cursor: pointer;
-    body {
-        font-family: 'Inter', sans-serif;
-    }
+
     .tittleDiv{
         width: 94vw;
         height: 100px;
         display: flex;
-        align-items: center;
-        font-family: "Lexend", sans-serif;
+        align-items: center
     }
 
     .tittleDiv > h1{
@@ -27,9 +24,9 @@ cursor: pointer;
     .card{
         background-color: var(--white);
         max-width: 300px;
-        height: 410px;
+        height: 400px;
         margin: 0px 10px 0px 10px;
-        
+
         :hover{
             border-bottom: 5px solid #4529e6;
         }
@@ -79,7 +76,6 @@ cursor: pointer;
         text-align: start;
         display: flex;
         align-items: center;
-        font-family: "Lexend", sans-serif;
     }
 
     .card > .divOne > p{
@@ -90,7 +86,6 @@ cursor: pointer;
         text-align: justify;   
         display: flex;
         align-items: center; 
-        font-family: 'Inter', sans-serif;
     }
 
     .card > .divTwo{
@@ -119,15 +114,13 @@ cursor: pointer;
     .card > .divTwo > div > p{
         font-size: 14px;
         color: var(--grey-2);
-        margin: 0px 5px 0px 5px;
-        font-family: 'Inter', sans-serif;
+        margin: 0px 5px 0px 5px 
     }
 
 
     .card > .divTwo > div > p{
         font-size: 14px;
         color: var(--grey-2);
-        font-family: 'Inter', sans-serif;
     }
 
     .card > .divTree{
@@ -163,14 +156,12 @@ cursor: pointer;
         justify-content: center;
         align-items: center;
         font-weight: bold;
-        font-family: 'Inter', sans-serif;
     }
 
     .card > .divTree > div > p{
         font-size: 16px;
         color: var(--grey-0);
         font-weight: bold;
-        font-family: "Lexend", sans-serif;
     }
 
     .card > .divFourth{
@@ -179,20 +170,19 @@ cursor: pointer;
         align-items: center;
     }
 
-    .card > .divFourth > .edit{
+    .card > .divFourth > button{
         display: flex;
         justify-content: center;
         align-items: center;
         height: 40px;
-        width: 105px;
-        border: none;
-        background-color: transparent;
+        width: 70px;
 
         :hover{
             transition: all 0.4s;
-            background-color: white;
-            color: var(--white);
+            background-color: #5126ea;
+            border: 1.5px solid var(--brand-1);
             border: none;
+            color: var(--white);
         }
     }
 
@@ -202,8 +192,6 @@ cursor: pointer;
         border: 1.5px solid var(--brand-1);
         border-radius: 4px;
         font-weight: bold;
-        height: 40px;
-        width: 90px;
 
         :hover{
             transition: all 0.4s;

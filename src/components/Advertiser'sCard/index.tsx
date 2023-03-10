@@ -6,9 +6,10 @@ import { Container } from "./style"
   export const AdvertisersCard = ({user}) => {
 
     const history = useHistory();
- 
+
+    
     const routeChange = (id) =>{ 
-      let path = `user/`+ id; 
+      let path = `../user/`+ id; 
       history.push(path);
     }
       return (
@@ -21,7 +22,7 @@ import { Container } from "./style"
               </div>
               <div className="descriptionCard">
                   <p>{user.description}</p>
-                  <button>Ver todos anúncios</button>
+                  <button onClick={() => { routeChange(user.id) }}>Ver todos anúncios</button>
               </div>   
           </Container>
         </>

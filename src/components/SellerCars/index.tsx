@@ -1,15 +1,11 @@
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { CarSection } from "./style"
-import userImg from "../../assets/user.jpg"
+import user from "../../assets/user.jpg"
 import Slider from "react-slick"
-import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../../providers/vehicle/vehicleContext";
-import { ModalEditAdButton } from "../ModalEditAd/ModalEditAd";
-import { UserContext } from "../../providers/user/userContext";
 
-export const Cars = () =>{
+export const SellerCars = ({cars}) =>{
     const settings = {
         dots: true,
         infinite: false,
@@ -52,23 +48,16 @@ export const Cars = () =>{
       let path = `product/`+ id; 
       history.push(path);
     }
-
-    const {getCarsByUser, userCars, deleteVehicle, setId}:any = useContext(AuthContext)
     
-    useEffect(() => {getCarsByUser()}, [])
-
-    const deleteCar = (id: string) =>{
-      deleteVehicle(id)
-      location.reload()
-    }
     
     return(
         <CarSection>
             <div className="tittleDiv">
                 <h1>Carros</h1>
             </div>
+              { (cars.length > 0) ?
               <Slider {...settings}>
-                  {userCars?.map((car: any, index: any) => (
+                  {cars?.map((car: any, index: any) => (
                               <div key={index} className="card" >
                                   <div onClick={() => {routeChange(car.id)}} className="imgDiv">
                                       <img src={car.urlImage} alt="" />
@@ -79,7 +68,7 @@ export const Cars = () =>{
                                   </div>
                                   <div className="divTwo">
                                       <div>
-                                          <img src={userImg} alt="" />
+                                          <img src={user} alt="" />
                                           <p>{car.owner}</p>
                                       </div>
                                   </div>
@@ -92,13 +81,11 @@ export const Cars = () =>{
                                           <p>R${car.price},00</p>
                                       </div>
                                   </div>
-                                  <div className="divFourth">
-                                    <button className="edit" onClick={() => {setId(car.id)}}><ModalEditAdButton/></button>
-                                    <button onClick={() => {deleteCar(car.id)}} className="delete">Deletar</button>
-                                  </div>
                               </div>)
                       )}
               </Slider> 
+              : <>Nenhum carro</>
+              }
         </CarSection>
     )
 }

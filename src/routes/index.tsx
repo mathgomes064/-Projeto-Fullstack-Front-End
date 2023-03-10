@@ -3,6 +3,7 @@ import { Dashboard } from "../pages/dashboard"
 
 import { Product } from "../pages/product"
 import { UserPage } from "../pages/userPage"
+import { SellerPage } from "../pages/sellerPage"
 
 import { Login } from "../pages/login"
 import { Register } from "../pages/register"
@@ -15,6 +16,7 @@ export const RoutesMain = () =>{
             <Route exact path="/" component={Dashboard}/>
             <Route exact path="/product/:id?" component={Product}/>
             <Route exact path="/user" component={UserPage}/>
+            <Route exact path="/user/:id?" component={SellerPage}/>
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/recuperacao" component={RecPassword}/>
