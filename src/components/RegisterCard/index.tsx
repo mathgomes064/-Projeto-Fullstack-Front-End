@@ -144,11 +144,11 @@ export const RegisterCard = () => {
           </div>
 
           <label>Senha</label>
-          <input type="text" placeholder="Digitar senha" {...register("password")}/>
+          <input type="password" placeholder="Digitar senha" {...register("password")}/>
           <span className="error">{errors.password?.message}</span>
 
           <label>Confirmar Senha</label>
-          <input type="text" placeholder="Digitar senha" {...register("confirmPassword")}/>
+          <input type="password" placeholder="Digitar senha" {...register("confirmPassword")}/>
           <span className="error">{errors.confirmPassword?.message}</span>
           <div id="wrapper-button">
             <button type="submit" id="button-blue-login-big">

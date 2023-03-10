@@ -80,6 +80,10 @@ export const HeadeMain = styled.header`
     font-size: 16px;
     cursor: pointer;
     font-family: "Inter", sans-serif;
+
+    :hover{
+      background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0)
+    }
   }
 
   .register-button:hover {
@@ -89,6 +93,7 @@ export const HeadeMain = styled.header`
     }
 
   .login-button {
+    position: relative;
     margin: 0px 23px;
     border: none;
     background-color: white;
@@ -96,9 +101,16 @@ export const HeadeMain = styled.header`
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 16px;
-
-    
-
+    cursor: pointer;
+    ::after {
+      content: " ";
+      width: 0%;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.5s ease-in-out;
+    }
 
     :hover::after {
       width: 100%;
@@ -159,6 +171,7 @@ export const HeadeMain = styled.header`
   }
 
   .profilePic {
+    background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
     width: 45px;
     height: 45px;
     border-radius: 50px;
