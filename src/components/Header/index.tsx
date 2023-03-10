@@ -1,7 +1,6 @@
 import { Container, HeadeMain } from "./style";
 import logo from "../../assets/logo.png";
-// import userImage from "../../assets/user.jpg";
-import userImage from "../../assets/userImage.png"
+import userImage from "../../assets/6915987.png"
 import { VscThreeBars } from "react-icons/vsc";
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -144,10 +143,10 @@ export const Header = () => {
           </div>
           {token === null ? (
             <div className="buttons">
-              <button onClick={() => history.push("/login")}>
+              <button className="login-button" onClick={() => history.push("/login")}>
                 Fazer Login
               </button>
-              <button onClick={() => history.push("/register")}>
+              <button className="register-button" onClick={() => history.push("/register")}>
                 Cadastrar
               </button>
             </div>
