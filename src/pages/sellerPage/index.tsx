@@ -27,6 +27,9 @@ export const SellerPage = () => {
       api
         .get("/user/"+params.id)
         .then((res) => {
+          console.log(seller != undefined)
+
+          console.log(seller.vehicle != undefined)
           setSeller(res.data);
         })
         .catch((err) => {
@@ -58,8 +61,10 @@ export const SellerPage = () => {
       bottom: 0,
       backgroundColor: "rgba(18, 18, 20, 0.5)",
     },
+    
   };
   if (seller != undefined && seller.vehicle != undefined){
+    console.log(seller.vehicle)
     return (
       <>
         <Header />
