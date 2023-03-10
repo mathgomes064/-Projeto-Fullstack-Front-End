@@ -27,9 +27,6 @@ export const SellerPage = () => {
       api
         .get("/user/"+params.id)
         .then((res) => {
-          console.log(seller != undefined)
-
-          console.log(seller.vehicle != undefined)
           setSeller(res.data);
         })
         .catch((err) => {
@@ -63,7 +60,7 @@ export const SellerPage = () => {
     },
     
   };
-  if (seller != undefined && seller.vehicle != undefined){
+  if (seller != undefined || seller.vehicle != undefined){
     console.log(seller.vehicle)
     return (
       <>
