@@ -67,6 +67,14 @@ export const Motorcycles = () =>{
             <div className="tittleDiv">
                 <h1>Motos</h1>
             </div>
+            {userMotorcycles.length ===0?
+            (
+              <div className="signDiv">
+                <h1>Nenhuma moto resgistrado...</h1>
+              </div>
+            )
+            :
+            (
               <Slider {...settings}>
                       {userMotorcycles?.map((motorcycle: any, index: any) =>(
                           <div key={index} className="card">
@@ -100,6 +108,8 @@ export const Motorcycles = () =>{
                       )
                   )}
               </Slider>
+            )
+            }
         </MotorcycleSection>
     )
 }

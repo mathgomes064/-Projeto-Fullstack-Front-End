@@ -7,6 +7,7 @@ export const HeadeMain = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #191B21;
 
   .container {
     width: 95%;
@@ -37,7 +38,7 @@ export const HeadeMain = styled.header`
   }
 
   .productLinks > a {
-    color: var(--grey-2);
+    color: var(--white);
     font-size: 16px;
     text-decoration: none;
     position: relative;
@@ -56,7 +57,7 @@ export const HeadeMain = styled.header`
 
     :hover::after {
       width: 100%;
-      background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
+      background-image: linear-gradient(to bottom right, #ffff, #ffff);
     }
   }
 
@@ -146,7 +147,7 @@ export const HeadeMain = styled.header`
   }
 
   .userInfo > div > h1 {
-    color: var(--grey-2);
+    color: var(--white);
     font-size: 17px;
     text-decoration: none;
     position: relative;
@@ -166,7 +167,7 @@ export const HeadeMain = styled.header`
 
     :hover::after {
       width: 100%;
-      background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
+      background-image: linear-gradient(to bottom right, #ffff, #ffff);
     }
   }
 
@@ -333,9 +334,10 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-image: linear-gradient(to bottom right, #191B21, #5126ea);
   color: black;
   gap: 30px;
+  border: none;
 
   .outsideDiv {
     width: 100%;
@@ -343,15 +345,61 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-  }
 
-  .upperDiv {
-    width: 100%;
-    height: 50%;
+  }
+  
+  .pictureAndOptions{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+    height: 50%;
+    
+    .profilePic {
+      background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
+      width: 85px;
+      height: 85px;
+      border-radius: 50px;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+
+  .upperDiv {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--white);
+
+    div{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+      height: 30px;
+
+      div{
+        width: auto;
+        
+        a{
+          margin-left: 10px;
+        }
+
+      }
+    }
   }
 
   .lowerDiv {
@@ -361,6 +409,25 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: var(--white);
+
+    div{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 70%;
+      height: 30px;
+
+      div{
+        width: auto;
+        
+        a{
+          margin-left: 10px;
+        }
+
+      }
+    }
   }
 
   div {
@@ -376,24 +443,31 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    height: 50px;
+    width: auto;
+    height: 30px;
     text-align: center;
-    color: var(--brand-2);
+    color: var(--white);
     font-size: 16px;
     text-decoration: none;
     position: relative;
     cursor: pointer;
-    border-radius: 4px;
-    border: 1.5px solid var(--brand-1);
     font-weight: bold;
 
-    :hover {
-      transition: all 0.4s;
-      background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
-      border: 1.5px solid var(--brand-1);
-      color: var(--white);
-      border: none;
+    ::after {
+      content: " ";
+      width: 0%;
+      height: 2px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: 0.3s ease-in-out;
     }
+
+    :hover::after {
+      width: 100%;
+      background-image: linear-gradient(to bottom right, #ffff, #ffff);
+    }
+
+
   }
 `;

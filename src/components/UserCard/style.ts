@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   section {
-  background-color: white;
+  background-color: #191B21;
   margin: 65px 20px 31px 20px;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@ export const Container = styled.div`
 }
 
 #profile-name > h3 {
-  color: var(--grey-1);
+  color: var(--white);
   font-size: 24px;
   font-family: 'Lexend', sans-serif;
   font-weight: 600;
@@ -45,7 +45,7 @@ export const Container = styled.div`
 
 #container-anunciante  {
   padding: 5px 7px;
-  background-color: var(--brand-4);
+  background-color: var(--white);
   border-radius: 4px;
   font-size: 16px;
   font-family: 'Inter', sans-serif;
@@ -63,7 +63,7 @@ span {
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  color: var(--grey-2);
+  color: var(--white);
   
 }
 
@@ -76,10 +76,11 @@ span {
   align-items: center;
   height: 48px;
   width: 146px;
-  background-color: var(--white);
+  background-color: #191B21;
   border: 1.5px solid var(--brand-1);
   border-radius: 4px;
   gap: 10px;
+  cursor: pointer;
 
   color: var(--brand-1);
   font-family: 'Inter', sans-serif;

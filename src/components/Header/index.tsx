@@ -1,5 +1,5 @@
 import { Container, HeadeMain } from "./style";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/motorsshop.svg";
 import userImage from "../../assets/6915987.png"
 import { VscThreeBars } from "react-icons/vsc";
 import { useContext, useEffect, useState } from "react";
@@ -13,6 +13,13 @@ import ModalSidebar from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
 import Fade from "@mui/material/Fade";
 import Box from "@mui/material/Box";
+import {AiOutlineUser} from "react-icons/ai"
+import {BsFillCartCheckFill} from "react-icons/bs"
+import {FaRegAddressBook} from "react-icons/fa"
+import {AiFillProfile} from "react-icons/ai"
+import {BiLogIn} from "react-icons/bi"
+
+
 
 type customStyleType = {
   content: any;
@@ -165,44 +172,70 @@ export const Header = () => {
                     <Box sx={style}>
                       <Container>
                         <div className="outsideDiv">
-                          <div className="upperDiv">
-                            <a
-                              style={{ fontFamily: "'Inter', sans-serif" }}
-                              onClick={() => handleOpenEditProfileModal()}
-                              className="options"
-                            >
-                              Editar Perfil
-                            </a>
-                            <a
-                              style={{ fontFamily: "'Inter', sans-serif" }}
-                              onClick={() => handleOpenEditAddressModal()}
-                              className="options"
-                            >
-                              Editar Endereço
-                            </a>
-                            <a
-                              style={{ fontFamily: "'Inter', sans-serif" }}
-                              className="options"
-                            >
-                              Minhas Compras
-                            </a>
-                            <a
-                              className="options"
-                              onClick={() => history.push("/user")}
-                              style={{ fontFamily: "'Inter', sans-serif" }}
-                            >
-                              Meu Perfil
-                            </a>
+                          <div className="pictureAndOptions">
+                            {loading ? (
+                              <img src={userImage} alt="imagem de perfil" />
+                            )
+                            :
+                            (
+                              <h3 style={{ fontFamily: "'Inter', sans-serif" }}>
+                                <InitialsAvatar className="profilePic" name={user.name} />
+                              </h3>
+                            )}
+                            <div className="upperDiv">
+                              <div>
+                                <div>
+                                  <AiFillProfile/>
+                                  <a
+                                    style={{ fontFamily: "'Inter', sans-serif" }}
+                                    onClick={() => handleOpenEditProfileModal()}
+                                    className="options"
+                                  >Editar Perfil</a>
+                                </div>
+                              </div>
+                              <div>
+                                <div>
+                                  <FaRegAddressBook/>
+                                  <a
+                                    style={{ fontFamily: "'Inter', sans-serif" }}
+                                    onClick={() => handleOpenEditAddressModal()}
+                                    className="options"
+                                  >Editar Endereço</a>
+                                </div>
+                              </div>
+                              <div>
+                                <div>
+                                  <BsFillCartCheckFill/>
+                                  <a
+                                    style={{ fontFamily: "'Inter', sans-serif" }}
+                                    className="options"
+                                  >Minhas Compras</a>
+                                </div>
+                              </div>
+
+                              <div>
+                                <div>
+                                  <AiOutlineUser />
+                                  <a
+                                    className="options"
+                                    onClick={() => history.push("/user")}
+                                    style={{ fontFamily: "'Inter', sans-serif" }}
+                                  >Meu Perfil</a>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                           <div className="lowerDiv">
-                            <a
-                              style={{ fontFamily: "'Inter', sans-serif" }}
-                              className="options"
-                              onClick={() => logOff()}
-                            >
-                              {" "}
-                              Sair
-                            </a>
+                            <div>
+                              <div>
+                                <BiLogIn/>
+                                <a
+                                  style={{ fontFamily: "'Inter', sans-serif" }}
+                                  className="options"
+                                  onClick={() => logOff()}
+                                >Sair</a>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </Container>

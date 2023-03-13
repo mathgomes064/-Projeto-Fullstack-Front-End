@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const Global = createGlobalStyle`
 :root {
-  background-color: var( --grey-8);
+  background-color: #191B21;
   overflow-x: hidden;
   /* font-family: 'IBM Plex Mono', monospace;
   font-size: 16px;

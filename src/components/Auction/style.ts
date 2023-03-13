@@ -15,7 +15,7 @@ export const Auction = styled.section`
 
   .tittleDiv > h1 {
     font-size: 24px;
-    color: var(--black);
+    color: var(--white);
     margin-left: 20px;
     font-family: "Lexend", sans-serif;
     font-weight: 600;

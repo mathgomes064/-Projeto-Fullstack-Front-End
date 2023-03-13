@@ -59,6 +59,14 @@ export const DashboardCars = () => {
       <div className="tittleDiv">
         <h1>Carros</h1>
       </div>
+      {allCars.length === 0?
+      (
+        <div className="signDiv">
+          <h1>Nenhum carro resgistrado...</h1>
+        </div>
+      )
+      :
+      (
       <Slider {...settings}>
         {allCars?.map((car: any, index: any) => (
           <div
@@ -103,6 +111,8 @@ export const DashboardCars = () => {
           </div>
         ))}
       </Slider>
+      )
+      }
     </CarSection>
   );
 };

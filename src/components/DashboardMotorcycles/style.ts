@@ -5,7 +5,6 @@ export const MotorcycleSection = styled.section`
   height: 500px;
   margin-top: 100px;
 
-  cursor: pointer;
   body {
         font-family: "'Inter', sans-serif";
     }
@@ -18,11 +17,24 @@ export const MotorcycleSection = styled.section`
 
   .tittleDiv > h1 {
     font-size: 24px;
-    color: var(--black);
+    color: var(--white);
     margin-left: 10px;
     font-weight: bold;
     font-family: "Lexend", sans-serif;
   }
+
+  .signDiv{
+        text-align: center;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        h1{
+            color: var(--white);
+        }
+    }
 
   .card {
     background-color: var(--white);
