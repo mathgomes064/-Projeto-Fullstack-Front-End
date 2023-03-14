@@ -32,7 +32,7 @@ export const LoginCard = () => {
 
   return (
     <Container>
-      <h1 id="title-5-500">Login</h1>
+      <h1 >Login</h1>
       <div id="wrapper-form">
         <form onSubmit={handleSubmit(loginUser)}>
           <label>Email</label>
@@ -56,8 +56,8 @@ export const LoginCard = () => {
             />
             )}
           </div>
-          <a  onClick={() => {routeChange()}} className= "Password"id="text-2-500">Esqueci minha senha</a>
-          <button  id="button-blue-login-big" type="submit">
+          <a  onClick={() => {routeChange()}} className="password" id="text-2-500">Esqueci minha senha</a>
+          <button id="button-blue-login-big" type="submit">
             Entrar
           </button>
         </form>

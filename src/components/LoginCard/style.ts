@@ -2,14 +2,24 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   padding: 44px 48px;
+  background-color: #191B21;
+  
+  h1 {
+    margin: 0;
+    color: var(--white);
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  label{
+    color: var(--white)
+  }
 
   div > form > input{
     background-color: transparent;
+    color: var(--white);
   }
 
-  h1 {
-    margin: 0;
-  }
   a {
     display: flex;
     justify-content: end;
@@ -29,10 +39,12 @@ export const Container = styled.section`
   button {
     margin-top: 25px;
     width: 100%;
-
-  }
-  .Password{
     cursor: pointer;
+  }
+
+  .password{
+    cursor: pointer;
+    color: var(--white)
   }
 
   .divInput{
@@ -58,9 +70,15 @@ export const Container = styled.section`
         background-color: transparent;
         outline: 0;
         border: none;
+        color: var(--white);
 
         ::placeholder{
+          color: var(--white)
         }
+    }
+
+    .olhoAberto{
+      color: var(--white)
     }
 
     input{
@@ -68,10 +86,11 @@ export const Container = styled.section`
         height: 40px;
         background-color: transparent;
         outline: 0;
-        border: 1px solid #adb5bd;
+        border: 1px solid var(--white);
         border-radius: 4px;
 
         ::placeholder{
+          color: var(--white)
         }
     }
 

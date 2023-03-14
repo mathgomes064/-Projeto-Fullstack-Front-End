@@ -214,14 +214,14 @@ table {
 }
 
 #text-2-400 {
-  color: var(--grey-2);
+  color: var(--white);
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
 
 #text-2-500 {
-  color: var(--grey-2);
+  color: var(--white);
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -499,9 +499,9 @@ table {
 
 #button-grey-login-big:hover {
   transition: all 0.4s;
-  background-color: var(--grey-5);
-  border: 1.6px solid var(--grey-5);
-  color: var(--grey-2);
+  background-color: var(--brand-2);
+  border: none;
+  color: var(--white);
   
 }
 
@@ -650,7 +650,7 @@ table {
 #button-blue-login-big:hover {
   transition: all 0.4s;
   background-color: var(--white);
-  border: 1.5px solid var(--brand-1);
+  border: none;
   color: var(--brand-1);
 }
 

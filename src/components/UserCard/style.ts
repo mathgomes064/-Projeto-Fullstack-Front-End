@@ -90,7 +90,7 @@ span {
 
 #button-blue-1-big:hover {
   transition: all 0.4s;
-  background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
+  background-color: #5126ea;
   border: 1.5px solid var(--brand-1);
   border: none;
   color: var(--white);

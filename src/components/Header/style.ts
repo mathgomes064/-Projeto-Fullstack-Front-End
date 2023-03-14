@@ -68,7 +68,6 @@ export const HeadeMain = styled.header`
     height: 60px;
     border-left: 1px solid var(--grey-6);
     
-    
   }
 
   .register-button {
@@ -76,33 +75,29 @@ export const HeadeMain = styled.header`
     background-color: transparent;
     padding: 10px;
     border-radius: 5px;
-    color: var(--black);
+    color: var(--white);
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
     font-family: "Inter", sans-serif;
 
     :hover{
-      background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0)
+      background-color: var(--brand-2);
+      transition: 144ms;
+      border: none;
     }
   }
-
-  .register-button:hover {
-      background-color: var(--black);
-      color: var(--white);
-      transition: 144ms;
-    }
 
   .login-button {
     position: relative;
     margin: 0px 23px;
     border: none;
-    background-color: white;
-    color: var(--grey-2);
     font-family: "Inter", sans-serif;
     font-weight: 600;
     font-size: 16px;
     cursor: pointer;
+    background-color: transparent;
+    color: var(--white);
     ::after {
       content: " ";
       width: 0%;
@@ -115,7 +110,7 @@ export const HeadeMain = styled.header`
 
     :hover::after {
       width: 100%;
-      background-image: linear-gradient(to bottom right, #5126ea, #b0a6f0);
+      background-image: linear-gradient(to bottom right, #ffff, #ffff);
     }
   }
 
@@ -334,7 +329,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to bottom right, #191B21, #5126ea);
+  background-color: #191B21;
   color: black;
   gap: 30px;
   border: none;
