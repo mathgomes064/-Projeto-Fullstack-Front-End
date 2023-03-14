@@ -57,6 +57,7 @@ margin-top: 100px;
         background-color: var(--grey-7);
         overflow: hidden;
         text-align: center;
+        cursor: pointer;
     }
 
     .card > .imgDiv > img{
@@ -217,6 +218,7 @@ margin-top: 100px;
         font-weight: bold;
         height: 40px;
         width: 90px;
+        cursor: pointer;
 
         :hover{
             transition: all 0.4s;

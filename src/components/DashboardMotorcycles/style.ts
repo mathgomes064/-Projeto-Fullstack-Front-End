@@ -4,6 +4,7 @@ export const MotorcycleSection = styled.section`
   width: 93vw;
   height: 500px;
   margin-top: 100px;
+  cursor: pointer;
 
   body {
         font-family: "'Inter', sans-serif";

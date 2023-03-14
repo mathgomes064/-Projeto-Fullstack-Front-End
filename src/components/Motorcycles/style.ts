@@ -5,7 +5,6 @@ width: 93vw;
 height: 500px;
 margin-top: 100px;
 
-cursor: pointer;
     body {
         font-family: "'Inter', sans-serif";
     }
@@ -13,7 +12,8 @@ cursor: pointer;
         width: 94vw;
         height: 100px;
         display: flex;
-        align-items: center
+        align-items: center;
+        font-family: "Lexend", sans-serif;
     }
 
     .tittleDiv > h1{
@@ -21,7 +21,6 @@ cursor: pointer;
         color: var(--white);
         margin-left: 10px;
         font-weight: bold;
-        font-family: "Lexend", sans-serif;
     }
 
     .signDiv{
@@ -57,6 +56,7 @@ cursor: pointer;
         background-color: var(--grey-7);
         overflow: hidden;
         text-align: center;
+        cursor: pointer;
     }
 
     .card > .imgDiv > img{
@@ -103,7 +103,7 @@ cursor: pointer;
         text-align: justify;   
         display: flex;
         align-items: center; 
-        font-family: "'Inter', sans-serif";
+        font-family: 'Inter', sans-serif;
     }
 
     .card > .divTwo{
@@ -140,7 +140,7 @@ cursor: pointer;
     .card > .divTwo > div > p{
         font-size: 14px;
         color: var(--grey-2);
-        font-family: "'Inter', sans-serif";
+        font-family: 'Inter', sans-serif;
     }
 
     .card > .divTree{
@@ -175,15 +175,14 @@ cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-weight: bold;
-        font-family: "'Inter', sans-serif";
+        font-family: "Lexend", sans-serif;
     }
 
     .card > .divTree > div > p{
         font-size: 16px;
         color: var(--grey-0);
         font-weight: bold;
-        font-weight: "'Lexend', sans-serif";
+        font-family: "Lexend", sans-serif;
     }
 
     .card > .divFourth{
@@ -192,7 +191,7 @@ cursor: pointer;
         align-items: center;
     }
 
-    .card > .divFourth > button{
+    .card > .divFourth > .edit{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -215,6 +214,9 @@ cursor: pointer;
         border: 1.5px solid var(--brand-1);
         border-radius: 4px;
         font-weight: bold;
+        height: 40px;
+        width: 90px;
+        cursor: pointer;
 
         :hover{
             transition: all 0.4s;
@@ -224,5 +226,5 @@ cursor: pointer;
             color: var(--white);
         }
 
-    }  
+    }   
 `

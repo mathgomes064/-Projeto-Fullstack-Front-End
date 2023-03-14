@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.section`
+  background-color: #191B21;
   div > form > input{
     background-color: transparent;
     outline: 0;
@@ -15,11 +16,24 @@ export const Container = styled.section`
   div > form > div{
   }
 
-  div > form > div > div > input{
-    background-color: transparent;
+  input{
+    color: white;
+    ::placeholder{
+      color: white;
+    }
   }
 
- 
+  div > form > div > div > input{
+    background-color: transparent;
+
+    ::placeholder{
+      color: white;
+    }
+  }
+
+ label{
+  color: white;
+ }
 
   .error{
     color: red;
@@ -109,7 +123,7 @@ export const Container = styled.section`
         background-color: transparent;
         outline: 0;
         padding-left: 10px;
-        color: black;
+        color: white;
         border: 1px solid #adb5bd;
         border-radius: 4px;
         margin-top: 40px;
@@ -150,7 +164,7 @@ export const Container = styled.section`
         background-color: transparent;
         outline: 0;
         padding-left: 10px;
-        color: black;
+        color: white;
         border: 1px solid #adb5bd;
         border-radius: 4px;
         margin-top: 40px;

@@ -6,6 +6,7 @@ justify-content: center;
 align-items: center;
 height: 40px;
 width: 100px;
+cursor: pointer;
 
 background-color: var(--white);
 color: var(--brand-1);
@@ -30,12 +31,22 @@ background-color: var(--white);
 display: flex;
 justify-content: center;
 
+    ::-webkit-scrollbar{
+    background-color: #1d1d1d;
+    width: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb{
+    background-color: #5B5B5B;
+    border-radius: 5px;
+    }
+
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background-color: gray; */
     gap: 20px;
 
     .headerForm {

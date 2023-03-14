@@ -2,7 +2,7 @@ import styled from "styled-components";
 import background from "../../assets/backgroundcardauction.svg";
 
 export const Auction = styled.section`
-  width: 94vw;
+  width: 93vw;
   height: 550px;
   margin-top: 100px;
 

@@ -121,7 +121,7 @@ table {
 }
 
 #title-2-500 {
-  color: black;
+  color: white;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -163,7 +163,7 @@ table {
 }
 
 #title-5-500 {
-  color: black;
+  color: white;
   font-family: 'Lexend', sans-serif;
   font-weight: 500;
   font-size: 24px;

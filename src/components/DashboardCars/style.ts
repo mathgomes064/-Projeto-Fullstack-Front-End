@@ -4,6 +4,7 @@ export const CarSection = styled.section`
 width: 93vw;
 height: 500px;
 margin-top: 100px;
+cursor: pointer;
 
     .tittleDiv{
         width: 94vw;

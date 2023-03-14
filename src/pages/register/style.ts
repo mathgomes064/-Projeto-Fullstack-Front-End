@@ -4,12 +4,9 @@ export const RegisterPage = styled.section`
     margin-top: 60px;
     margin-bottom: 90px;
     border-radius: 4px;
-    background-color: var(--white);
-   
 `
 export const Container = styled.body`
-    background-color: var(--grey-8);
-    
+    background-color: #191B21;
     display: flex;
     flex-direction: column;
     justify-content: center;

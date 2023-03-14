@@ -5,7 +5,6 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { IUserCreate, IUserRaw } from "../../interfaces/user";
 import { UserContext } from "../../providers/user/userContext";
-import { useHistory } from "react-router-dom";
 import { AiFillEyeInvisible } from "react-icons/ai";
 import { AiFillEye } from "react-icons/ai";
 
