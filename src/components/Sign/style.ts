@@ -67,6 +67,7 @@ background-attachment: fixed;
         font-size: 16px;
         font-family: 'Inter', sans-serif;
         color: var(--white);
+        cursor: pointer;
         :hover{
             background-color: var(--white);
             color: var(--black);
