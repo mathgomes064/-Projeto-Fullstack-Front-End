@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const EditProfileButton = styled.a`
+export const EditAddressButton = styled.a`
 color: var(--white);
 font-size: 16px;
 text-decoration: none;
@@ -25,20 +25,19 @@ cursor: pointer;
       background-image: linear-gradient(to bottom right, #ffff, #ffff);
     }
 `
-
 export const Content = styled.div`
 width: 400px;
-height: 700px;
+height: 500px;
 padding: 20px;
 background-color: white;
 
-    form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
+form{
+display: flex;
+align-items: center;
+justify-content: center;
+}
 
-  .headerForm{
+.headerForm{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -57,6 +56,7 @@ background-color: white;
     width: 100%;
   }
 
+  
   input {
     width: 97%;
     background-color: white;
@@ -76,19 +76,31 @@ background-color: white;
     }
   }
   .imageField{
-    display: flex;
+      display: flex;
     flex-direction: column;
   }
   .vehicleInformationLabel {
-    display: flex;
+      display: flex;
     flex-direction: row;
-  }
+}
+
+    .flexDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    }
 
   .divVehicle-1 {
+    width: 45%;
     display: flex;
     flex-direction: column;
-  }
 
+    input{
+        width: 95%;
+    }
+  }
+  
   .divVehicle-2,
   .divVehicle-3 {
     display: flex;
@@ -105,7 +117,7 @@ background-color: white;
   }
 
   button {
-    background-color: white;
+     background-color: white;
     border: 1px solid var(--grey-4);
     border-radius: 4px;
     color: var(--grey-0);
@@ -131,4 +143,4 @@ background-color: white;
         color: white;
     }
   }
-`;
+  `;

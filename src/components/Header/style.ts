@@ -462,7 +462,13 @@ export const Container = styled.div`
       width: 100%;
       background-image: linear-gradient(to bottom right, #ffff, #ffff);
     }
+  }
 
+  .profile{
+    margin-bottom: 4.5px;
+  }
 
+  .address{
+    margin-bottom: 4.5px;
   }
 `;

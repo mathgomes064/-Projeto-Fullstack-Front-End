@@ -5,8 +5,6 @@ import { VscThreeBars } from "react-icons/vsc";
 import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../providers/user/userContext";
-import Modal from "react-modal";
-import ModalEditAddress from "../ModalEditAddress/ModalEditAddress";
 import InitialsAvatar from "react-initials-avatar";
 import ModalSidebar from "@mui/material/Modal";
 import Backdrop from "@mui/material/Backdrop";
@@ -18,18 +16,10 @@ import {FaRegAddressBook} from "react-icons/fa"
 import {AiFillProfile} from "react-icons/ai"
 import {BiLogIn} from "react-icons/bi"
 import { NewModalEditProfile } from "../NewModalEditProfile";
-
-
-
-type customStyleType = {
-  content: any;
-  overlay: any;
-};
+import { NewModalEditAddress } from "../NewModalEditAddress";
 
 export const Header = () => {
-  const [activeDropDown, setActiveDropDown] = useState(false);
   const [activeItemsDropdown, setActiveItemsDropdown] = useState(false);
-  const [modalEditAddressIsOpen, setModalEditAddressIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -39,7 +29,6 @@ export const Header = () => {
   const history = useHistory();
 
   const logOff = () => {
-    setActiveDropDown(false);
     localStorage.clear();
     history.push("/");
     location.reload();
@@ -49,54 +38,12 @@ export const Header = () => {
     position: "absolute",
   };
 
-  const customStyles: customStyleType = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      height: "100%",
-      width: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      background: "transparent",
-      border: "none",
-    },
-    overlay: {
-      position: "fixed",
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: "rgba(18, 18, 20, 0.5)",
-    },
-  };
-
-  function handleOpenEditAddressModal() {
-    setModalEditAddressIsOpen(true);
-    setOpen(false);
-  }
-
-  function handleCloseEditAddressModal() {
-    setModalEditAddressIsOpen(false);
-  }
-
   useEffect(() => {
     getUserData();
   }, []);
 
   return (
     <HeadeMain>
-      <Modal
-        style={customStyles}
-        isOpen={modalEditAddressIsOpen}
-        onRequestClose={handleCloseEditAddressModal}
-      >
-        <ModalEditAddress
-          handleCloseEditAddressModal={handleCloseEditAddressModal}
-        />
-      </Modal>
-
       <div className="container">
         <img src={logo} alt="" onClick={() => history.push("/")} />
         <div className="buttonSection">
@@ -166,21 +113,14 @@ export const Header = () => {
                             <div className="upperDiv">
                               <div>
                                 <div>
-                                  <AiFillProfile/>
-                                  <a
-                                    style={{ fontFamily: "'Inter', sans-serif" }}
-                                    className="options"
-                                  ><NewModalEditProfile/></a>
+                                  <AiFillProfile className="profile"/>
+                                  <NewModalEditProfile/>
                                 </div>
                               </div>
                               <div>
                                 <div>
-                                  <FaRegAddressBook/>
-                                  <a
-                                    style={{ fontFamily: "'Inter', sans-serif" }}
-                                    onClick={() => handleOpenEditAddressModal()}
-                                    className="options"
-                                  >Editar Endereço</a>
+                                  <FaRegAddressBook className="address"/>
+                                  <NewModalEditAddress/>
                                 </div>
                               </div>
                               <div>
