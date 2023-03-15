@@ -6,7 +6,6 @@ import { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { UserContext } from "../../providers/user/userContext";
 import Modal from "react-modal";
-import ModalEditProfile from "../ModalEditProfile/ModalEditProfile";
 import ModalEditAddress from "../ModalEditAddress/ModalEditAddress";
 import InitialsAvatar from "react-initials-avatar";
 import ModalSidebar from "@mui/material/Modal";
@@ -18,6 +17,7 @@ import {BsFillCartCheckFill} from "react-icons/bs"
 import {FaRegAddressBook} from "react-icons/fa"
 import {AiFillProfile} from "react-icons/ai"
 import {BiLogIn} from "react-icons/bi"
+import { NewModalEditProfile } from "../NewModalEditProfile";
 
 
 
@@ -29,7 +29,6 @@ type customStyleType = {
 export const Header = () => {
   const [activeDropDown, setActiveDropDown] = useState(false);
   const [activeItemsDropdown, setActiveItemsDropdown] = useState(false);
-  const [modalEditProfileIsOpen, setModalEditProfileIsOpen] = useState(false);
   const [modalEditAddressIsOpen, setModalEditAddressIsOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -73,15 +72,6 @@ export const Header = () => {
     },
   };
 
-  function handleOpenEditProfileModal() {
-    setModalEditProfileIsOpen(true);
-    setOpen(false);
-  }
-
-  function handleCloseEditProfileModal() {
-    setModalEditProfileIsOpen(false);
-  }
-
   function handleOpenEditAddressModal() {
     setModalEditAddressIsOpen(true);
     setOpen(false);
@@ -97,15 +87,6 @@ export const Header = () => {
 
   return (
     <HeadeMain>
-      <Modal
-        style={customStyles}
-        isOpen={modalEditProfileIsOpen}
-        onRequestClose={handleCloseEditProfileModal}
-      >
-        <ModalEditProfile
-          handleCloseEditProfileModal={handleCloseEditProfileModal}
-        />
-      </Modal>
       <Modal
         style={customStyles}
         isOpen={modalEditAddressIsOpen}
@@ -188,9 +169,8 @@ export const Header = () => {
                                   <AiFillProfile/>
                                   <a
                                     style={{ fontFamily: "'Inter', sans-serif" }}
-                                    onClick={() => handleOpenEditProfileModal()}
                                     className="options"
-                                  >Editar Perfil</a>
+                                  ><NewModalEditProfile/></a>
                                 </div>
                               </div>
                               <div>
